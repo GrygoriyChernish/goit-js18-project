@@ -1,9 +1,0 @@
-// .section {
-//     @include size(100%);
-// }
-
-@include md {
-    .section {
-        @include size(200%);
-    }
-}

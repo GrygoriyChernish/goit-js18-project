@@ -60,10 +60,3 @@
         @content;
     }
 }
-
-// Очень большие устройства
-@mixin xl {
-    @media (min-width: #{$screen-xl-min}) {
-        @content;
-    }
-}
