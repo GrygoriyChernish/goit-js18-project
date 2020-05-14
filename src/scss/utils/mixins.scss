@@ -1,0 +1,69 @@
+@mixin font-source-sans(
+    $size: false,
+    $colour: false,
+    $weight: false,
+    $lh: false
+) {
+    // font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+@mixin font-source($size: false, $weight: false) {
+    @if $size {
+        font-size: $size;
+    }
+
+    @if $weight {
+        font-weight: $weight;
+    }
+}
+
+@mixin size($width, $height) {
+    @if length($height) == 1 {
+        height: $height;
+        width: $width;
+    } @else {
+        height: $width;
+        width: $width;
+    }
+}
+
+// Медиа запросы
+// Маленькие устройства
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Средние устройства
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Большие устройства
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Очень большие устройства
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}

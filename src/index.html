@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Your Name Project</title>
+    </head>
+
+    <body>
+        <form action="">
+            <span class="input-geo"> </span>
+            <input class="input" />
+            <span class="input-star"></span>
+        </form>
+        ​
+        <ul class="input--list"></ul>
+        ​
+        <section class="weather-info">
+            <button class="btn--today"></button>
+            <button class="btn--days"></button>
+        </section>
+        ​
+        <section class="date-info"></section>
+        ​
+        <blockquote class="quotation"></blockquote>
+        <cite class="quotation--author"></cite>
+
+        <!-- ФОРМА ПОИСКА -->
+        <section class="search-city">
+            <form class="search-city__form">
+                <!--или вместо <i> ::before?? -->
+                <i class="search-city__geo"></i>
+                <input
+                    class="search-city__input"
+                    type="text"
+                    name="query"
+                    placeholder="Enter the city"
+                />
+                <button class="search-city__fav-btn"></button>
+            </form>
+            <div class="search-city__slider">
+                <button class="search-city__btn-prev"></button>
+                <ul class="search-city__list"></ul>
+                <button class="search-city__btn-next"></button>
+            </div>
+        </section>
+        <!-- ПОГОДА НА 1 ДЕНЬ -->
+        <section class="wheather-today"></section>
+        <div class="btns-wrap">
+            <button class="btns-wrap__btn btn--today">Today</button>
+            <button class="btns-wrap__btn btn--days">5 Days</button>
+        </div>
+        <!-- ПОГОДА НА 5 ДНЕЙ, СКРЫТА С НАЗВАНИЕМ ГОРОДА -->
+        <!-- <h2 class="city"></h2>
+  <section class="wheather-days"></section> -->
+        <!-- ИНФОРМАЦИЯ О ТЕКУЩЕЙ ДАТЕ И ВРЕМЕНИ -->
+        <section class="date-info"></section>
+        <!-- БЛОК С ЦИТАТАМИ -->
+        <div class="quotation">
+            <p class="quotation__text"></p>
+            <p class="quotation__author"></p>
+        </div>
+    </body>
+</html>
