@@ -109,7 +109,7 @@ git push -u origin имя_вашей_ветки
 ```shell
 btn__search                   # Имя блока btn__search
 
-btn__search-active            # Реализация элемента с модификатором btn__search-active
+btn__search--active            # Реализация элемента с модификатором btn__search--active
    ```                                    
 
 ## Стиль написания коммитов
