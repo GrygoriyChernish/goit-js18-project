@@ -1,0 +1,108 @@
+.wrap-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 50px;
+}
+.input-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    font-size: $text-s;
+    font: $main-font;
+    width: 80%;
+    //height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    &__item {
+        justify-content: space-between;
+        //height: 100%;
+        color: $lite_main;
+        background-color: $middle_dark;
+        border-radius: 50px;
+        padding: 7px;
+        list-style-type: none;
+        height: 100%;
+        margin-right: 3px;
+    }
+    &__city {
+        margin-right: 22px;
+        cursor: pointer;
+    }
+}
+
+.close-icon {
+    top: 50%;
+    right: 15%;
+    cursor: pointer;
+    width: 20px;
+    padding-left: 10px;
+    color: $middle_lite;
+    //background-image: url(../../icons/close/close-24px.svg);
+}
+.arrow__prev {
+    border: radius 50%;
+    background-color: $middle_lite;
+    top: 50%;
+    right: 15%;
+    width: 30px;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_left_black_18dp.png);
+}
+.arrow__next {
+    border: radius 50%;
+    background-color: $middle_lite;
+    top: 50%;
+    right: 15%;
+    width: 30px;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
+
+    // &--active {
+    //     background-color: $lite_main;
+    //     cursor: pointer;
+    // }
+}
+
+.arrow__next:hover {
+    background-color: $lite_main;
+    cursor: pointer;
+}
+.arrow__prev:hover {
+    background-color: $lite_main;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .wrap-list {
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 768px) {
+    .wrap-list {
+        margin-bottom: 104px;
+        margin: 0 auto;
+        width: 508px;
+    }
+    .input-list {
+        width: 85%;
+    }
+    .input-list__city {
+        margin-right: 10px;
+    }
+}
+@media (min-width: 1140px) {
+    .wrap-list {
+        margin-bottom: 92px;
+    }
+}
