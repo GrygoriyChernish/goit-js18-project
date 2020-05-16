@@ -40,40 +40,38 @@
     top: 50%;
     right: 15%;
     cursor: pointer;
-    @include size(12px);
-    // width: 12px;
-    // height: 12px;
+    //@include size(12px);
+    width: 12px;
+    height: 12px;
     padding-left: 15px;
-    background-image: url(../icons/close/close-24px.svg);
+    background-image: url(../icons/icon-close.svg);
     background-position: center;
     background-repeat: no-repeat;
     fill: $middle_lite;
 }
 // svg {
 //     fill: $middle_lite;
-//margin:
 // }
 .arrow__prev {
     border-radius: 50%;
     background-color: $middle_lite;
-    top: 50%;
-    right: 15%;
+    padding: 5px;
     width: 30px;
     margin-left: 5px;
     margin-right: 5px;
-    background-image: url(../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_left_black_18dp.png);
+    background-image: url(../icons/back.svg);
     background-position: center;
     background-repeat: no-repeat;
+    fill: $dark_main;
 }
 .arrow__next {
     border-radius: 50%;
     background-color: $middle_lite;
-    top: 50%;
-    right: 15%;
+    padding: 5px;
     width: 30px;
     margin-left: 5px;
     margin-right: 5px;
-    background-image: url(../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
+    background-image: url(../icons/next.svg);
     background-position: center;
     background-repeat: no-repeat;
 
