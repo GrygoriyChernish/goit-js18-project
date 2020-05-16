@@ -22,7 +22,6 @@
 
     &__item {
         justify-content: space-between;
-        //height: 100%;
         color: $lite_main;
         background-color: $middle_dark;
         border-radius: 50px;
@@ -32,7 +31,7 @@
         margin-right: 3px;
     }
     &__city {
-        margin-right: 22px;
+        margin-right: 10px;
         cursor: pointer;
     }
 }
@@ -41,11 +40,17 @@
     top: 50%;
     right: 15%;
     cursor: pointer;
-    width: 20px;
-    padding-left: 10px;
-    color: $middle_lite;
-    //background-image: url(../../icons/close/close-24px.svg);
+    width: 12px;
+    height: 12px;
+    padding-left: 15px;
+    background-image: url(../icons/close/close-24px.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: $middle_lite;
 }
+// svg {
+//     fill: $middle_lite;
+// }
 .arrow__prev {
     border: radius 50%;
     background-color: $middle_lite;
@@ -55,7 +60,9 @@
     border-radius: 50px;
     margin-left: 5px;
     margin-right: 5px;
-    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_left_black_18dp.png);
+    background-image: url(../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_left_black_18dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .arrow__next {
     border: radius 50%;
@@ -66,7 +73,9 @@
     border-radius: 50px;
     margin-left: 5px;
     margin-right: 5px;
-    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
+    background-image: url(../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
 
     // &--active {
     //     background-color: $lite_main;
@@ -92,7 +101,8 @@
     .wrap-list {
         margin-bottom: 104px;
         margin: 0 auto;
-        width: 508px;
+        width: 84%;
+        //width: 508px;
     }
     .input-list {
         width: 85%;
@@ -104,5 +114,6 @@
 @media (min-width: 1140px) {
     .wrap-list {
         margin-bottom: 92px;
+        width: 48%;
     }
 }
