@@ -40,8 +40,9 @@
     top: 50%;
     right: 15%;
     cursor: pointer;
-    width: 12px;
-    height: 12px;
+    @include size(12px);
+    // width: 12px;
+    // height: 12px;
     padding-left: 15px;
     background-image: url(../icons/close/close-24px.svg);
     background-position: center;
@@ -50,6 +51,7 @@
 }
 // svg {
 //     fill: $middle_lite;
+//margin:
 // }
 .arrow__prev {
     border-radius: 50%;
@@ -78,6 +80,7 @@
     // &--active {
     //     background-color: $lite_main;
     //     cursor: pointer;
+    //
     // }
 }
 
