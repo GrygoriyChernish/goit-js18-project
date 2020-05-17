@@ -1,0 +1,249 @@
+@media (max-width: 767px) {
+    // .days {
+    //     width: 250px;
+    // }
+}
+
+.citi {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 700;
+    text-align: center;
+}
+
+.wather {
+    width: $cont-mob;
+    @include margin(0 auto);
+
+    text-align: center;
+    background-color: $bg_opacity;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    border-radius: 35px;
+}
+
+.days {
+    // list-style: none;
+    //  margin(0 auto);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    // margin-bottom: 18px;
+}
+.day__item {
+    width: 58px;
+    padding-top: 22px;
+}
+.day__item:hover .day__week {
+    color: $accent;
+}
+
+.day__item:hover .more-info__btn {
+    opacity: 1;
+}
+.day__week {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    font-family: $main-font;
+    font-weight: 400;
+    text-align: center;
+    color: $lite_main;
+    opacity: 54%;
+    padding-bottom: 15px;
+}
+
+.day__month {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.day__tempr {
+    @include margin(0 auto);
+    width: 58px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.day__tempr-min-max {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+    opacity: 54%;
+}
+
+.day__tempr-degrees {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    color: $accent;
+    font-family: $main-font;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    // line-height: 23px;
+}
+.day__tempr-degrees::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    border: 1px solid #ff6b08;
+    position: absolute;
+    right: 0;
+    content: '';
+    display: inline-block;
+}
+
+.day__tempr::before {
+    width: 1px;
+    height: 29px;
+    background-color: $lite_main;
+    position: absolute;
+    opacity: 30%;
+    content: '';
+    display: inline-block;
+    transform: translate(50%, -50%);
+    top: 50%;
+    left: 47%;
+}
+
+.more-info__btn {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    letter-spacing: 0px;
+    // line-height: 22px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+    text-align: center;
+    opacity: 54%;
+    cursor: pointer;
+    border-bottom: 1px solid $lite_main;
+}
+
+.more-info__tempr {
+    margin: 0 auto;
+    width: 30px;
+    text-align: center;
+}
+
+.more-info__item {
+    list-style: none;
+    width: 118px;
+    height: 220px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 16px;
+    padding-bottom: 18px;
+    margin-top: 16px;
+}
+.more-info__item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+// .more-info__time {
+//     font-size: 12px;
+//     letter-spacing: 0px;
+//     line-height: 22px;
+//     color: $lite_main;
+//     font-family: $main-font;
+//     font-weight: 400;
+//     text-align: center;
+// }
+
+.more-info__descr {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 13px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 22px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+    text-align: center;
+    opacity: 54%;
+}
+
+// .more-info {
+//     display: none;
+// }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .wather {
+        width: $cont-tab;
+        padding-top: 42px;
+        padding-bottom: 70px;
+    }
+
+    .days {
+        width: 545px;
+        // margin-bottom: 40px;
+    }
+    .day__week {
+        font-size: $text-s;
+    }
+    .day__month {
+        font-size: $text-m;
+    }
+    .day__item {
+        width: 82px;
+        padding-top: 0;
+    }
+    .day__tempr-min-max {
+        font-size: $text-s;
+    }
+    .day__tempr {
+        width: 82px;
+    }
+    .day__tempr::before {
+        height: 40px;
+    }
+    .day__tempr-degrees {
+        font-size: $text-m;
+    }
+    .more-info__btn {
+        font-size: $text-s;
+    }
+
+    .more-info {
+        margin-top: 40px;
+    }
+    .more-info__item {
+        margin-top: 0;
+    }
+}
