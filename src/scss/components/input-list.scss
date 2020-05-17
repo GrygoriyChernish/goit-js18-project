@@ -31,7 +31,11 @@
         margin-right: 3px;
     }
     &__city {
+
+        margin-right: 10px;
+
         margin-right: 22px;
+
         cursor: pointer;
     }
 }
@@ -40,6 +44,42 @@
     top: 50%;
     right: 15%;
     cursor: pointer;
+
+    //@include size(12px);
+    width: 12px;
+    height: 12px;
+    padding-left: 15px;
+    background-image: url(../icons/icon-close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: $middle_lite;
+}
+// svg {
+//     fill: $middle_lite;
+// }
+.arrow__prev {
+    border-radius: 50%;
+    background-color: $middle_lite;
+    padding: 5px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-image: url(../icons/back.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: $dark_main;
+}
+.arrow__next {
+    border-radius: 50%;
+    background-color: $middle_lite;
+    padding: 5px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-image: url(../icons/next.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
     width: 20px;
     padding-left: 10px;
     color: $middle_lite;
@@ -67,6 +107,7 @@
     margin-right: 5px;
     // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
 
+
     // &--active {
     //     background-color: $lite_main;
     //     cursor: pointer;
@@ -91,7 +132,10 @@
     .wrap-list {
         margin-bottom: 104px;
         margin: 0 auto;
+        width: 84%;
+        //width: 508px;
         width: 508px;
+
     }
     .input-list {
         width: 85%;
@@ -103,5 +147,7 @@
 @media (min-width: 1140px) {
     .wrap-list {
         margin-bottom: 92px;
+        width: 48%;
+
     }
 }
