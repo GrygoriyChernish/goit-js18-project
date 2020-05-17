@@ -1,0 +1,118 @@
+p {
+    margin: 0;
+}
+
+.degree {
+    @extend %flex;
+    @extend %center;
+    flex-direction: column;
+    height: 190px;
+    margin-bottom: 30px;
+    font-family: $main-font;
+    color: $lite_main;
+    background-color: $bg_solid;
+    border-radius: 35px;
+    box-shadow: 0px 8px 43px 0px rgba(16, 33, 54, 0.59);
+}
+
+.degree__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 16px;
+}
+
+.degree__city {
+    margin-bottom: 20px;
+    font-size: $text-m;
+    color: $middle_dark;
+}
+
+.degree__temp {
+    margin-right: 14px;
+    font-size: $text-mobl;
+    font-weight: 300;
+    &::after {
+        content: "\00B0";
+        padding-left: 2px;
+        font-size: 36px;
+        vertical-align: top;
+    }
+}
+
+.degree__minmax,
+.degree__minmax-wrap {
+    @extend %flex;
+    @extend %center;
+}
+
+.degree__min {
+    padding-right: 14px;
+}
+
+.degree__max {
+    padding-left: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.degree__min-text,
+.degree__max-text {
+    font-size: $text-s;
+    color: $middle_dark;
+    margin-bottom: 4px;
+}
+
+.degree__min-value,
+.degree__max-value {
+    font-size: $text-m;
+    &::after {
+        content: "\00B0";
+        padding-left: 2px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .degree {
+        width: 492px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 46px;
+    }
+
+    .degree__city {
+        margin-bottom: 12px;
+    }
+
+    .degree__temp {
+        margin-right: 0;
+        margin-bottom: 14px;
+        font-size: $text-tabl;
+        &::after {
+            font-size: 80px;
+        }
+    }
+
+    .degree__minmax {
+        flex-direction: column;
+    }
+
+    .degree__min {
+        padding-right: 20px;
+    }
+
+    .degree__max {
+        padding-left: 20px;
+    }
+
+    .degree__min-text,
+    .degree__max-text {
+        font-size: $text-m;
+    }
+}
+@media screen and (min-width: 1140px) {
+    .degree {
+        margin-right: 0;
+        margin-bottom: 28px;
+        border-radius: 35px 0 0 35px;
+    }
+}
