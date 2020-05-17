@@ -1,0 +1,18 @@
+.form__wrap {
+    position: relative;
+    @extend %flex;
+    @extend %center;
+    @include size($cont-mob, auto);
+}
+
+@include md {
+    .form__wrap {
+        width: $cont-tab;
+    }
+}
+
+@include lg {
+    .form__wrap {
+        width: $cont-desk;
+    }
+}

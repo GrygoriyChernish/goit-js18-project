@@ -1,0 +1,29 @@
+.form {
+    position: relative;
+    @include margin(27px null 13px null);
+
+    span {
+        position: absolute;
+        display: inline-block;
+        background: {
+            repeat: no-repeat;
+            position: center;
+        }
+        @include size(22px, 22px);
+        @include padding(28px 0 0 0);
+    }
+}
+
+@include md {
+    .form {
+        @include padding(62px 0 0 0);
+        @include margin(null null 13px null);
+        width: $cont-tab;
+    }
+}
+
+@include lg {
+    .form {
+        width: $cont-desk;
+    }
+}

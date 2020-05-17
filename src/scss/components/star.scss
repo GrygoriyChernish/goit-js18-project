@@ -1,0 +1,22 @@
+.star {
+    @include size(30px, 30px);
+    @include border-radius(50%);
+    background-image: url(../icons/star/star.svg);
+    right: 25px;
+
+    &:hover {
+        background-color: $star_hover;
+        cursor: pointer;
+    }
+
+    &:focus {
+        background-image: url(../icons/star_filled/star_color.svg);
+        outline: none;
+    }
+}
+
+@include lg {
+    .star {
+        right: 298px;
+    }
+}

@@ -1,0 +1,10 @@
+.location {
+    left: 25px;
+    background-image: url(../icons/location/location_search.svg);
+}
+
+@include lg {
+    .location {
+        left: 298px;
+    }
+}
