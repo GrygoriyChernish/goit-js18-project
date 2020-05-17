@@ -6,7 +6,7 @@
     &__item {
         @extend %space-between;
         color: $lite_main;
-        background-color: $middle_dark;
+        background-color: $middle_dark_list;
         @include border-radius(50px);
         @include padding(7px);
         @include size(null, 100%);
