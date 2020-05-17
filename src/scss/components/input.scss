@@ -1,26 +1,114 @@
-// @media (max-width: 767px) {
-//     .input {
-//         margin-top: 27px;
-//         margin-bottom: 13px;
-//     }
-//     .input--list {
-//         margin-bottom: 50px;
-//     }
-// }
-// @media (min-width: 768px) {
-//     .input {
-//         margin-top: 62px;
-//         margin-bottom: 13px;
-//     }
-//     .input--list {
-//         margin-bottom: 104px;
-//     }
-// }
-// @media (min-width: 1140px) {
-//     .input {
-//         margin-top: 80px;
-//         margin-bottom: 13px;
-//     }
-//     .input--list {
-//         margin-bottom: 92px;
-//     }
+::placeholder {
+    font-family: $main-font;
+    color: $dark_main;
+}
+
+.form {
+    position: relative;
+    margin-bottom: 13px;
+    span {
+        position: absolute;
+    }
+}
+
+.input {
+    height: 48px;
+    border: none;
+    border-radius: 24px;
+    background-color: $lite_main;
+    border: 2px solid $lite_main;
+    padding: 0 52px 0 59px;
+}
+
+.location {
+    background-image: url(../icons/location/location_search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 22px;
+    height: 22px;
+}
+
+.star {
+    background-image: url(../icons/star/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 22px;
+    height: 22px;
+    &:hover {
+        background-color: $star_hover;
+    }
+}
+.star {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.star:focus {
+    background-image: url(../icons/star_filled/star_color.svg);
+    outline: none;
+}
+
+@media (max-width: 767px) {
+    .form {
+        padding: 28px 0 0 0;
+        width: $cont-mob;
+    }
+
+    .input {
+        width: $cont-mob;
+        font-size: $text-s;
+    }
+
+    .location {
+        left: 24px;
+        top: 41px;
+    }
+
+    .star {
+        right: 17px;
+        top: 38px;
+    }
+}
+@media (min-width: 768px) {
+    .form {
+        padding: 62px 0 0 0;
+        margin-bottom: 13px;
+        width: $cont-tab;
+    }
+
+    .input {
+        width: 505px;
+        font-size: $text-m;
+    }
+
+    .location {
+        top: 75px;
+        left: 76px;
+    }
+
+    .star {
+        top: 72px;
+        right: 72px;
+    }
+}
+@media (min-width: 1140px) {
+    .form {
+        background-size: 48px;
+        padding: 79px 0 0 0;
+        width: $cont-desk;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .location {
+        top: 92px;
+        left: 302px;
+    }
+
+    .star {
+        top: 89px;
+        right: 298px;
+    }
+}
