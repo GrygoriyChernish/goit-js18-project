@@ -24,6 +24,7 @@
 
 @include lg {
     .form {
+        @include padding(78px 0 0 0);
         width: $cont-desk;
     }
 }
