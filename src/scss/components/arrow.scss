@@ -1,0 +1,28 @@
+.arrow {
+    @include border-radius(50px);
+    @include size(30px, 30px);
+    @include padding(5px);
+    @include margin(null 5px);
+    background: {
+        color: $middle_lite;
+        position: center;
+        repeat: no-repeat;
+    }
+}
+
+.arrow__prev {
+    background-image: url(../icons/back.svg);
+    &:hover {
+        background-color: $lite_main;
+        cursor: pointer;
+    }
+}
+
+.arrow__next {
+    background-image: url(../icons/next.svg);
+
+    &:hover {
+        background-color: $lite_main;
+        cursor: pointer;
+    }
+}
