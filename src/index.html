@@ -1,122 +1,118 @@
 <!DOCTYPE html>
 <html lang="en-ru">
-
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Weather</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Weather</title>
+    </head>
 
     <body>
         <div class="container">
-            <!-- Форма поиска - Sity Search -->
-            <form class="form" action="">
+            <!-- Форма поиска-->
+            <form class="form">
                 <span class="location"></span>
                 <input class="input" placeholder="Eter the city" />
                 <span tabindex="0" class="star star_favorit"></span>
             </form>
 
-<body>
-    <div class="container">
-        <!-- Форма поиска - Sity Search -->
-        <form action="">
-            <input />
-        </form>
-
-        <!-- Список избранных городов - Favorites -->
-        <div class="wrap-list">
-            <span class="arrow__prev"></span>
-            <ul class="input-list">
-                <li class="input-list__item">
-                    <u class="input-list__city">Amsterdam</u><span class="close-icon"></span>
-                </li>
-                <li class="input-list__item">
-                    <u class="input-list__city">Paris</u><span class="close-icon"></span>
-                </li>
-            </ul>
-            <span class="arrow__next"></span>
-        </div>
-        
-        <!-- Секция Degree -->
-        <section class="degree">
-            <img class="degree__icon" src="https://s1.iconbird.com/ico/2013/9/450/w256h2561380453883Cloud256x25632.png">
-            <p class="degree__city">Kyiv, UA</p>
-            <div class="degree__minmax">
-                <p class="degree__temp">-3</p>
-                <div class="degree__minmax-wrap">
-                    <div class="degree__min">
-                        <p class="degree__min-text">min</p>
-                        <p class="degree__min-value">-18</p>
-                    </div>
-                    <div class="degree__max">
-                        <p class="degree__max-text">max</p>
-                        <p class="degree__max-value">+15</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Секция дни -->
-            <section class="citi__section">Kyiv, UA</section>
-            <section class="wather">
-                <h1 class="citi">Kyiv, UA</h1>
-                <ul class="days">
-                    <li class="day__item">
-                        <h2 class="day__week">Sanday</h2>
-                        <h2 class="day__month">09 Feb</h2>
-                        <p>icon</p>
-                        <div class="day__tempr">
-                            <div>
-                                <h3 class="day__tempr-min-max">min</h3>
-                                <p class="day__tempr-degrees">-2</p>
-                            </div>
-                            <div>
-                                <h3 class="day__tempr-min-max">max</h3>
-                                <p class="day__tempr-degrees">-5</p>
-                            </div>
-                        </div>
-                        <p class="more-info__btn">more info</p>
+            <!-- Список избранных городов-->
+            <div class="wrap-list">
+                <span class="arrow__prev"></span>
+                <ul class="input-list">
+                    <li class="input-list__item">
+                        <u class="input-list__city">Amsterdam</u
+                        ><span class="close-icon"></span>
                     </li>
-                    <li class="day__item">
-                        <h2 class="day__week">Sanday</h2>
-                        <h2 class="day__month">09 Feb</h2>
-                        <p>icon</p>
-                        <div class="day__tempr">
-                            <div>
-                                <h3 class="day__tempr-min-max">min</h3>
-                                <p class="day__tempr-degrees">-2</p>
-                            </div>
-                            <div>
-                                <h3 class="day__tempr-min-max">max</h3>
-                                <p class="day__tempr-degrees">-5</p>
-                            </div>
-                        </div>
-                        <p class="more-info__btn">more info</p>
-                    </li>
-                    <li class="day__item">
-                        <h2 class="day__week">Sanday</h2>
-                        <h2 class="day__month">09 Feb</h2>
-                        <p>icon</p>
-                        <div class="day__tempr">
-                            <div>
-                                <h3 class="day__tempr-min-max">min</h3>
-                                <p class="day__tempr-degrees">-2</p>
-                            </div>
-                            <div>
-                                <h3 class="day__tempr-min-max">max</h3>
-                                <p class="day__tempr-degrees">-5</p>
-                            </div>
-                        </div>
-                        <p class="more-info__btn">more info</p>
+                    <li class="input-list__item">
+                        <u class="input-list__city">Paris</u
+                        ><span class="close-icon"></span>
                     </li>
                 </ul>
-
                 <span class="arrow__next"></span>
             </div>
-            
+
             <!-- Секция Degree -->
-            <section></section>
+            <section class="degree">
+                <img
+                    class="degree__icon"
+                    src="https://s1.iconbird.com/ico/2013/9/450/w256h2561380453883Cloud256x25632.png"
+                    alt="icon"
+                />
+                <p class="degree__city">Kyiv, UA</p>
+                <div class="degree__minmax">
+                    <p class="degree__temp">-3</p>
+                    <div class="degree__minmax-wrap">
+                        <div class="degree__min">
+                            <p class="degree__min-text">min</p>
+                            <p class="degree__min-value">-18</p>
+                        </div>
+                        <div class="degree__max">
+                            <p class="degree__max-text">max</p>
+                            <p class="degree__max-value">+15</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция дни -->
+            <section class="citi__section">
+                <div class="wather">
+                    <h2 class="citi">Kyiv, UA</h2>
+                    <ul class="days">
+                        <li class="day__item">
+                            <h2 class="day__week">Sanday</h2>
+                            <h2 class="day__month">09 Feb</h2>
+                            <p>icon</p>
+                            <div class="day__tempr">
+                                <div>
+                                    <h3 class="day__tempr-min-max">min</h3>
+                                    <p class="day__tempr-degrees">-2</p>
+                                </div>
+                                <div>
+                                    <h3 class="day__tempr-min-max">max</h3>
+                                    <p class="day__tempr-degrees">-5</p>
+                                </div>
+                            </div>
+                            <p class="more-info__btn">more info</p>
+                        </li>
+                        <li class="day__item">
+                            <h2 class="day__week">Sanday</h2>
+                            <h2 class="day__month">09 Feb</h2>
+                            <p>icon</p>
+                            <div class="day__tempr">
+                                <div>
+                                    <h3 class="day__tempr-min-max">min</h3>
+                                    <p class="day__tempr-degrees">-2</p>
+                                </div>
+                                <div>
+                                    <h3 class="day__tempr-min-max">max</h3>
+                                    <p class="day__tempr-degrees">-5</p>
+                                </div>
+                            </div>
+                            <p class="more-info__btn">more info</p>
+                        </li>
+                        <li class="day__item">
+                            <h2 class="day__week">Sanday</h2>
+                            <h2 class="day__month">09 Feb</h2>
+                            <p>icon</p>
+                            <div class="day__tempr">
+                                <div>
+                                    <h3 class="day__tempr-min-max">min</h3>
+                                    <p class="day__tempr-degrees">-2</p>
+                                </div>
+                                <div>
+                                    <h3 class="day__tempr-min-max">max</h3>
+                                    <p class="day__tempr-degrees">-5</p>
+                                </div>
+                            </div>
+                            <p class="more-info__btn">more info</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- <span class="arrow__next"></span> -->
 
             <!-- Кнопки Active & No Active  -->
             <div class="wrap-btn">
@@ -127,6 +123,7 @@
                     <span>5 DAYS</span>
                 </button>
             </div>
+
             <!-- Секция дни -->
             <section>
                 <!-- Секция дни -Первый экран- -->
@@ -154,8 +151,9 @@
                     </div>
                 </div>
             </section>
-            
 
+            <!-- Секция дни -->
+            <section>
                 <ul class="more-info days">
                     <li class="more-info__item">
                         <h3 class="day__tempr-min-max more-info__time">
@@ -179,30 +177,9 @@
                     </li>
                 </ul>
             </section>
-            
 
             <!-- Цитата -->
             <blockquote></blockquote>
-
-        </section>
-
-        <!-- Кнопки Active & No Active  -->
-        <div class="wrap-btn">
-            <button type="button" class="btn js-today">
-                <span>TODAY</span>
-            </button>
-            <button type="button" class="btn js-days">
-                <span>5 DAYS</span>
-            </button>
-
         </div>
-
-        <!-- Секция дни -->
-        <section></section>
-
-        <!-- Цитата -->
-        <blockquote></blockquote>
-    </div>
-</body>
-
+    </body>
 </html>
