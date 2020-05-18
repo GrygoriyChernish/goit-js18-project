@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+%column {
+    flex-direction: column;
+}
+
 %flex-flow {
     flex-flow: row nowrap;
 }
