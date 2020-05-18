@@ -37,23 +37,23 @@
 @include md {
     .more-info {
         @include margin(40px null null null);
-    }
 
-    .more-info__btn {
-        font-size: $text-s;
-    }
+        &__btn {
+            font-size: $text-s;
+        }
 
-    .more-info__item {
-        @include margin(0 null null null);
+        &__item {
+            @include margin(0 null null null);
+        }
     }
 }
 
 @include lg {
     .more-info {
         @include margin(0 null null null);
-    }
 
-    .more-info__btn {
-        font-size: $text-m;
+        &__btn {
+            font-size: $text-m;
+        }
     }
 }
