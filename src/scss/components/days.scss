@@ -1,0 +1,17 @@
+.days {
+    @extend %flex;
+    @extend %space-between;
+    @include size(250px, null);
+}
+
+@include md {
+    .days {
+        @include size(545px, null);
+    }
+}
+
+@include lg {
+    .days {
+        @include size(900px, null);
+    }
+}
