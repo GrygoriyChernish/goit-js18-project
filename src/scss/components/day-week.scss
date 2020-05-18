@@ -4,19 +4,19 @@
     opacity: 54%;
 
     &:hover {
-        color: $accent;
+        // color: $accent;
         opacity: 1;
     }
+}
 
-    @include md {
-        .day__week {
-            font-size: $text-s;
-        }
+@include md {
+    .day__week {
+        font-size: $text-s;
     }
+}
 
-    @include lg {
-        .day__week {
-            font-size: $text-m;
-        }
+@include lg {
+    .day__week {
+        font-size: $text-m;
     }
 }

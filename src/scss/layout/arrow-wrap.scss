@@ -1,0 +1,5 @@
+.arrow-wrap {
+    @extend %flex;
+    @extend %space-between;
+    @include size(100px, 30px);
+}

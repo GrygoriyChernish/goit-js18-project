@@ -8,13 +8,21 @@
         position: center;
         repeat: no-repeat;
     }
+    cursor: pointer;
 }
 
 .arrow__prev {
     background-image: url(../icons/back.svg);
     &:hover {
         background-color: $lite_main;
-        cursor: pointer;
+    }
+
+    &--fix {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
 
@@ -23,6 +31,13 @@
 
     &:hover {
         background-color: $lite_main;
-        cursor: pointer;
+    }
+
+    &--fix {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
