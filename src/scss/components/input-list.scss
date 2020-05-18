@@ -9,7 +9,7 @@
         background-color: $middle_dark_list;
         @include border-radius(50px);
         @include padding(7px);
-        @include size(null, 100%);
+        @include size(null, 30px);
         @include margin(null 3px null null);
     }
 
