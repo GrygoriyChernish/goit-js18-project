@@ -1,42 +1,15 @@
-.wrap-btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around; // or space-between;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 30px;
-}
 .btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 5px 30px;
-    font-size: $text-s;
-    font-weight: 700;
-    font: $main-font;
+    @extend %flex;
+    @extend %flex-flow;
+    @include padding(5px 30px);
+    @include font-source-sans($text-s, $dark_main, 700, null);
     background-color: $middle_lite;
-    color: $dark_main;
-    border-radius: 50px;
-    border: 0;
+    @include border-radius(50px);
+    border: none;
+    cursor: pointer;
+
     &:hover,
     &:focus {
         background-color: $lite_main;
-    }
-}
-@media (min-width: 576px) {
-}
-@media (min-width: 768px) {
-    .wrap-btn {
-        margin-bottom: 46px;
-        margin: 0 auto;
-        width: 48%;
-    }
-}
-@media (min-width: 1140px) {
-    .wrap-btn {
-        margin-bottom: 55px;
-        margin-right: 0;
-        width: 26%;
     }
 }

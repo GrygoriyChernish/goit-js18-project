@@ -1,0 +1,21 @@
+.btn__wrap {
+    @extend %flex;
+    @extend %flex-flow;
+    @extend %space-between;
+    @include size(100%, 30px);
+    @include margin(null null 30px null);
+}
+
+@include md {
+    .btn__wrap {
+        @include margin(0 auto 46px);
+        @include size(48%, null);
+    }
+}
+
+@include lg {
+    .btn__wrap {
+        @include margin(null 0 46px null);
+        @include size(26%, null);
+    }
+}
