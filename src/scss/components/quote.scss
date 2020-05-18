@@ -1,0 +1,65 @@
+.quote {
+    display: block;
+    width: 200px;
+    text-align: right;
+    margin-bottom: 58px;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.quote__text {
+    font-size: $text-s;
+    line-height: 21px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 15px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: '\201D';
+        font-size: 90px;
+        font-family: 'Arial';
+        color: $middle_dark;
+        top: 18px;
+        right: 0px;
+    }
+}
+
+.quote__autor {
+    font-size: $text-m;
+    line-height: 32px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+}
+
+@include md {
+    .quote {
+        width: 373px;
+        margin-bottom: 72px;
+        margin-right: 20px;
+    }
+
+    .quote__text {
+        font-size: $quotation-tab;
+        line-height: 32px;
+        margin-bottom: 30px;
+
+        &::before {
+            font-size: 195px;
+            right: 20px;
+            top: 35px;
+        }
+    }
+}
+
+@include lg {
+    .quote {
+        margin-bottom: 104px;
+        margin-right: 0px;
+    }
+}
