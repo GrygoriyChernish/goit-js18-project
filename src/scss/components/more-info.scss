@@ -1,0 +1,59 @@
+.more-info__btn {
+    @include font-source(12px, 400);
+    letter-spacing: 0px;
+    opacity: 54%;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.more-info__tempr {
+    @include size(30px, null);
+}
+
+.more-info__item {
+    @include size(120px, null);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @include padding(16px null null null);
+    @include margin(16px null null null);
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.more-info__descr {
+    padding-bottom: 13px;
+    @include padding(null null 13px null);
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 54%;
+}
+
+@include md {
+    .more-info {
+        @include margin(40px null null null);
+    }
+
+    .more-info__btn {
+        font-size: $text-s;
+    }
+
+    .more-info__item {
+        @include margin(0 null null null);
+    }
+}
+
+@include lg {
+    .more-info {
+        @include margin(0 null null null);
+    }
+
+    .more-info__btn {
+        font-size: $text-m;
+    }
+}

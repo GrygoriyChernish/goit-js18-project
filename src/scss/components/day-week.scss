@@ -1,0 +1,22 @@
+.day__week {
+    @include font-source(12px, 400);
+    @include padding(null null 15px null);
+    opacity: 54%;
+
+    &:hover {
+        color: $accent;
+        opacity: 1;
+    }
+
+    @include md {
+        .day__week {
+            font-size: $text-s;
+        }
+    }
+
+    @include lg {
+        .day__week {
+            font-size: $text-m;
+        }
+    }
+}
