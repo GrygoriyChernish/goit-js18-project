@@ -34,13 +34,11 @@
 @include md {
     .quote {
         width: 373px;
-        // margin-right: 20px;
     }
 
     .quote__text {
         font-size: $quotation-tab;
         line-height: 32px;
-        // margin-bottom: 30px;
 
         &::before {
             font-size: 195px;

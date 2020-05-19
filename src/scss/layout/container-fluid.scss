@@ -1,5 +1,7 @@
-.container-fluid {
-    @include size(100%, null);
-    @include margin(0 auto);
-    text-align: center;
+@include lg {
+    .container-fluid {
+        @include size(100%, null);
+        @include margin(0 auto);
+        text-align: center;
+    }
 }
