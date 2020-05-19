@@ -1,19 +1,27 @@
 .input-list {
     @extend %flex;
-    justify-content: space-evenly;
+    justify-content: start;
+
     @include font-source-sans($text-s, null, null, null);
     @include size(80%, null);
     @include padding(0);
 
     &__item {
         @extend %flex;
-        @extend %space-between;
+        // @extend %space-between;
+        justify-content: start;
         align-items: center;
         color: $lite_main;
         background-color: rgba(16, 33, 54, 0.59);
         @include border-radius(50px);
         @include padding(7px);
+        @include margin(null 3px);
         @include size(null, 30px);
+
+        &:hover {
+            background-color: rgba(16, 33, 54, 0.3);
+            cursor: pointer;
+        }
     }
 
     &__city {

@@ -9,11 +9,16 @@
     ::placeholder {
         @include font-source-sans(null, $dark_main, 400, null);
     }
+
+    &:focus {
+        outline: none;
+        border-color: $border-color;
+    }
 }
 
 @include md {
     .form__input {
-        width: 100%;
+        @include size(100%, null);
         font-size: $text-m;
     }
 }
@@ -21,6 +26,6 @@
 @include lg {
     .form__input {
         background-size: 48px;
-        width: 518px;
+        @include size(518px, null);
     }
 }

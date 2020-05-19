@@ -8,23 +8,18 @@
     </head>
 
     <body>
-        <div class="background">
+        <div class="container-fluid background">
+            <form class="container form">
+                <div class="form__wrap">
+                    <span class="location"></span>
+                    <input class="form__input" placeholder="Enter the city" />
+                    <span class="star star_favorit"></span>
+                </div>
+            </form>
+
+            <!-- Список избранных городов-->
+
             <div class="container">
-                <!-- Форма поиска-->
-
-                <form class="form">
-                    <div class="form__wrap">
-                        <span class="location"></span>
-                        <input
-                            class="form__input"
-                            placeholder="Enter the city"
-                        />
-                        <span tabindex="0" class="star star_favorit"></span>
-                    </div>
-                </form>
-
-                <!-- Список избранных городов-->
-
                 <div class="list__wrap">
                     <span class="arrow arrow__prev"></span>
                     <ul class="input-list">
@@ -39,10 +34,11 @@
                     </ul>
                     <span class="arrow arrow__next"></span>
                 </div>
+            </div>
 
-                <!-- Секция Degree -->
+            <!-- Секция Degree -->
 
-                <div class="wrapper">
+            <!-- <div class="wrapper">
                     <section class="degree">
                         <img
                             class="degree__icon"
@@ -64,18 +60,18 @@
                             </div>
                         </div>
                     </section>
-                </div>
+                </div> -->
 
-                <!-- Кнопки Active & No Active  -->
+            <!-- Кнопки Active & No Active  -->
 
-                <div class="btn__wrap">
+            <!-- <div class="btn__wrap">
                     <button type="button" class="btn js-today">Today</button>
                     <button type="button" class="btn js-days">5 Days</button>
-                </div>
+                </div> -->
 
-                <!-- Секция  1 день и 5 дней-->
+            <!-- Секция  1 день и 5 дней-->
 
-                <!-- <section class="city__section">
+            <!-- <section class="city__section">
                     <div class="weather">
                         <h2 class="city__section">Kyiv, UA</h2>
                         <ul class="days">
@@ -163,7 +159,7 @@
                     </div>
                 </section> -->
 
-                <section class="current-day">
+            <!-- <section class="current-day">
                     <div class="wrapper">
                         <div class="date-box">
                             <div class="date">
@@ -202,8 +198,7 @@
                             </blockquote>
                         </div>
                     </div>
-                </section>
-            </div>
+                </section> -->
         </div>
     </body>
 </html>
