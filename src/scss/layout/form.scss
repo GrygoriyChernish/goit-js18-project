@@ -1,6 +1,7 @@
 .form {
     position: relative;
-    @include margin(27px null 13px null);
+    @include margin(null null 13px null);
+    @include padding(28px null null null);
 
     span {
         position: absolute;

@@ -3,7 +3,7 @@
     @include size($cont-mob, 48px);
     @include border-radius(24px);
     background-color: $lite_main;
-    border: 1px solid $dark_main;
+    border: 1px solid $lite_main;
     @include padding(0 55px);
 
     ::placeholder {
