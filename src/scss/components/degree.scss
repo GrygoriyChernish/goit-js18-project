@@ -104,7 +104,7 @@
 }
 @include lg {
     .degree {
-        @include position(absolute, null 0 null null);
+        // @include position(absolute, null 0 null null);
         @include margin(null 0 28px null);
         @include border-left-radius(35px);
         @include border-right-radius(0);

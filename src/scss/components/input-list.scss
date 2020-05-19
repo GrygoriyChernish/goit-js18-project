@@ -1,20 +1,23 @@
 .input-list {
     @extend %flex;
+    justify-content: space-evenly;
     @include font-source-sans($text-s, null, null, null);
     @include size(80%, null);
+    @include padding(0);
 
     &__item {
+        @extend %flex;
         @extend %space-between;
+        align-items: center;
         color: $lite_main;
-        background-color: $middle_dark_list;
+        background-color: rgba(16, 33, 54, 0.59);
         @include border-radius(50px);
         @include padding(7px);
         @include size(null, 30px);
-        @include margin(null 3px null null);
     }
 
     &__city {
-        @include margin(null 10px null null);
+        @include margin(null 5px null null);
         cursor: pointer;
     }
 }

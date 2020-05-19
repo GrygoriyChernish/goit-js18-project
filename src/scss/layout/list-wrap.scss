@@ -1,7 +1,9 @@
 .list__wrap {
-    @extend %flex;
-    @extend %flex-flow;
-    @extend %space-between;
+    // @extend %flex;
+    // @extend %flex-flow;
+    // @extend %space-between;
+    display: flex;
+    align-items: center;
     @include size(100%, 30px);
     @include margin(null null 50px null);
 }
