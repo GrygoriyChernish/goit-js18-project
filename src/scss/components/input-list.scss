@@ -8,9 +8,7 @@
 
     &__item {
         @extend %flex;
-        // @extend %space-between;
-        justify-content: start;
-        align-items: center;
+        @extend %center;
         color: $lite_main;
         background-color: rgba(16, 33, 54, 0.59);
         @include border-radius(50px);
