@@ -5,6 +5,8 @@
     right: 25px;
 
     &:hover {
+        @include size(30px, 30px);
+        @include border-radius(50%);
         background-color: $star_hover;
         cursor: pointer;
     }
