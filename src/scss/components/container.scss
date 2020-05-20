@@ -1,9 +1,7 @@
 .container {
     width: $cont-mob;
     @include margin(0 auto);
-
     text-align: center;
-    background-color: gray;
 }
 
 @include md {

@@ -1,3 +1,6 @@
+body {
+    background-color: purple;
+}
 .wrap-list {
     display: flex;
     flex-direction: row;
@@ -63,7 +66,6 @@
     background-image: url(../icons/back.svg);
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer;
     fill: $lite_main;
 }
 .arrow__next {
@@ -76,30 +78,78 @@
     background-image: url(../icons/next.svg);
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer;
-    fill: $lite_main;
+
+    width: 20px;
+    padding-left: 10px;
+    color: $middle_lite;
+    //background-image: url(../../icons/close/close-24px.svg);
 }
-.arrow path {
-    fill: $lite_main;
+.arrow__prev {
+    border: radius 50%;
+    background-color: $middle_lite;
+    top: 50%;
+    right: 15%;
+    width: 30px;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_left_black_18dp.png);
 }
+.arrow__next {
+    border: radius 50%;
+    background-color: $middle_lite;
+    top: 50%;
+    right: 15%;
+    width: 30px;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // background-image: url(../../icons/chevron/chevron_right-black-18dp/1x/baseline_chevron_right_black_18dp.png);
+
+    // &--active {
+    //     background-color: $lite_main;
+    //     cursor: pointer;
+    // }
+}
+// .arrow path {
+//     fill: $lite_main;
+// }
 .arrow__next:hover {
     background-color: $lite_main;
+    cursor: pointer;
 }
 .arrow__prev:hover {
     background-color: $lite_main;
+    cursor: pointer;
 }
 
-// .arrow-lite__prev {
-//     border-radius: 50%;
-//     padding: 5px;
-//     width: 30px;
-//     margin-left: 5px;
-//     margin-right: 5px;
-//     background-image: url(../icons/back.svg);
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     cursor: pointer;
-// }
+.arrow-lite {
+    // border-radius: 50%;
+    // padding: 5px;
+    //width: 30px;
+    width: 28px;
+    height: 28px;
+    margin-left: 5px;
+    margin-right: 5px;
+    // background-image: url(../../icons/back.svg);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    cursor: pointer;
+
+    &__next path {
+        fill: $middle_lite;
+    }
+    &__prev path {
+        fill: $middle_lite;
+        // width: 28px;
+        // height: 28px;
+    }
+}
+svg {
+    display: none;
+    width: 26px;
+    height: 26px;
+}
 
 // .arrow-lite__next {
 //     border-radius: 50%;
@@ -107,19 +157,21 @@
 //     width: 30px;
 //     margin-left: 5px;
 //     margin-right: 5px;
-//     background-image: url(../icons/next.svg);
+//     // background-image: url(../icons/next.svg);
 //     background-position: center;
 //     background-repeat: no-repeat;
 //     cursor: pointer;
-// }
-
-// .arrow-lite path {
 //     fill: $middle_lite;
 // }
 
-// .arrow-lite path :hover {
-//     fill: $lite_main;
+// .arrow path {
+//     fill: $middle_lite;
 // }
+
+.arrow-lite__next,
+.arrow-lite__prev:hover {
+    fill: $lite_main;
+}
 
 @media (min-width: 576px) {
     .wrap-list {
@@ -147,11 +199,28 @@
         width: 48%;
     }
 }
-// .wrap-arrow {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     justify-content: center;
-//     width: 100%;
-//     height: 30px;
-// }
+.wrap-arrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+}
+.more-info {
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 250px;
+    height: 3px;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-track {
+    background: $middle_lite;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $accent;
+}

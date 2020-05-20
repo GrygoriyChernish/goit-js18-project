@@ -39,6 +39,15 @@
     }
 }
 
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin psevdo($display: block, $content: '') {
+    display: $display;
+    content: $content;
+}
+
 // Медиа запросы
 // Маленькие устройства
 @mixin sm {
