@@ -25,7 +25,7 @@
     @include font-source-sans($text-mobl, null, 300, null);
 
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
         padding-left: 2px;
         @include font-source(36px, null);
@@ -43,10 +43,15 @@
     @include padding(null 14px null null);
 }
 
+// .degree__max {
+//     @include padding(null null null 14px);
+//     @include border-left-radius(14px);
+//     @include border-style(1px solid rgba(255, 255, 255, 0.1));
+// }
+
 .degree__max {
     @include padding(null null null 14px);
-    @include border-left-radius(14px);
-    @include border-style(1px solid rgba(255, 255, 255, 0.1));
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .degree__min-text,
@@ -60,7 +65,7 @@
 .degree__max-value {
     font-size: $text-m;
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
     }
 }
