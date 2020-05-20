@@ -1,0 +1,55 @@
+.quote {
+    display: inline-block;
+    @include size(200px, null);
+    @include margin(0);
+    text-align: right;
+}
+
+.quote__text {
+    @include font-source-sans($text-s, $lite_main, 400, 21px);
+    font-style: italic;
+    margin-bottom: 15px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: '\201D';
+        font-size: 90px;
+        font-family: 'Arial';
+        color: $middle_dark;
+        top: 18px;
+        right: 0px;
+    }
+}
+
+.quote__autor {
+    font-size: $text-m;
+    line-height: 32px;
+    color: $lite_main;
+    font-family: $main-font;
+    font-weight: 400;
+}
+
+@include md {
+    .quote {
+        width: 373px;
+    }
+
+    .quote__text {
+        font-size: $quotation-tab;
+        line-height: 32px;
+
+        &::before {
+            font-size: 195px;
+            right: 20px;
+            top: 35px;
+        }
+    }
+}
+
+// @include lg {
+//     .quote {
+//         // margin-bottom: 104px;
+//     }
+// }

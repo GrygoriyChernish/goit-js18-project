@@ -1,0 +1,18 @@
+.day__item {
+    @include size(58px, null);
+    @include padding(22px null null null);
+}
+
+@include md {
+    .day__item {
+        @include size(82px, null);
+        @include padding(0 null null null);
+        cursor: pointer;
+    }
+}
+
+@include lg {
+    .day__item {
+        @include size(82px, null);
+    }
+}

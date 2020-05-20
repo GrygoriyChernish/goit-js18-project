@@ -6,3 +6,21 @@
     justify-content: center;
     align-items: center;
 }
+
+%center-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+%column {
+    flex-direction: column;
+}
+
+%flex-flow {
+    flex-flow: row nowrap;
+}
+
+%space-between {
+    justify-content: space-between;
+}

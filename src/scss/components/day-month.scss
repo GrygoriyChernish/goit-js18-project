@@ -1,0 +1,16 @@
+.day__month {
+    @include font-source(16px, 400);
+    @include padding(null null 10px null);
+}
+
+@include md {
+    .day__month {
+        font-size: $text-m;
+    }
+}
+
+@include lg {
+    .day__month {
+        @include margin(null null 20px null);
+    }
+}

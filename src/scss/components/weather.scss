@@ -1,0 +1,25 @@
+.weather {
+    @extend %flex;
+    @extend %column;
+    align-items: center;
+    @include size($cont-mob, null);
+    @include padding(34px null);
+    @include border-radius(35px);
+    background-color: $bg_opacity;
+}
+
+@include md {
+    .weather {
+        @include size($cont-tab, null);
+        @include padding(42px null 70px null);
+        @include margin(30 px null null null);
+    }
+}
+
+@include lg {
+    .weather {
+        @include size($cont-desk, null);
+        @include padding(34px null);
+        @include padding(37px null 32px null);
+    }
+}

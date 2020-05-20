@@ -1,0 +1,31 @@
+.form__input {
+    @include font-source-sans($text-s, $dark_main, 700, null);
+    @include size($cont-mob, 48px);
+    @include border-radius(24px);
+    background-color: $lite_main;
+    border: 1px solid $lite_main;
+    @include padding(0 55px);
+
+    ::placeholder {
+        @include font-source-sans(null, $dark_main, 400, null);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $border-color;
+    }
+}
+
+@include md {
+    .form__input {
+        @include size(100%, null);
+        font-size: $text-m;
+    }
+}
+
+@include lg {
+    .form__input {
+        background-size: 48px;
+        @include size(518px, null);
+    }
+}

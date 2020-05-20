@@ -51,21 +51,21 @@
 // Медиа запросы
 // Маленькие устройства
 @mixin sm {
-    @media (min-width: #{$screen-sm-min}) {
+    @media screen and (min-width: #{$screen-sm-min}) {
         @content;
     }
 }
 
 // Средние устройства
 @mixin md {
-    @media (min-width: #{$screen-md-min}) {
+    @media screen and (min-width: #{$screen-md-min}) {
         @content;
     }
 }
 
 // Большие устройства
 @mixin lg {
-    @media (min-width: #{$screen-lg-min}) {
+    @media screen and (min-width: #{$screen-lg-min}) {
         @content;
     }
 }

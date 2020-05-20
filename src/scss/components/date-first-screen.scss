@@ -1,8 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
 .date-box {
     display: flex;
     flex-direction: column;
@@ -157,10 +152,10 @@
     }
 
     .date-box {
-        position: relative;
+        // position: absolute;
         align-items: flex-start;
         padding-left: 110px;
-        left: -110px;
+        left: 0px;
     }
 
     .border-line {

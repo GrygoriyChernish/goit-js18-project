@@ -1,0 +1,43 @@
+.arrow {
+    @include border-radius(50%);
+    @include size(30px, 30px);
+    @include padding(5px);
+
+    background: {
+        color: $middle_lite;
+        position: center;
+        repeat: no-repeat;
+    }
+    cursor: pointer;
+}
+
+.arrow__prev {
+    background-image: url(../icons/back.svg);
+    &:hover {
+        background-color: $lite_main;
+    }
+
+    &--fix {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.arrow__next {
+    background-image: url(../icons/next.svg);
+
+    &:hover {
+        background-color: $lite_main;
+    }
+
+    &--fix {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}

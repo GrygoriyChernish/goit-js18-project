@@ -9,7 +9,9 @@ $bg_solid: rgb(16, 33, 54); /*синий фон */
 $bg_opacity: rgba(16, 33, 54, 0.5); /*синий  фон прозрачный*/
 $middle_lite: rgba(255, 255, 255, 0.54); /*светло серый*/
 $middle_dark: rgba(255, 255, 255, 0.3); /*темно серый*/
+$middle_dark_list: rgb(16, 33, 54); /*сине серый*/
 $star_hover: rgb(241, 241, 241); /*светло серый*/
+$border-color: #12c2e9;
 
 /*TEXT SIZE*/
 $text-s: 14px; /*мал шрифт для всех размеров*/
@@ -19,8 +21,8 @@ $text-tabl: 90px; /*большой шрифт для таб и пк*/
 $quotation-tab: 22px; /*цитата для таб и пк*/
 
 /*CONTAINER SIZE*/
-$cont-mob: 87.5%;
-$cont-tab: 80%;
+$cont-mob: 280px;
+$cont-tab: 608px;
 $cont-desk: 1060px;
 
 // Переменные для медиазапросов

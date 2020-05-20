@@ -1,0 +1,20 @@
+.container {
+    width: $cont-mob;
+    @include margin(0 auto);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+@include md {
+    .container {
+        width: $cont-tab;
+    }
+}
+
+@include lg {
+    .container {
+        width: $cont-desk;
+    }
+}
