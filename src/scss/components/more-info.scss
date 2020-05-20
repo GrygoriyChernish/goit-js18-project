@@ -1,6 +1,7 @@
 .more-info__btn {
     @include font-source(12px, 400);
     letter-spacing: 0px;
+    font-weight: 400;
     opacity: 54%;
     cursor: pointer;
     text-decoration: underline;
@@ -25,6 +26,9 @@
     &:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
+    @media (max-width: 1139px) {
+        margin-bottom: 20px;
+    }
 }
 
 .more-info__descr {
@@ -33,6 +37,8 @@
     font-size: 14px;
     font-weight: 400;
     opacity: 54%;
+    position: relative;
+    padding-left: 20px;
 }
 
 @include md {
@@ -54,7 +60,7 @@
         @include margin(0 null null null);
 
         &__btn {
-            font-size: $text-m;
+            font-size: $text-s;
         }
     }
 }

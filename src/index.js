@@ -1,4 +1,8 @@
 import './scss/styles.scss';
+import slickSkroll from './js/slick-skroll';
+import refs from './js/refs';
+import forThreeHours from './templates/for-three-hours.hbs';
+import fiveDays from './templates/fiveDays.hbs';
 
 const time = document.querySelector('#time');
 const currentMounth = document.querySelector('#mounth');

@@ -12,5 +12,6 @@
 @include lg {
     .day__month {
         @include margin(null null 20px null);
+        font-size: 25px;
     }
 }

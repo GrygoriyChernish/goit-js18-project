@@ -23,3 +23,105 @@
         @include padding(37px null 32px null);
     }
 }
+
+.day__tempr-degrees {
+    margin: 0;
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    color: $accent;
+    font-family: $main-font;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+
+    &:before {
+        width: 5px;
+        height: 5px;
+        border-radius: 3px;
+        border: 1px solid #ff6b08;
+        position: absolute;
+        right: 0;
+        content: '';
+        display: inline-block;
+    }
+
+    @media (min-width: 768px) and (max-width: 1139px) {
+        font-size: $text-m;
+    }
+
+    @media (min-width: 1140px) {
+        font-size: $text-m;
+        margin-top: 10px;
+    }
+}
+
+.more-info__tempr {
+    margin: 0 auto;
+    width: 30px;
+    text-align: center;
+}
+
+.slick-dotted.slick-slider {
+    margin: 0;
+}
+
+.pressure {
+    margin-top: 10px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url(../icons/pressure@1X.png) no-repeat;
+    }
+}
+
+.humidity {
+    &::before {
+        content: '';
+        position: absolute;
+        left: 22px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url(../icons/humidity@1X.png) no-repeat;
+    }
+}
+
+.wind {
+    &::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url(../icons/wind@1X.png) no-repeat;
+    }
+}
+
+// @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+//     .pressure {
+//         &::before {
+//             background-size: 22px 22px;
+//             background: url(../icons/pressure@2X.png) no-repeat;
+//         }
+//     }
+// .humidity {
+//     &::before {
+//         background-size: 22px 22px;
+//         background: url(../icons/humidity@2X.png) no-repeat;
+//     }
+// }
+
+// .wind {
+//     &::before {
+//         background-size: 22px 22px;
+//         background: url(../icons/wind@2X.png) no-repeat;
+//     }
+// }
+// }
