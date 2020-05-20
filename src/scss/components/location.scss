@@ -1,4 +1,5 @@
 .location {
+    @include size(30px, 30px);
     left: 25px;
     background-image: url(../icons/location/location_search.svg);
 }
