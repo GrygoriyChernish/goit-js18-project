@@ -12,9 +12,3 @@
 
 // Компоненты с файлом .scss
 @import 'components/main';
-
-@include lg {
-    .wrapper {
-        width: 100vw;
-    }
-}
