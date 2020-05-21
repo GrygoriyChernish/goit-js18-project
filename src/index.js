@@ -1,2 +1,2 @@
 import './scss/styles.scss';
-import currentDate from './js/current-date';
+import showCurrentData from './js/show-current-data';
