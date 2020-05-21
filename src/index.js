@@ -1,7 +1,10 @@
 import './scss/styles.scss';
 import './js/add-cities-list';
 import showCurrentData from './js/show-current-data';
+import onBtnClick from './js/button-switch';
+import slickSkroll from './js/slick-skroll';
 
+onBtnClick();
 import $ from 'jquery';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
@@ -12,7 +15,7 @@ const refs = {
     daysContainer: document.querySelector('.js-five-days'),
 };
 
-$('.input-list').slick({
+$('.js-input-list').slick({
     dots: true,
     infinite: true,
     autoplay: true,
