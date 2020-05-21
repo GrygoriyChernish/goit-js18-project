@@ -19,7 +19,7 @@ starInput.addEventListener('click', addToFavoriteCities);
 
 // Add To Favorites
 
-function addToFavoriteCities() {
+function addToFavoriteCities(e) {
     const cityName = cityInput.value.trim();
 
     if (favouriteCities.includes(cityName) || cityName === '') {
