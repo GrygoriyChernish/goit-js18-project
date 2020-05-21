@@ -28,6 +28,8 @@ function addToFavoriteCities(e) {
 
     favouriteCities.push(cityName);
     localStorage.setItem('cities', JSON.stringify(favouriteCities));
+
+    renderCitiesList(parseCities);
 }
 
 //Render List
@@ -36,5 +38,3 @@ function renderCitiesList(cities) {
     const markup = cities.reduce((acc, city) => acc + cityItem(city), '');
     return citiesList.insertAdjacentHTML('beforeend', markup);
 }
-
-renderCitiesList(parseCities);
