@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick.css';
 export default $('.js-input-list').slick({
     dots: true,
     infinite: true,
-    autoplay: true,
-    speed: 300,
+    autoplay: false,
+    speed: 500,
     slidesToShow: 1,
     centerMode: true,
     variableWidth: true,
