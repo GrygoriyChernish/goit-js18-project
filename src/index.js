@@ -33,4 +33,6 @@ const showMounth = () => {
     currentMounth.textContent = `${current}`;
 };
 
-// showMounth();
+import './js/add-cities-list';
+import showCurrentData from './js/show-current-data';
+
