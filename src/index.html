@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script
+            type="text/JavaScript"
+            src="https://MomentJS.com/downloads/moment.js"
+        ></script>
         <title>Weather</title>
     </head>
 
@@ -165,20 +169,18 @@
                 <div class="date-box container">
                     <div class="date">
                         <div class="data-suffix">
-                            <p class="date__data">
+                            <p id="data" class="date__data">
                                 8
                             </p>
-                            <sup class="date__suffix">th</sup>
+                            <sup id="suffix" class="date__suffix"></sup>
                         </div>
                         <div class="date__day">
-                            <p class="date__day-week">Sat</p>
+                            <p id="day-week" class="date__day-week"></p>
                         </div>
                     </div>
                     <div class="block-desk">
                         <div class="month-time">
-                            <p id="mounth" class="month border-line">
-                                February
-                            </p>
+                            <p id="mounth" class="month border-line"></p>
                             <p id="time" class="time"></p>
                         </div>
                         <div class="sunrise-sunset">
