@@ -1,7 +1,7 @@
 .form {
     position: relative;
     @include margin(null null 13px null);
-    @include padding(28px null null null);
+    @include padding(20px null null null);
 
     span {
         position: absolute;
@@ -16,7 +16,6 @@
 
 @include md {
     .form {
-        @include padding(62px 0 0 0);
         @include margin(null null 13px null);
         width: $cont-tab;
     }
@@ -24,7 +23,6 @@
 
 @include lg {
     .form {
-        @include padding(78px 0 0 0);
         width: $cont-desk;
     }
 }

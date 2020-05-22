@@ -1,3 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-page {
+    min-width: 100%;
+    overflow: auto;
+}
+
 .date-box {
     @extend %flex;
     @extend %center;
@@ -30,7 +40,7 @@
 .date__suffix {
     @include font-source-sans(text-s, rgb(247, 247, 247), 300, null);
     margin-right: 16px;
-    top: 14px;
+    top: 0;
 }
 
 .month,
@@ -69,10 +79,20 @@
 }
 
 .sunrise::before {
+    background: {
+        size: 25px 33px;
+        position: center;
+        repeat: no-repeat;
+    }
     background-image: url('../icons/sun/sunrise.png');
 }
 
 .sunset::before {
+    background: {
+        size: 25px 33px;
+        position: center;
+        repeat: no-repeat;
+    }
     background-image: url('../icons/sun/sunset.png');
 }
 
@@ -110,12 +130,16 @@
 }
 
 @include lg {
+    .wrapper {
+        flex-direction: inherit;
+    }
     .date-box {
         width: 601px;
         height: 277px;
         border-radius: 0 35px 0 0;
-        margin-left: 0;
-        margin-bottom: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
 
     .block-desk {
@@ -132,15 +156,10 @@
     }
 
     .date-box {
-        // position: absolute;
         align-items: flex-start;
-        padding-left: 110px;
-        left: 0px;
     }
 
     .border-line {
-        margin-right: 36px;
-
         &::after {
             right: -18px;
         }
@@ -149,14 +168,12 @@
 
 @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .sunrise::before {
-        background-size: 25px 33px;
         background-image: url('../icons/sun/sunrise@2x.png');
     }
 }
 
 @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .sunset::before {
-        background-size: 25px 33px;
         background-image: url('../icons/sun/sunset@2x.png');
     }
 }

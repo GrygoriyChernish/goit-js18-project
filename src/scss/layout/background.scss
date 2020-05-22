@@ -34,7 +34,6 @@
 
 @include lg {
     .background {
-        @include size(null, 100vh);
         background-image: url('../icons/images-bg/bg-desk-1screen.png');
     }
 

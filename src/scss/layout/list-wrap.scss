@@ -2,19 +2,19 @@
     @extend %flex;
     @extend %center;
     @include size(100%, 30px);
-    @include margin(null null 50px null);
+    @include margin(null null 30px null);
 }
 
 @include md {
     .list__wrap {
-        @include margin(null auto 104px auto);
+        @include margin(null auto);
         @include size(80%, null);
     }
 }
 
 @include lg {
     .list__wrap {
-        @include margin(null auto 92px auto);
+        @include margin(null auto);
         @include size(40%, null);
     }
 }
