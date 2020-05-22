@@ -1,12 +1,9 @@
 .date-box {
-    display: flex;
-    flex-direction: column;
+    @extend %flex;
     @extend %center;
-    width: 280px;
-    height: 190px;
+    @extend %column;
+    @include size(280px, 190px);
     border-radius: 35px;
-    box-shadow: 0px 8px 43px 0px rgba(16, 33, 54, 0.59);
-    background-color: rgba(16, 33, 54, 0.59);
     margin-bottom: 42px;
 }
 
@@ -22,24 +19,16 @@
 .month-time,
 .data-suffix,
 .sunrise-sunset {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    @extend %center-row;
 }
 
 .date__data,
 .date__day-week {
-    font-size: $text-mobl;
-    color: rgb(247, 247, 247);
-    font-family: $main-font;
-    font-weight: 300;
+    @include font-source-sans(text-mobl, rgb(247, 247, 247), 300, null);
 }
 
 .date__suffix {
-    font-size: $text-s;
-    color: rgb(247, 247, 247);
-    font-family: $main-font;
-    font-weight: 300;
+    @include font-source-sans(text-s, rgb(247, 247, 247), 300, null);
     margin-right: 16px;
     top: 14px;
 }
@@ -48,10 +37,7 @@
 .time,
 .sunrise,
 .sunset {
-    font-size: $text-s;
-    color: $lite_main;
-    font-family: $main-font;
-    font-weight: 400;
+    @include font-source-sans(text-s, $lite_main, 400, null);
 }
 
 .border-line {
@@ -60,11 +46,8 @@
 
     &::after {
         @include psevdo($display: block);
-        position: absolute;
-        top: 0;
-        right: -10px;
-        width: 1px;
-        height: 20px;
+        @include size(1px, 20px);
+        @include position(absolute, 0 -10px null null);
         background-color: rgb(231, 232, 235);
     }
 }
@@ -80,11 +63,8 @@
 
     &::before {
         @include psevdo($display: block);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 25px;
-        height: 33px;
+        @include position(absolute, null null 0 0);
+        @include size(25px, 33px);
     }
 }
 

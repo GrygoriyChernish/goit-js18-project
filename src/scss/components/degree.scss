@@ -5,9 +5,7 @@
     @include size(null, 190px);
     @include margin(null null 30px null);
     @include font-source-sans(null, $lite_main, 400, null);
-    background-color: $bg_solid;
     @include border-radius(35px);
-    box-shadow: 0px 8px 43px 0px rgba(16, 33, 54, 0.59);
 }
 
 .degree__icon {
