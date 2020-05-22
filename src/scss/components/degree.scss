@@ -11,21 +11,20 @@
 }
 
 .degree__icon {
-    @include size(36px, 36px);
-    @include margin(null null 16px null);
+    @include size(42px, 42px);
 }
 
 .degree__city {
-    @include margin(null null 20px null);
+    @include padding(16px null 20px null);
     @include font-source-sans($text-m, $lite_main, 400, null);
 }
 
 .degree__temp {
-    margin-right: 14px;
+    padding-right: 14px;
     @include font-source-sans($text-mobl, null, 300, null);
 
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
         @include font-source(36px, null);
         vertical-align: top;
@@ -51,7 +50,7 @@
 .degree__max-text {
     font-size: $text-s;
     color: $middle_dark;
-    margin-bottom: 4px;
+    padding-bottom: 4px;
 }
 
 .degree__min-value,
@@ -59,7 +58,7 @@
     font-size: $text-m;
 
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
     }
 }
@@ -71,13 +70,11 @@
     }
 
     .degree__city {
-        @include margin(null null 12px null);
+        @include padding(null null 12px null);
     }
 
     .degree__temp {
-        @include margin(null 0 14px null);
-        margin-right: 0;
-        margin-bottom: 14px;
+        @include padding(null 0 14px null);
         font-size: $text-tabl;
         &::after {
             font-size: 80px;
