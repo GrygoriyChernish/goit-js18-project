@@ -2,9 +2,6 @@
     width: $cont-mob;
     @include margin(0 auto);
     text-align: center;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
 }
 
 @include md {
