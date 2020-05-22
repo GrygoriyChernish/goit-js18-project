@@ -1,0 +1,10 @@
+.main-page {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+@include lg {
+    // .main-page {
+    //     height: 100vh;
+    // }
+}
