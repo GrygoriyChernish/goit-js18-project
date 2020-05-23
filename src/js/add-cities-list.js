@@ -60,3 +60,20 @@
 // // }
 
 // // renderCitiesList(parseCities);
+
+// const refs = {
+//     inputList: document.querySelector('.input-list'),
+// };
+// refs.inputList.addEventListener('click', onCloseIconClick);
+// function onCloseIconClick(event) {
+//     if (event.target.nodeName === 'SPAN') {
+//         const listItem = event.target.parentElement;
+//         const inputList = listItem.parentElement;
+//         const inputListArray = Array.from(inputList.children);
+//         const cityId = inputListArray.indexOf(listItem);
+//         const savedCities = JSON.parse(localStorage.getItem('cities'));
+//         savedCities.splice(cityId, 1);
+//         localStorage.setItem('cities', JSON.stringify(savedCities));
+//         listItem.remove();
+//     }
+// }

@@ -5,10 +5,6 @@ import onBtnClick from './js/button-switch';
 // import slickSkroll from './js/slick-skroll';
 import './js/date-time';
 
-// updateWeatherResult();
-
-// onBtnClick();
-
 // const refs = {
 //     moreInfoContainer: document.querySelector('.js-more-info'),
 //     moreInfoItem: document.querySelector('.js-more-info__item'),
