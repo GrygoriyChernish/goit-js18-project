@@ -1,5 +1,6 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
+import { fetchBackgroundImage } from './apiService-bg';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -8,6 +9,7 @@ const refs = {
     oneDayData: document.querySelector('.js-sun'),
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
+    background: document.querySelector('.background'),
 };
 
 const defaultCity = 'kiev';
@@ -87,6 +89,25 @@ function clearHtml() {
     refs.oneDayData.innerHTML = '';
 }
 
+// Добавляем стили на бекграунд с картинкой из запроса
+
+function setBackgroundImage(imageSrc) {
+    const css = `
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.05) 100%
+        ),
+        url(${imageSrc})
+    `;
+
+    refs.background.style.backgroundImage = css;
+}
+
+// Генерируем случайное число для выбора картинки
+
+const getRandomNumber = () => Math.floor(Math.random() * 20);
+
 // Запрос к серверу по сабмиту
 
 refs.searchForm.addEventListener('submit', event => {
@@ -97,6 +118,15 @@ refs.searchForm.addEventListener('submit', event => {
     appState.currentCity = form.elements.query.value;
 
     updateWeatherResult(searchQuery);
+
+    // Установка картинки с API
+
+    fetchBackgroundImage(searchQuery)
+        .then(({ hits }) => {
+            setBackgroundImage(hits[getRandomNumber()].largeImageURL);
+        })
+        .catch(error => console.log(error));
+
 });
 
 // Запрос к серверу по клику на кнопку "TODAY"
