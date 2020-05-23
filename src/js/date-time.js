@@ -126,15 +126,14 @@ refs.searchForm.addEventListener('submit', event => {
             setBackgroundImage(hits[getRandomNumber()].largeImageURL);
         })
         .catch(error => console.log(error));
-
 });
 
 // Запрос к серверу по клику на кнопку "TODAY"
 
-refs.oneDayBtn.addEventListener('click', () => {
-    const city = appState.currentCity;
-    updateWeatherResult(city);
-});
+// refs.oneDayBtn.addEventListener('click', () => {
+//     const city = appState.currentCity;
+//     updateWeatherResult(city);
+// });
 
 // Default call
 

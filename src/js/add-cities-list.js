@@ -1,62 +1,62 @@
-import cityItem from '../template/cityItem.hbs';
+// import cityItem from '../template/cityItem.hbs';
+// // import slickSkroll from './slick-skroll';
 
-//REFS
+// //REFS
 
-const refs = {
-    inputList: document.querySelector('.js-input-list'),
-    starInput: document.querySelector('.js-star'),
-    cityInput: document.querySelector('.js-form__input'),
-    inputList: document.querySelector('.input-list'),
-};
+// const refs = {
+//     starInput: document.querySelector('.js-star'),
+//     citiesList: document.querySelector('.js-input-list'),
+//     cityInput: document.querySelector('.js-form__input'),
+// };
 
-let favouriteCities = localStorage.getItem('cities')
-    ? JSON.parse(localStorage.getItem('cities'))
-    : [];
+// console.log(refs.starInput);
+// console.log(refs.citiesList);
+// console.log(refs.cityInput);
 
-localStorage.setItem('cities', JSON.stringify(favouriteCities));
-const parseCities = JSON.parse(localStorage.getItem('cities'));
+// // let favouriteCities = localStorage.getItem('cities')
+// //     ? JSON.parse(localStorage.getItem('cities'))
+// //     : [];
+// // localStorage.setItem('cities', JSON.stringify(favouriteCities));
+// // const parseCities = JSON.parse(localStorage.getItem('cities'));
 
-//Listiners
+// let favouriteCities = [];
 
-refs.starInput.addEventListener('click', addToFavoriteCities);
-refs.starInput.addEventListener('click', event => {
-    if (event.target.nodeName === 'SPAN') {
-        console.log('CLICK!');
-        renderCitiesList(parseCities);
-    }
-});
+// // //Listiners
+// // refs.starInput.addEventListener('click', addToFavoriteCities);
+// refs.starInput.addEventListener('click', e => {
+//     console.log(e.target);
 
-// Add To Favorites
+//     refs.starInput.style.backgroundColor = 'red';
 
-function addToFavoriteCities(e) {
-    const cityName = refs.cityInput.value.trim();
+//     const cityName = refs.cityInput.value.trim();
 
-    if (favouriteCities.includes(cityName) || cityName === '') {
-        return;
-    }
+//     if (!favouriteCities) {
+//         return;
+//     }
 
-    favouriteCities.push(cityName);
-    localStorage.setItem('cities', JSON.stringify(favouriteCities));
-}
+//     favouriteCities.push(cityName);
+//     renderCitiesList(favouriteCities);
+//     refs.cityInput.value = '';
 
-//Render List
+//     // localStorage.setItem('cities', JSON.stringify(favouriteCities));
+// });
 
-function renderCitiesList(cities) {
-    const markup = cities.reduce((acc, city) => acc + cityItem(city), '');
-    return refs.inputList.insertAdjacentHTML('beforeend', markup);
-}
+// // //Render List
+// function renderCitiesList(cities) {
+//     const markup = cityItem(cities);
+//     return refs.citiesList.insertAdjacentHTML('beforeend', markup);
+// }
 
-refs.inputList.addEventListener('click', onCloseIconClick);
+// // // Add To Favorites
+// // function addToFavoriteCities(e) {
+// //     const cityName = refs.cityInput.value.trim();
+// //     if (favouriteCities.includes(cityName) || cityName === '') {
+// //         return;
+// //     }
+// //     favouriteCities.push(cityName);
+// //     localStorage.setItem('cities', JSON.stringify(favouriteCities));
+// //     renderCitiesList(parseCities);
+// //     //cityName = '';
+// // }
 
-function onCloseIconClick(event) {
-    if (event.target.nodeName === 'SPAN') {
-        const listItem = event.target.parentElement;
-        const inputList = listItem.parentElement;
-        const inputListArray = Array.from(inputList.children);
-        const cityId = inputListArray.indexOf(listItem);
-        const savedCities = JSON.parse(localStorage.getItem('cities'));
-        savedCities.splice(cityId, 1);
-        localStorage.setItem('cities', JSON.stringify(savedCities));
-        listItem.remove();
-    }
-}
+// // renderCitiesList(parseCities);
