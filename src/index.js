@@ -3,6 +3,7 @@ import './scss/styles.scss';
 import showCurrentData from './js/show-current-data';
 import onBtnClick from './js/button-switch';
 import slickSkroll from './js/slick-skroll';
+import './js/date-time';
 
 // onBtnClick();
 
