@@ -19,5 +19,5 @@ function showCurrentData(link, value) {
 }
 
 function showTime() {
-    time.innerHTML = `${moment().format('LTS')}`;
+    time.innerHTML = `${moment().format('HH:mm:ss')}`;
 }

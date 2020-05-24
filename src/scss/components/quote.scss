@@ -1,7 +1,6 @@
 .quote {
     display: inline-block;
     @include size(200px, null);
-    @include margin(0 auto);
     text-align: right;
 }
 
@@ -49,8 +48,8 @@
     }
 }
 
-// @include lg {
-//     .quote {
-//         // margin-bottom: 104px;
-//     }
-// }
+@include lg {
+    .quote {
+        margin: 0;
+    }
+}

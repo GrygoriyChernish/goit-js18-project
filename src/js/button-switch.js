@@ -1,7 +1,8 @@
 const refs = {
     btnWrap: document.querySelector('.btn__wrap'),
     citySection: document.querySelector('.city__section'),
-    degree: document.querySelector('.degree'),
+    degree: document.querySelector('.js-degree'),
+    wrapDateQuote: document.querySelector('.js-wrapper'),
 };
 
 refs.btnWrap.addEventListener('click', onBtnClick);
@@ -9,13 +10,23 @@ refs.btnWrap.addEventListener('click', onBtnClick);
 function onBtnClick(event) {
     if (event.target.nodeName === 'BUTTON') {
         if (event.target.classList.contains('js-days')) {
-            refs.degree.classList.add('is-hidden');
-            refs.citySection.classList.remove('is-hidden');
+            addClassList(refs.degree, 'is-hidden');
+            addClassList(refs.wrapDateQuote, 'is-hidden');
+            removeClassList(refs.citySection, 'is-hidden');
         } else {
-            refs.degree.classList.remove('is-hidden');
-            refs.citySection.classList.add('is-hidden');
+            removeClassList(refs.degree, 'is-hidden');
+            removeClassList(refs.wrapDateQuote, 'is-hidden');
+            addClassList(refs.citySection, 'is-hidden');
         }
     }
+}
+
+function addClassList(ref, style) {
+    return ref.classList.add(style);
+}
+
+function removeClassList(ref, style) {
+    return ref.classList.remove(style);
 }
 
 export default onBtnClick;
