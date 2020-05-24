@@ -1,79 +1,75 @@
-// import cityItem from '../template/cityItem.hbs';
-// // import slickSkroll from './slick-skroll';
+import cityItem from '../template/cityItem.hbs';
 
-// //REFS
+import $ from 'jquery';
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
 
-// const refs = {
-//     starInput: document.querySelector('.js-star'),
-//     citiesList: document.querySelector('.js-input-list'),
-//     cityInput: document.querySelector('.js-form__input'),
-// };
+$('.js-input-list').slick({
+    dots: true,
+    infinite: true,
+    autoplay: false,
+    speed: 500,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    nextArrow: document.querySelector('.arrow__prev'),
+    prevArrow: document.querySelector('.arrow__next'),
+    appendDots: false,
+});
 
-// console.log(refs.starInput);
-// console.log(refs.citiesList);
-// console.log(refs.cityInput);
+//REFS
 
-// // let favouriteCities = localStorage.getItem('cities')
-// //     ? JSON.parse(localStorage.getItem('cities'))
-// //     : [];
-// // localStorage.setItem('cities', JSON.stringify(favouriteCities));
-// // const parseCities = JSON.parse(localStorage.getItem('cities'));
+const refs = {
+    starInput: document.querySelector('.js-star'),
+    citiesList: document.querySelector('.js-input-list'),
+    cityInput: document.querySelector('.js-form__input'),
+};
 
-// let favouriteCities = [];
+let favouriteCities = localStorage.getItem('cities')
+    ? JSON.parse(localStorage.getItem('cities'))
+    : [];
+localStorage.setItem('cities', JSON.stringify(favouriteCities));
+const parseCities = JSON.parse(localStorage.getItem('cities'));
 
-// // //Listiners
-// // refs.starInput.addEventListener('click', addToFavoriteCities);
-// refs.starInput.addEventListener('click', e => {
-//     console.log(e.target);
+// Listiners
+refs.starInput.addEventListener('click', addToFavoriteCities);
 
-//     refs.starInput.style.backgroundColor = 'red';
+// Render List
+function renderCitiesList(cities) {
+    const markup = cityItem(cities);
+    return refs.citiesList.insertAdjacentHTML('beforeend', markup);
+}
 
-//     const cityName = refs.cityInput.value.trim();
+// Add To Favorites
+function addToFavoriteCities(e) {
+    const cityName = refs.cityInput.value.trim();
+    if (favouriteCities.includes(cityName) || cityName === '') {
+        return;
+    }
 
-//     if (!favouriteCities) {
-//         return;
-//     }
+    favouriteCities.push(cityName);
 
-//     favouriteCities.push(cityName);
-//     renderCitiesList(favouriteCities);
-//     refs.cityInput.value = '';
+    localStorage.setItem('cities', JSON.stringify(favouriteCities));
 
-//     // localStorage.setItem('cities', JSON.stringify(favouriteCities));
-// });
+    renderCitiesList(parseCities);
+}
 
-// // //Render List
-// function renderCitiesList(cities) {
-//     const markup = cityItem(cities);
-//     return refs.citiesList.insertAdjacentHTML('beforeend', markup);
-// }
+renderCitiesList(parseCities);
 
-// // // Add To Favorites
-// // function addToFavoriteCities(e) {
-// //     const cityName = refs.cityInput.value.trim();
-// //     if (favouriteCities.includes(cityName) || cityName === '') {
-// //         return;
-// //     }
-// //     favouriteCities.push(cityName);
-// //     localStorage.setItem('cities', JSON.stringify(favouriteCities));
-// //     renderCitiesList(parseCities);
-// //     //cityName = '';
-// // }
+// Удаление из списка
 
-// // renderCitiesList(parseCities);
+refs.citiesList.addEventListener('click', onCloseIconClick);
 
-// const refs = {
-//     inputList: document.querySelector('.input-list'),
-// };
-// refs.inputList.addEventListener('click', onCloseIconClick);
-// function onCloseIconClick(event) {
-//     if (event.target.nodeName === 'SPAN') {
-//         const listItem = event.target.parentElement;
-//         const inputList = listItem.parentElement;
-//         const inputListArray = Array.from(inputList.children);
-//         const cityId = inputListArray.indexOf(listItem);
-//         const savedCities = JSON.parse(localStorage.getItem('cities'));
-//         savedCities.splice(cityId, 1);
-//         localStorage.setItem('cities', JSON.stringify(savedCities));
-//         listItem.remove();
-//     }
-// }
+function onCloseIconClick(event) {
+    if (event.target.nodeName === 'SPAN') {
+        const listItem = event.target.parentElement;
+        const inputList = listItem.parentElement;
+        const inputListArray = Array.from(inputList.children);
+        const cityId = inputListArray.indexOf(listItem);
+        const savedCities = JSON.parse(localStorage.getItem('cities'));
+        savedCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(savedCities));
+        listItem.remove();
+        localStorage.removeItem(savedCities);
+    }
+}

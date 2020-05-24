@@ -1,22 +1,5 @@
-// const getCurrentPosition = () => {
-//     const options = {
-//         timeout: 5000
-//     };
-//     return new Promise((resolve, reject) => {
-//         navigator.geolocation.getCurrentPosition(resolve, reject);
-//     });
-// };
-
-// getCurrentPosition()
-//     .then((location) => {
-//         console.log(location);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     });
-
 const options = {
-    timeout: 5000
+    timeout: 5000,
 };
 
 function success(position) {
@@ -30,10 +13,13 @@ function success(position) {
     const queryApi = () => {
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
-        return fetch(url).then((response) => response.json()).then((data) => data).catch((err) => console.warn(err));
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => data)
+            .catch(err => console.warn(err));
     };
 
-    queryApi().then((data) => {
+    queryApi().then(data => {
         console.log(data);
     });
 }

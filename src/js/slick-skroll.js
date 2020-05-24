@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 
-export default $('.js-input-list').slick({
+$('.js-input-list').slick({
     dots: true,
     infinite: true,
     autoplay: false,
