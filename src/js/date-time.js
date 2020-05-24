@@ -89,9 +89,6 @@ function createHtml(days) {
 
     renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforebegin');
 
-    const markupDate = date(days);
-    refs.oneDayData.insertAdjacentHTML('beforeend', markupDate);
-
     const markupQuote = quote(blockquotes[getRandomNumber()]);
     refs.quoteChange.insertAdjacentHTML('beforeend', markupQuote);
 }
