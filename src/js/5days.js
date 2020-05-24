@@ -21,7 +21,7 @@ function getCurrencyCity(serchQuery = 'kiev') {
 
 getCurrencyCity().then(response => {
     const getDate = data => new Date(data.dt * 1000).getDate();
-    console.log(response.list);
+    // console.log(response.list);
 
     const dates = response.list
         .map(element => getDate(element))
@@ -41,6 +41,6 @@ getCurrencyCity().then(response => {
 
     console.log(changedData.list);
     changedData.list[1].forecast.map(e => {
-        console.log(e);
+        // console.log(e);
     });
 });

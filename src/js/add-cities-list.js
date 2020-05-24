@@ -1,22 +1,5 @@
 import cityItem from '../template/cityItem.hbs';
 
-import $ from 'jquery';
-import 'slick-carousel';
-import 'slick-carousel/slick/slick.css';
-
-$('.js-input-list').slick({
-    dots: true,
-    infinite: true,
-    autoplay: false,
-    speed: 500,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true,
-    nextArrow: document.querySelector('.arrow__prev'),
-    prevArrow: document.querySelector('.arrow__next'),
-    appendDots: false,
-});
-
 //REFS
 
 const refs = {
@@ -28,33 +11,33 @@ const refs = {
 let favouriteCities = localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [];
-localStorage.setItem('cities', JSON.stringify(favouriteCities));
-const parseCities = JSON.parse(localStorage.getItem('cities'));
 
-// Listiners
+localStorage.setItem('cities', JSON.stringify(favouriteCities));
+
+//Listiners
+
 refs.starInput.addEventListener('click', addToFavoriteCities);
 
-// Render List
+//Render List
 function renderCitiesList(cities) {
     const markup = cityItem(cities);
     return refs.citiesList.insertAdjacentHTML('beforeend', markup);
 }
 
 // Add To Favorites
-function addToFavoriteCities(e) {
+
+function addToFavoriteCities() {
     const cityName = refs.cityInput.value.trim();
     if (favouriteCities.includes(cityName) || cityName === '') {
         return;
     }
-
     favouriteCities.push(cityName);
-
     localStorage.setItem('cities', JSON.stringify(favouriteCities));
-
-    renderCitiesList(parseCities);
+    renderCitiesList(favouriteCities);
+    //cityName = '';
 }
 
-renderCitiesList(parseCities);
+renderCitiesList(favouriteCities);
 
 // Удаление из списка
 
