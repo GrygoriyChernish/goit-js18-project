@@ -49,8 +49,8 @@ function onCloseIconClick(event) {
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
         const cityId = inputListArray.indexOf(listItem) - 1;
-        parseCities.splice(cityId, 1);
-        localStorage.setItem('cities', JSON.stringify(parseCities));
+        favouriteCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(favouriteCities));
         listItem.remove();
     }
 }

@@ -88,16 +88,17 @@ function createHtml(days) {
     renderMarkup(date, days, refs.oneDayData, 'beforeend');
 
     renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforebegin');
-}
 
-function renderMarkup(templ, data, link, position) {
-    const markup = templ(data);
-    return link.insertAdjacentHTML(position, markup);
     const markupDate = date(days);
     refs.oneDayData.insertAdjacentHTML('beforeend', markupDate);
 
     const markupQuote = quote(blockquotes[getRandomNumber()]);
     refs.quoteChange.insertAdjacentHTML('beforeend', markupQuote);
+}
+
+function renderMarkup(templ, data, link, position) {
+    const markup = templ(data);
+    return link.insertAdjacentHTML(position, markup);
 }
 
 function clearHtml() {

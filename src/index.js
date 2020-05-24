@@ -23,3 +23,5 @@ import './js/date-time';
 
 // Запрос на 5 дней
 import './js/5days';
+
+// Цитаты
