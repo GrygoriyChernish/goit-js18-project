@@ -1,7 +1,9 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
 import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
+import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
+import blockquotes from './blockquote';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -13,6 +15,7 @@ const refs = {
     background: document.querySelector('.background'),
     fiveDaysBtn: document.querySelector('.js-days'),
     fiveDayHeading: document.querySelector('.weather'),
+    quoteChange: document.querySelector('.quote'),
 };
 
 const defaultCity = 'kiev';
@@ -90,12 +93,18 @@ function createHtml(days) {
 function renderMarkup(templ, data, link, position) {
     const markup = templ(data);
     return link.insertAdjacentHTML(position, markup);
+    const markupDate = date(days);
+    refs.oneDayData.insertAdjacentHTML('beforeend', markupDate);
+
+    const markupQuote = quote(blockquotes[getRandomNumber()]);
+    refs.quoteChange.insertAdjacentHTML('beforeend', markupQuote);
 }
 
 function clearHtml() {
     refs.oneDayDegree.innerHTML = '';
     refs.oneDayData.innerHTML = '';
     refs.fiveDayHeading.innerHTML = '';
+    refs.quoteChange.innerHTML = '';
 }
 
 // Добавляем стили на бекграунд с картинкой из запроса
