@@ -4,12 +4,17 @@
     background-image: url(../icons/star/star.svg);
     right: 25px;
 
-    &:hover {
+    &:hover,
+    :focus {
         background-color: $star_hover;
         cursor: pointer;
     }
 
-    &:focus {
+    // &:focus {
+    //     background-image: url(../icons/star_filled/star_color.svg);
+    //     outline: none;
+    // }
+    &--active {
         background-image: url(../icons/star_filled/star_color.svg);
         outline: none;
     }
