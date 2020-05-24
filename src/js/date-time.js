@@ -1,6 +1,8 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
+import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
+import blockquotes from './blockquote';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -10,6 +12,7 @@ const refs = {
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
     background: document.querySelector('.background'),
+    quoteChange: document.querySelector('.quote'),
 };
 
 const defaultCity = 'kiev';
@@ -82,11 +85,15 @@ function createHtml(days) {
 
     const markupDate = date(days);
     refs.oneDayData.insertAdjacentHTML('beforeend', markupDate);
+
+    const markupQuote = quote(blockquotes[getRandomNumber()]);
+    refs.quoteChange.insertAdjacentHTML('beforeend', markupQuote);
 }
 
 function clearHtml() {
     refs.oneDayDegree.innerHTML = '';
     refs.oneDayData.innerHTML = '';
+    refs.quoteChange.innerHTML = '';
 }
 
 // Добавляем стили на бекграунд с картинкой из запроса
