@@ -65,11 +65,9 @@ function onCloseIconClick(event) {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
-        const cityId = inputListArray.indexOf(listItem);
-        const savedCities = JSON.parse(localStorage.getItem('cities'));
-        savedCities.splice(cityId, 1);
-        localStorage.setItem('cities', JSON.stringify(savedCities));
+        const cityId = inputListArray.indexOf(listItem) - 1;
+        parseCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(parseCities));
         listItem.remove();
-        localStorage.removeItem(savedCities);
     }
 }
