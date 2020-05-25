@@ -8,7 +8,7 @@ import showCurrentData from './js/show-current-data';
 // import $ from 'jquery';
 // import 'slick-carousel';
 // import 'slick-carousel/slick/slick.css';
-// import slickSkroll from './js/slick-skroll';
+
 import './js/add-cities-list';
 
 // Кнопки "Today" и "5 days"
@@ -16,7 +16,6 @@ import onBtnClick from './js/button-switch';
 
 // Геолокация
 import getCurrentPosition from './js/geolocation';
-// console.log(dataGeoLocation);
 
 // Запрос на 1 день
 import './js/date-time';

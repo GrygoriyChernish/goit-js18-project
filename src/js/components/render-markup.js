@@ -1,6 +1,6 @@
-function renderMarkup(templ, data, link, position) {
+function renderMarkup(templ, data, link) {
     const markup = templ(data);
-    return link.insertAdjacentHTML(position, markup);
+    return link.insertAdjacentHTML('beforeend', markup);
 }
 
 export default renderMarkup;

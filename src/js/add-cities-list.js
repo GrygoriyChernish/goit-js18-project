@@ -1,3 +1,4 @@
+// import slickSkroll from './slick-skroll';
 import cityItem from '../template/cityItem.hbs';
 
 //REFS

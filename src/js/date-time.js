@@ -84,11 +84,11 @@ const tranformData = data => {
 // Создание разметки и очистка
 
 function createHtml(days) {
-    renderMarkup(degree, days, refs.oneDayDegree, 'beforeend');
+    renderMarkup(degree, days, refs.oneDayDegree);
 
-    renderMarkup(date, days, refs.oneDayData, 'beforeend');
+    renderMarkup(date, days, refs.oneDayData);
 
-    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforeend');
+    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading);
 
     renderMarkup(
         quote,
