@@ -60,8 +60,6 @@ function resetRequest() {
 
 //Delete
 
-// Удаление из списка
-
 refs.citiesList.addEventListener('click', onCloseIconClick);
 
 function onCloseIconClick(event) {

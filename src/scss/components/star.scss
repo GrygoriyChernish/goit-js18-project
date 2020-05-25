@@ -10,7 +10,7 @@
         cursor: pointer;
     }
 
-    &:--active {
+    &--active {
         background-image: url(../icons/star_filled/star_color.svg);
 
         &:focus {
