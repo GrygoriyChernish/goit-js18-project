@@ -4,6 +4,7 @@ import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
 import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
+import renderMarkup from './components/render-markup';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -14,7 +15,7 @@ const refs = {
     searchForm: document.querySelector('.form'),
     background: document.querySelector('.background'),
     fiveDaysBtn: document.querySelector('.js-days'),
-    fiveDayHeading: document.querySelector('.weather'),
+    fiveDayHeading: document.querySelector('.js-heading'),
     quoteChange: document.querySelector('.quote'),
 };
 
@@ -87,15 +88,14 @@ function createHtml(days) {
 
     renderMarkup(date, days, refs.oneDayData, 'beforeend');
 
-    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforebegin');
+    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforeend');
 
-    const markupQuote = quote(blockquotes[getRandomNumber()]);
-    refs.quoteChange.insertAdjacentHTML('beforeend', markupQuote);
-}
-
-function renderMarkup(templ, data, link, position) {
-    const markup = templ(data);
-    return link.insertAdjacentHTML(position, markup);
+    renderMarkup(
+        quote,
+        blockquotes[getRandomNumber()],
+        refs.quoteChange,
+        'beforeend',
+    );
 }
 
 function clearHtml() {
