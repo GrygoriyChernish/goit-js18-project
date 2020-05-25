@@ -27,6 +27,9 @@ function getCurrencyCity(serchQuery = 'kiev') {
             console.error('Error: ', err);
         });
 }
+
+let oneDay = '';
+
 getCurrencyCity().then(response => {
     const getDate = data => new Date(data.dt * 1000).getDate();
     // console.log(response.list);
@@ -46,28 +49,32 @@ getCurrencyCity().then(response => {
         list,
     };
 
-    renderMarkup(fiveDaysTmpl, changedData.list[0].date, refs.daysContainer);
+    renderMarkup(
+        fiveDaysTmpl,
+        changedData.list[0].date,
+        refs.daysContainer,
+        'beforeend',
+    );
 
     let days = [];
     let hours = [];
-    let tempMax = [];
 
-    changedData.list.map(e => {
+    console.log(days);
+    changedData.list.map((a, e) => {
+        console.log(a);
+        days.push(tranformDay(e, a));
         console.log(e);
-        days.push(tranformDay(e));
     });
 
     changedData.list[1].forecast.map(e => {
-        tempMax.push(e.main.temp_max);
-        console.log(e.main.temp_max);
         hours.push(tranformHours(e));
     });
 
-    renderMarkup(fiveDaysTmpl, days, refs.daysContainer);
-    renderMarkup(dayMoreInfoTmpl, hours, refs.daysContainerMoreInfo);
+    updateDaysMarkup(days);
+    updateMoreInfoMarkup(hours);
 });
 
-const tranformDay = data => {
+const tranformDay = (a, data) => {
     return {
         dayWeek: new Date(data.date * 1000).toLocaleString('en-US', {
             weekday: 'long',
@@ -76,22 +83,12 @@ const tranformDay = data => {
             month: 'short',
             day: 'numeric',
         }),
+        index: a,
     };
 };
 
 const tranformHours = data => {
     return {
-        // sunrise: timeConversion((data.sys.sunrise + data.timezone) * 1000),
-        // sunset: timeConversion((data.sys.sunset + data.timezone) * 1000),
-        // country: data.sys.country,
-        // name: data.name,
-        dayWeek: new Date(data.dt * 1000).toLocaleString('en-US', {
-            weekday: 'long',
-        }),
-        dayMonth: new Date(data.dt * 1000).toLocaleString('en-US', {
-            month: 'short',
-            day: 'numeric',
-        }),
         hours: new Date(data.dt * 1000).toLocaleString('en-US', {
             hour12: false,
             hour: '2-digit',
@@ -100,19 +97,31 @@ const tranformHours = data => {
         temp: Math.round(data.main.temp),
         tempMin: Math.round(data.main.temp_min),
         tempMax: Math.round(data.main.temp_max),
-        tempAverage: average(Array(data.main.temp_max, data.main.temp_min)),
         humidity: data.main.humidity,
         pressure: data.main.pressure,
         wind: data.wind.speed,
         icon:
             'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png',
     };
-
-    console.log(tranformHours.tempAverage);
 };
 
-console.log(tranformHours.tempAverage);
+function updateDaysMarkup(day) {
+    const markup = fiveDaysTmpl(day);
+    refs.daysContainer.insertAdjacentHTML('beforeend', markup);
+}
 
-function average(nums) {
-    return nums.reduce((a, b) => a + b) / nums.length;
+function updateMoreInfoMarkup(forThreeHours) {
+    const markup = dayMoreInfoTmpl(forThreeHours);
+    refs.daysContainerMoreInfo.insertAdjacentHTML('beforeend', markup);
+}
+
+refs.daysContainer.addEventListener('click', showMoreInformation);
+
+function showMoreInformation(e) {
+    if (e.target.nodeName !== 'A') {
+        return;
+    }
+    oneDay = Number(e.target.dataset.index);
+    console.log(oneDay);
+    console.log(typeof oneDay);
 }
