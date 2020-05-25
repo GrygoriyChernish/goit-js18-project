@@ -1,5 +1,5 @@
 .more-info__btn {
-    @include font-source(null, 400);
+    @include font-source(12px, 400);
     letter-spacing: 0px;
     opacity: 54%;
     cursor: pointer;

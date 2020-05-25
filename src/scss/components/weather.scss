@@ -19,39 +19,29 @@
 }
 
 .pressure {
-    margin-top: 10px;
     &::before {
-        content: '';
-        position: absolute;
-        left: 15px;
         display: block;
-        width: 22px;
-        height: 22px;
-        // background: url(../icons/pressure@1X.png) no-repeat;
+        content: '';
+        @include position(absolute, null null null 15px);
+        @include size(22px, 22px);
     }
 }
 
 .humidity {
     &::before {
-        content: '';
-        position: absolute;
-        left: 22px;
         display: block;
-        width: 22px;
-        height: 22px;
-        // background: url(../icons/humidity@1X.png) no-repeat;
+        content: '';
+        @include position(absolute, null null null 22px);
+        @include size(22px, 22px);
     }
 }
 
 .wind {
     &::before {
-        content: '';
-        position: absolute;
-        left: 15px;
         display: block;
-        width: 22px;
-        height: 22px;
-        // background: url(../icons/wind@1X.png) no-repeat;
+        content: '';
+        @include position(absolute, null null null 15px);
+        @include size(22px, 22px);
     }
 }
 
