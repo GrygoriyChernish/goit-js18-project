@@ -1,60 +1,64 @@
 import cityItem from '../template/cityItem.hbs';
 
-import $ from 'jquery';
-import 'slick-carousel';
-import 'slick-carousel/slick/slick.css';
-
-$('.js-input-list').slick({
-    dots: true,
-    infinite: true,
-    autoplay: false,
-    speed: 500,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true,
-    nextArrow: document.querySelector('.arrow__prev'),
-    prevArrow: document.querySelector('.arrow__next'),
-    appendDots: false,
-});
-
 //REFS
 
 const refs = {
+    citiesList: document.querySelector('.js-input-list'),
     starInput: document.querySelector('.js-star'),
     citiesList: document.querySelector('.js-input-list'),
     cityInput: document.querySelector('.js-form__input'),
 };
 
+let isActive = false;
 let favouriteCities = localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [];
+
 localStorage.setItem('cities', JSON.stringify(favouriteCities));
-const parseCities = JSON.parse(localStorage.getItem('cities'));
 
-// Listiners
+//Listiners
+
 refs.starInput.addEventListener('click', addToFavoriteCities);
+refs.citiesList.addEventListener('click', onCloseIconClick);
 
-// Render List
+//Render List
 function renderCitiesList(cities) {
+    refs.starInput.classList.remove('star--active');
     const markup = cityItem(cities);
     return refs.citiesList.insertAdjacentHTML('beforeend', markup);
 }
 
 // Add To Favorites
-function addToFavoriteCities(e) {
+
+function addToFavoriteCities() {
     const cityName = refs.cityInput.value.trim();
+
+    renderCitiesList(favouriteCities);
+
+    refs.cityInput.value = '';
+
     if (favouriteCities.includes(cityName) || cityName === '') {
         return;
     }
 
+    isActive = true;
+    refs.starInput.classList.add('star--active');
     favouriteCities.push(cityName);
-
     localStorage.setItem('cities', JSON.stringify(favouriteCities));
-
-    renderCitiesList(parseCities);
 }
 
-renderCitiesList(parseCities);
+renderCitiesList(favouriteCities);
+
+//Reset
+
+function resetRequest() {
+    refs.cityInput.value = '';
+    isActive = false;
+    refs.starInput.classList.remove('star--active');
+    console.log('RESET INPUT');
+}
+
+//Delete
 
 // Удаление из списка
 
@@ -65,11 +69,14 @@ function onCloseIconClick(event) {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
+
         const cityId = inputListArray.indexOf(listItem);
-        const savedCities = JSON.parse(localStorage.getItem('cities'));
-        savedCities.splice(cityId, 1);
-        localStorage.setItem('cities', JSON.stringify(savedCities));
+        favouriteCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(favouriteCities));
+
+        cityId = inputListArray.indexOf(listItem) - 1;
+        favouriteCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(favouriteCities));
         listItem.remove();
-        localStorage.removeItem(savedCities);
     }
 }

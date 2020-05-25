@@ -1,6 +1,10 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
+import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
+import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
+import blockquotes from './blockquote';
+import renderMarkup from './components/render-markup';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -10,6 +14,12 @@ const refs = {
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
     background: document.querySelector('.background')
+
+    background: document.querySelector('.background'),
+    fiveDaysBtn: document.querySelector('.js-days'),
+    fiveDayHeading: document.querySelector('.js-heading'),
+    quoteChange: document.querySelector('.quote'),
+
 };
 
 const defaultCity = 'kiev';
@@ -74,16 +84,25 @@ const tranformData = (data) => {
 // Создание разметки и очистка
 
 function createHtml(days) {
-    const markupDegree = degree(days);
-    refs.oneDayDegree.insertAdjacentHTML('beforeend', markupDegree);
+    renderMarkup(degree, days, refs.oneDayDegree, 'beforeend');
 
-    const markupDate = date(days);
-    refs.oneDayData.insertAdjacentHTML('beforeend', markupDate);
+    renderMarkup(date, days, refs.oneDayData, 'beforeend');
+
+    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforeend');
+
+    renderMarkup(
+        quote,
+        blockquotes[getRandomNumber()],
+        refs.quoteChange,
+        'beforeend',
+    );
 }
 
 function clearHtml() {
     refs.oneDayDegree.innerHTML = '';
     refs.oneDayData.innerHTML = '';
+    refs.fiveDayHeading.innerHTML = '';
+    refs.quoteChange.innerHTML = '';
 }
 
 // Добавляем стили на бекграунд с картинкой из запроса
@@ -127,10 +146,20 @@ refs.searchForm.addEventListener('submit', (event) => {
 
 // Запрос к серверу по клику на кнопку "TODAY"
 
-// refs.oneDayBtn.addEventListener('click', () => {
-//     const city = appState.currentCity;
-//     updateWeatherResult(city);
-// });
+refs.oneDayBtn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const city = appState.currentCity;
+    updateWeatherResult(city);
+});
+
+// Запрос к серверу по клику на кнопку "5 дней"
+
+refs.fiveDaysBtn.addEventListener('click', () => {
+    console.log('Click!');
+    // const city = appState.currentCity;
+    // updateWeatherResult(city);
+});
 
 // Default call
 

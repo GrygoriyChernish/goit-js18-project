@@ -4,18 +4,27 @@
     background-image: url(../icons/star/star.svg);
     right: 25px;
 
-    &:hover {
+    &:hover,
+    :focus {
         background-color: $star_hover;
         cursor: pointer;
     }
 
-    &:focus {
-        outline: none;
-    }
-}
+    // &:focus {
+    //     background-image: url(../icons/star_filled/star_color.svg);
+    //     outline: none;
+    // }
+    &--active {
+        background-image: url(../icons/star_filled/star_color.svg);
 
-@include lg {
-    .star {
-        right: 298px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    @include lg {
+        .star {
+            right: 298px;
+        }
     }
 }

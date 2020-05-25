@@ -5,11 +5,11 @@ import './scss/styles.scss';
 import showCurrentData from './js/show-current-data';
 
 // Добавление в список избранных городов
-import './js/add-cities-list';
 // import $ from 'jquery';
 // import 'slick-carousel';
 // import 'slick-carousel/slick/slick.css';
 // import slickSkroll from './js/slick-skroll';
+import './js/add-cities-list';
 
 // Кнопки "Today" и "5 days"
 import onBtnClick from './js/button-switch';
@@ -24,4 +24,4 @@ import './js/date-time';
 // Запрос на 5 дней
 import './js/5days';
 
-console.log(slickSkroll);
+// Цитаты
