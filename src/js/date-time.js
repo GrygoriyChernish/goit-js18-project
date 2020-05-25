@@ -13,13 +13,10 @@ const refs = {
     oneDayData: document.querySelector('.js-sun'),
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
-    background: document.querySelector('.background')
-
     background: document.querySelector('.background'),
     fiveDaysBtn: document.querySelector('.js-days'),
     fiveDayHeading: document.querySelector('.js-heading'),
     quoteChange: document.querySelector('.quote'),
-
 };
 
 const defaultCity = 'kiev';
@@ -27,15 +24,15 @@ const defaultCity = 'kiev';
 // Сохранение текущего города, который ввели в поле поиска или по умолчанию
 
 const appState = {
-    currentCity: defaultCity
+    currentCity: defaultCity,
 };
 
 // Запрос данных API
 
 function fetchData(geoSearch = defaultCity) {
     return fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${geoSearch}&units=metric&appid=${apiKey}`
-    ).then((response) => {
+        `https://api.openweathermap.org/data/2.5/weather?q=${geoSearch}&appid=${apiKey}`,
+    ).then(response => {
         if (response.ok) return response.json();
         throw new Error('Error fetching data');
     });
@@ -44,13 +41,15 @@ function fetchData(geoSearch = defaultCity) {
 function updateWeatherResult(params) {
     clearHtml();
     fetchData(params)
-        .then((data) => {
+        .then(data => {
             const days = tranformData(data);
             createHtml(days);
         })
-        .catch((err) => {
+        .catch(err => {
             console.error('Error: ', err);
-            alert(`По запросу "${appState.currentCity}" найдено 0 местоположений`);
+            alert(
+                `По запросу "${appState.currentCity}" найдено 0 местоположений`,
+            );
         });
 }
 
@@ -68,16 +67,17 @@ function timeConversion(duration) {
 
 // Преобразование данных
 
-const tranformData = (data) => {
+const tranformData = data => {
     return {
         sunrise: timeConversion((data.sys.sunrise + data.timezone) * 1000),
         sunset: timeConversion((data.sys.sunset + data.timezone) * 1000),
         country: data.sys.country,
         name: data.name,
-        temp: Math.round(data.main.temp),
-        tempMin: Math.round(data.main.temp_min),
-        tempMax: Math.round(data.main.temp_max),
-        icon: 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png'
+        temp: Math.round(data.main.temp - 273.15),
+        tempMin: Math.round(data.main.temp_min - 273.15),
+        tempMax: Math.round(data.main.temp_max - 273.15),
+        icon:
+            'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png',
     };
 };
 
@@ -126,7 +126,7 @@ const getRandomNumber = () => Math.floor(Math.random() * 20);
 
 // Запрос к серверу по сабмиту
 
-refs.searchForm.addEventListener('submit', (event) => {
+refs.searchForm.addEventListener('submit', event => {
     event.preventDefault();
 
     const form = event.target;
@@ -141,7 +141,7 @@ refs.searchForm.addEventListener('submit', (event) => {
         .then(({ hits }) => {
             setBackgroundImage(hits[getRandomNumber()].largeImageURL);
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
 });
 
 // Запрос к серверу по клику на кнопку "TODAY"
@@ -165,4 +165,4 @@ refs.fiveDaysBtn.addEventListener('click', () => {
 
 updateWeatherResult();
 
-export { updateWeatherResult, getRandomNumber, setBackgroundImage, clearHtml, createHtml, tranformData };
+export { updateWeatherResult };
