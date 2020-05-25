@@ -1,17 +1,18 @@
 .container {
-    width: $cont-mob;
+    @include size(80%, 100vh);
+    max-width: $cont-mob;
     @include margin(0 auto);
     text-align: center;
 }
 
 @include md {
     .container {
-        width: $cont-tab;
+        max-width: $cont-tab;
     }
 }
 
 @include lg {
     .container {
-        width: $cont-desk;
+        max-width: $cont-desk;
     }
 }

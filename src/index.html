@@ -8,9 +8,9 @@
     </head>
 
     <body>
-        <div class="container-fluid background">
-            <form class="container form">
-                <div class="form__wrap">
+        <main class="background">
+            <div class="container">
+                <form class="form">
                     <span class="location"></span>
                     <input
                         class="form__input js-form__input"
@@ -18,26 +18,22 @@
                         name="query"
                     />
                     <span class="star js-star"></span>
-                </div>
-            </form>
+                </form>
 
-            <!-- Список избранных городов-->
+                <!-- Список избранных городов-->
 
-            <div class="container">
                 <div class="list__wrap">
                     <span class="arrow arrow__prev"></span>
                     <ul class="input-list js-input-list"></ul>
                     <span class="arrow arrow__next"></span>
                 </div>
-            </div>
 
-            <!-- Секция Degree -->
+                <!-- Секция Degree -->
 
-            <div class="container js-degree"></div>
+                <div class="js-degree"></div>
 
-            <!-- Кнопки Active & No Active  -->
+                <!-- Кнопки Active & No Active  -->
 
-            <div class="container">
                 <div class="btn__wrap">
                     <button type="button" class="btn js-today">
                         Today
@@ -46,83 +42,90 @@
                         5 Days
                     </button>
                 </div>
-            </div>
 
-            <!-- Секция  1 день и 5 дней-->
+                <!-- Секция  1 день и 5 дней-->
 
-            <section class="city__section container is-hidden">
-                <div class="weather">
-                    <h2 class="js-heading"></h2>
-                    <ul class="days js-five-days">
-                        <!-- <li class="day__item">
-                            <h2 class="day__week">Sanday</h2>
-                            <h2 class="day__month">09 Feb</h2>
-                            <p>icon</p>
-                            <div class="day__tempr">
-                                <div>
-                                    <h3 class="day__tempr--min-max">min</h3>
-                                    <p class="day__tempr--degrees">-2</p>
+                <section class="city__section is-hidden">
+                    <div class="weather">
+                        <h2 class="js-heading"></h2>
+                        <ul class="days js-five-days">
+                            <!-- <li class="day__item">
+                                <h2 class="day__week">Sanday</h2>
+                                <h2 class="day__month">09 Feb</h2>
+                                <p>icon</p>
+                                <div class="day__tempr">
+                                    <div>
+                                        <h3 class="day__tempr--min-max">min</h3>
+                                        <p class="day__tempr--degrees">-2</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="day__tempr--min-max">max</h3>
+                                        <p class="day__tempr--degrees">-5</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="day__tempr--min-max">max</h3>
-                                    <p class="day__tempr--degrees">-5</p>
-                                </div>
-                            </div>
-                            <a class="more-info__btn">more info</a>
-                        </li> -->
-                    </ul>
-
-                    <div class="arrow-wrap">
-                        <span class="arrow arrow__prev arrow__prev--fix"></span>
-                        <span class="arrow arrow__next arrow__next--fix"></span>
-                    </div>
-
-                    <ul class="more-info days js-more-info">
-                        <!-- <li class="more-info__item js-more-info__item">
-                            <h3 class="day__tempr--min-max more-info__time">
-                                00:00
-                            </h3>
-                            <p>icon</p>
-                            <p class="day__tempr-degrees more-info__tempr">
-                                -5
-                            </p>
-                            <p class="more-info__descr">772 mm</p>
-                            <p class="more-info__descr">54%</p>
-                            <p class="more-info__descr">3,7 m/s</p>
+                                <a class="more-info__btn">more info</a>
                             </li> -->
-                    </ul>
-                </div>
-            </section>
+                        </ul>
 
-            <section class="container">
-                <div class="wrapper js-wrapper">
-                    <div class="date-box section">
-                        <div class="date">
-                            <div class="data-suffix">
-                                <p id="data" class="date__data">
-                                    8
+                        <div class="arrow-wrap">
+                            <span
+                                class="arrow arrow__prev arrow__prev--fix"
+                            ></span>
+                            <span
+                                class="arrow arrow__next arrow__next--fix"
+                            ></span>
+                        </div>
+
+                        <ul class="more-info days js-more-info">
+                            <!-- <li class="more-info__item js-more-info__item">
+                                <h3 class="day__tempr--min-max more-info__time">
+                                    00:00
+                                </h3>
+                                <p>icon</p>
+                                <p class="day__tempr-degrees more-info__tempr">
+                                    -5
                                 </p>
-                                <sup id="suffix" class="date__suffix"></sup>
-                            </div>
-                            <div class="date__day">
-                                <p id="day-week" class="date__day-week"></p>
-                            </div>
-                        </div>
-                        <div class="block-desk">
-                            <div class="month-time">
-                                <p id="mounth" class="month border-line"></p>
-                                <p id="time" class="time"></p>
-                            </div>
-                            <div class="sunrise-sunset js-sun">
-                                <p class="sunrise border-line"></p>
-                                <p class="sunset"></p>
-                            </div>
-                        </div>
+                                <p class="more-info__descr">772 mm</p>
+                                <p class="more-info__descr">54%</p>
+                                <p class="more-info__descr">3,7 m/s</p>
+                                </li> -->
+                        </ul>
                     </div>
+                </section>
 
-                    <div class="quote"></div>
-                </div>
-            </section>
-        </div>
+                <section>
+                    <div class="wrapper js-wrapper">
+                        <div class="date-box section">
+                            <div class="date">
+                                <div class="data-suffix">
+                                    <p id="data" class="date__data">
+                                        8
+                                    </p>
+                                    <sup id="suffix" class="date__suffix"></sup>
+                                </div>
+                                <div class="date__day">
+                                    <p id="day-week" class="date__day-week"></p>
+                                </div>
+                            </div>
+                            <div class="block-desk">
+                                <div class="month-time">
+                                    <p
+                                        id="mounth"
+                                        class="month border-line"
+                                    ></p>
+                                    <p id="time" class="time"></p>
+                                </div>
+                                <div class="sunrise-sunset js-sun">
+                                    <p class="sunrise border-line"></p>
+                                    <p class="sunset"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quote"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
     </body>
 </html>

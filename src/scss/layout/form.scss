@@ -1,5 +1,7 @@
 .form {
     position: relative;
+    text-align: center;
+    @include size(100%, null);
     @include margin(null null 13px null);
     @include padding(40px null null null);
 
@@ -17,12 +19,5 @@
 @include md {
     .form {
         @include margin(null null 13px null);
-        width: $cont-tab;
-    }
-}
-
-@include lg {
-    .form {
-        width: $cont-desk;
     }
 }
