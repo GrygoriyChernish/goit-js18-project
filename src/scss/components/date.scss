@@ -124,12 +124,8 @@
         flex-direction: inherit;
     }
     .date-box {
-        width: 601px;
-        height: 277px;
-        border-radius: 0 35px 0 0;
-        margin: 0;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
     }
 
     .block-desk {
@@ -143,10 +139,6 @@
         &::before {
             bottom: 42px;
         }
-    }
-
-    .date-box {
-        align-items: flex-start;
     }
 
     .border-line {

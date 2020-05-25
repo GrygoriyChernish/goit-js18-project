@@ -21,6 +21,7 @@ localStorage.setItem('cities', JSON.stringify(favouriteCities));
 
 refs.starInput.addEventListener('click', addToFavoriteCities);
 refs.citiesList.addEventListener('click', onCloseIconClick);
+refs.citiesList.addEventListener('click', onCloseIconClick);
 
 //Render List
 function renderCitiesList(cities) {
@@ -50,30 +51,14 @@ function addToFavoriteCities() {
 
 renderCitiesList(favouriteCities);
 
-//Reset
-
-function resetRequest() {
-    refs.cityInput.value = '';
-    isActive = false;
-    refs.starInput.classList.remove('star--active');
-    console.log('RESET INPUT');
-}
-
 //Delete
-
-refs.citiesList.addEventListener('click', onCloseIconClick);
 
 function onCloseIconClick(event) {
     if (event.target.nodeName === 'SPAN') {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
-
-        const cityId = inputListArray.indexOf(listItem);
-        favouriteCities.splice(cityId, 1);
-        localStorage.setItem('cities', JSON.stringify(favouriteCities));
-
-        cityId = inputListArray.indexOf(listItem) - 1;
+        const cityId = inputListArray.indexOf(listItem) - 1;
         favouriteCities.splice(cityId, 1);
         localStorage.setItem('cities', JSON.stringify(favouriteCities));
         listItem.remove();
