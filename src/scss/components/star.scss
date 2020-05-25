@@ -10,7 +10,6 @@
         cursor: pointer;
     }
 
-
     // &:focus {
     //     background-image: url(../icons/star_filled/star_color.svg);
     //     outline: none;
@@ -18,13 +17,14 @@
     &--active {
         background-image: url(../icons/star_filled/star_color.svg);
 
-    &:focus {
-        outline: none;
+        &:focus {
+            outline: none;
+        }
     }
-}
 
-@include lg {
-    .star {
-        right: 298px;
+    @include lg {
+        .star {
+            right: 298px;
+        }
     }
 }
