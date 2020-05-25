@@ -144,8 +144,6 @@ refs.searchForm.addEventListener('submit', event => {
         .catch(error => console.log(error));
 });
 
-console.log(appState);
-
 // Запрос к серверу по клику на кнопку "TODAY"
 
 refs.oneDayBtn.addEventListener('click', e => {

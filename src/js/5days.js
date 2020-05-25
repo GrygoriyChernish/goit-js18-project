@@ -1,7 +1,10 @@
+import fiveDaysTmpl from '../template/five-days.hbs';
+import renderMarkup from './components/render-markup';
+
 const refs = {
+    daysContainer: document.querySelector('.js-five-days'),
     moreInfoContainer: document.querySelector('.js-more-info'),
     moreInfoItem: document.querySelector('.js-more-info__item'),
-    daysContainer: document.querySelector('.js-five-days'),
 };
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
@@ -26,7 +29,8 @@ getCurrencyCity().then(response => {
     const dates = response.list
         .map(element => getDate(element))
         .filter((el, idx, arr) => arr.indexOf(el) === idx);
-    // массив из 5 дней console.log(dates);
+    // массив из 5 дней
+    // console.log(dates);
 
     const list = dates
         .map(el => response.list.filter(elem => getDate(elem) === el))
@@ -38,9 +42,16 @@ getCurrencyCity().then(response => {
         ...response,
         list,
     };
+    console.log(changedData);
 
-    console.log(changedData.list);
-    changedData.list[1].forecast.map(e => {
-        // console.log(e);
-    });
+    renderMarkup(
+        fiveDaysTmpl,
+        changedData.list[0].date,
+        refs.daysContainer,
+        'beforeend',
+    );
+
+    // changedData.list[0].forecast.map(e => {
+    //     console.log(e);
+    // });
 });
