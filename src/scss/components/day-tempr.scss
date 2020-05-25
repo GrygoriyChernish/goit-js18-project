@@ -7,7 +7,7 @@
 
     &:before {
         @include size(1px, 29px);
-        @include position(absolute, 50% null null 47%);
+        @include position(absolute, 70% null null 47%);
         transform: translate(50%, -50%);
         background-color: $lite_main;
         opacity: 30%;
@@ -17,7 +17,7 @@
 }
 
 .day__tempr--min-max {
-    font-size: 12px;
+    @include font-source(12px, 400);
     opacity: 54%;
 }
 
@@ -60,10 +60,31 @@
     }
 
     .day__tempr--min-max {
-        font-size: $text-m;
+        font-size: $text-s;
     }
 
     .day__tempr--degrees {
-        @include margin(10 px null null null);
+        @include margin(16px 0 0 0);
+        @include padding(0);
+        position: relative;
+
+        &:before {
+            @include size(5px, 5px);
+            border-radius: 3px;
+            border: 1px solid #ff6b08;
+            position: absolute;
+            right: 0;
+            content: '';
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) and (max-width: 1139px) {
+            font-size: $text-m;
+        }
+
+        @include lg {
+            font-size: $text-m;
+            margin-top: 10px;
+        }
     }
 }

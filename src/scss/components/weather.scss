@@ -8,6 +8,43 @@
     background-color: $bg_opacity;
 }
 
+.more-info__tempr {
+    margin: 0 auto;
+    width: 30px;
+    text-align: center;
+}
+
+.slick-dotted.slick-slider {
+    margin: 0;
+}
+
+.pressure {
+    &::before {
+        display: block;
+        content: '';
+        @include position(absolute, null null null 15px);
+        @include size(22px, 22px);
+    }
+}
+
+.humidity {
+    &::before {
+        display: block;
+        content: '';
+        @include position(absolute, null null null 22px);
+        @include size(22px, 22px);
+    }
+}
+
+.wind {
+    &::before {
+        display: block;
+        content: '';
+        @include position(absolute, null null null 15px);
+        @include size(22px, 22px);
+    }
+}
+
 @include md {
     .weather {
         @include size($cont-tab, null);

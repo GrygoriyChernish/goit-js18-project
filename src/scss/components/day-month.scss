@@ -1,5 +1,5 @@
 .day__month {
-    @include font-source(16px, 400);
+    @include font-source($text-s, 400);
     @include padding(null null 10px null);
 }
 

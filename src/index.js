@@ -1,32 +1,26 @@
+// Стили
 import './scss/styles.scss';
 
-const time = document.querySelector('#time');
-const currentMounth = document.querySelector('#mounth');
+// Отображение текущего времени и даты
+import showCurrentData from './js/show-current-data';
 
-const showTime = () => {
-    let today = new Date();
-    let hour = today.getHours();
-    let min = today.getMinutes();
-    let sec = today.getSeconds();
+// Добавление в список избранных городов
+// import $ from 'jquery';
+// import 'slick-carousel';
+// import 'slick-carousel/slick/slick.css';
 
-    hour = hour % 24 || 24;
+import './js/add-cities-list';
 
-    time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(
-        min,
-    )}<span>:</span>${addZero(sec)}`;
+// Кнопки "Today" и "5 days"
+import onBtnClick from './js/button-switch';
 
-    setTimeout(showTime, 1000);
-};
+// Геолокация
+import getCurrentPosition from './js/geolocation';
 
-const addZero = number => (parseInt(number, 10) < 10 ? '0' : '') + number;
+// Запрос на 1 день
+import './js/date-time';
 
-showTime();
+// Запрос на 5 дней
+import './js/5days';
 
-const showMounth = () => {
-    let mounth = new Date();
-    let current = mounth.getMonth();
-
-    currentMounth.textContent = `${current}`;
-};
-
-// showMounth();
+// Цитаты
