@@ -5,6 +5,7 @@ import cityItem from '../template/cityItem.hbs';
 const refs = {
     citiesList: document.querySelector('.js-input-list'),
     starInput: document.querySelector('.js-star'),
+    citiesList: document.querySelector('.js-input-list'),
     cityInput: document.querySelector('.js-form__input'),
 };
 
@@ -14,17 +15,24 @@ let favouriteCities = localStorage.getItem('cities')
     : [];
 
 localStorage.setItem('cities', JSON.stringify(favouriteCities));
-const parseCities = JSON.parse(localStorage.getItem('cities'));
 
 //Listiners
 
 refs.starInput.addEventListener('click', addToFavoriteCities);
 refs.citiesList.addEventListener('click', onCloseIconClick);
 
+//Render List
+function renderCitiesList(cities) {
+    const markup = cityItem(cities);
+    return refs.citiesList.insertAdjacentHTML('beforeend', markup);
+}
+
+
 // Add To Favorites
 
 function addToFavoriteCities() {
     const cityName = refs.cityInput.value.trim();
+
     renderCitiesList(parseCities);
     refs.cityInput.value = '';
     // isActive = false;
@@ -40,9 +48,19 @@ function addToFavoriteCities() {
         // renderCitiesList(parseCities);
         //resetRequest();
     }
+
+    if (favouriteCities.includes(cityName) || cityName === '') {
+        return;
+    }
+    favouriteCities.push(cityName);
+    localStorage.setItem('cities', JSON.stringify(favouriteCities));
+    renderCitiesList(favouriteCities);
+    //cityName = '';
+
 }
 
-//Render List
+renderCitiesList(favouriteCities);
+
 
 function renderCitiesList(cities) {
     //refs.citiesList.innerHTML = '';
@@ -62,15 +80,25 @@ function resetRequest() {
 
 //Delete
 
+// Удаление из списка
+
+refs.citiesList.addEventListener('click', onCloseIconClick);
+
+
 function onCloseIconClick(event) {
     if (event.target.nodeName === 'SPAN') {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
+
         const cityId = inputListArray.indexOf(listItem);
         //const savedCities = JSON.parse(localStorage.getItem('cities'));
         parseCities.splice(cityId, 1);
         localStorage.setItem('cities', JSON.stringify(parseCities));
+
+        const cityId = inputListArray.indexOf(listItem) - 1;
+        favouriteCities.splice(cityId, 1);
+        localStorage.setItem('cities', JSON.stringify(favouriteCities));
         listItem.remove();
         //resetRequest();
     }

@@ -151,6 +151,7 @@
 
     .border-line {
         &::after {
+            @include margin(null 7px null null);
             right: -18px;
         }
     }
