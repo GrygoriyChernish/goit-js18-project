@@ -1,7 +1,6 @@
 import fiveDaysTmpl from '../template/five-days.hbs';
-import renderMarkup from './components/render-markup';
 import dayMoreInfoTmpl from '../template/five-days-more-info.hbs';
-// import slickSkrollMoreinfo from './slick-skrol-more-info';
+import fiveDayService from './apiServiceFiveDay';
 
 const refs = {
     daysContainer: document.querySelector('.js-five-days'),
@@ -10,69 +9,12 @@ const refs = {
     daysContainerMoreInfo: document.querySelector('.js-more-info'),
     moreInfoPrev: document.querySelector('.js-more-info-arrow__prev'),
     moreInfoNext: document.querySelector('.js-more-info-arrow__next'),
+    fiveDaysBtn: document.querySelector('.js-days'),
+    jsMoreInfoContainer: document.querySelector('.js-more-info__container'),
 };
 
-const apiKey = '73ee7931741da6d4344aba83af577859';
-
-function getCurrencyCity(serchQuery = 'kiev') {
-    return fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${serchQuery}&units=metric&appid=${apiKey}`,
-    )
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Error fetching data');
-        })
-        .then(data)
-        .catch(err => {
-            console.error('Error: ', err);
-        });
-}
-
-let oneDay = '';
-
-getCurrencyCity().then(response => {
-    const getDate = data => new Date(data.dt * 1000).getDate();
-    // console.log(response.list);
-    const dates = response.list
-        .map(element => getDate(element))
-        .filter((el, idx, arr) => arr.indexOf(el) === idx);
-    // массив из 5 дней
-    // console.log(dates);
-    const list = dates
-        .map(el => response.list.filter(elem => getDate(elem) === el))
-        .map(element => ({
-            date: element[0].dt,
-            forecast: element,
-        }));
-    const changedData = {
-        ...response,
-        list,
-    };
-
-    renderMarkup(
-        fiveDaysTmpl,
-        changedData.list[0].date,
-        refs.daysContainer,
-        'beforeend',
-    );
-
-    let days = [];
-    let hours = [];
-
-    console.log(days);
-    changedData.list.map((a, e) => {
-        console.log(a);
-        days.push(tranformDay(e, a));
-        console.log(e);
-    });
-
-    changedData.list[1].forecast.map(e => {
-        hours.push(tranformHours(e));
-    });
-
-    updateDaysMarkup(days);
-    updateMoreInfoMarkup(hours);
-});
+refs.fiveDaysBtn.addEventListener('click', getweatherFiveDay);
+refs.daysContainer.addEventListener('click', setActiveTag);
 
 const tranformDay = (a, data) => {
     return {
@@ -84,6 +26,18 @@ const tranformDay = (a, data) => {
             day: 'numeric',
         }),
         index: a,
+        tempMax: Math.round(
+            data.forecast.reduce((acc, value) => acc + value.main.temp_max, 0) /
+                data.forecast.length,
+        ),
+        tempMin: Math.round(
+            data.forecast.reduce((acc, value) => acc + value.main.temp_min, 0) /
+                data.forecast.length,
+        ),
+        icon:
+            'http://openweathermap.org/img/wn/' +
+            data.forecast[0].weather[0].icon +
+            '.png',
     };
 };
 
@@ -94,9 +48,8 @@ const tranformHours = data => {
             hour: '2-digit',
             minute: '2-digit',
         }),
+
         temp: Math.round(data.main.temp),
-        tempMin: Math.round(data.main.temp_min),
-        tempMax: Math.round(data.main.temp_max),
         humidity: data.main.humidity,
         pressure: data.main.pressure,
         wind: data.wind.speed,
@@ -112,16 +65,92 @@ function updateDaysMarkup(day) {
 
 function updateMoreInfoMarkup(forThreeHours) {
     const markup = dayMoreInfoTmpl(forThreeHours);
-    refs.daysContainerMoreInfo.insertAdjacentHTML('beforeend', markup);
+    refs.daysContainerMoreInfo.innerHTML = markup;
 }
 
-refs.daysContainer.addEventListener('click', showMoreInformation);
+function getweatherFiveDay(event) {
+    fiveDayService.days.length = 0;
+    fiveDayService.hits = fiveDayService.getCurrencyCity();
 
-function showMoreInformation(e) {
+    fiveDayService.hits.then(response => {
+        const getDate = data => new Date(data.dt * 1000).getDate();
+
+        const dates = response.list
+            .map(element => getDate(element))
+            .filter((el, idx, arr) => arr.indexOf(el) === idx);
+
+        const list = dates
+            .map(el => response.list.filter(elem => getDate(elem) === el))
+            .map(element => ({
+                date: element[0].dt,
+                forecast: element,
+            }));
+        const changedData = {
+            ...response,
+            list,
+        };
+        changedData.list.map((a, e) => {
+            fiveDayService.days.push(tranformDay(e, a));
+        });
+        updateDaysMarkup(fiveDayService.days);
+    });
+}
+
+function showMoreInformation() {
+    fiveDayService.hours.length = 0;
+    fiveDayService.hits.then(response => {
+        const getDate = data => new Date(data.dt * 1000).getDate();
+
+        const dates = response.list
+            .map(element => getDate(element))
+            .filter((el, idx, arr) => arr.indexOf(el) === idx);
+
+        const list = dates
+            .map(el => response.list.filter(elem => getDate(elem) === el))
+            .map(element => ({
+                date: element[0].dt,
+                forecast: element,
+            }));
+        const changedData = {
+            ...response,
+            list,
+        };
+
+        changedData.list[fiveDayService.oneDay].forecast.map(e => {
+            fiveDayService.hours.push(tranformHours(e));
+        });
+        updateMoreInfoMarkup(fiveDayService.hours);
+    });
+}
+
+function setActiveTag(e) {
     if (e.target.nodeName !== 'A') {
         return;
     }
-    oneDay = Number(e.target.dataset.index);
-    console.log(oneDay);
-    console.log(typeof oneDay);
+    fiveDayService.oneDay = Number(e.target.dataset.index);
+    const nextActiveTag = e.target.parentNode;
+    const currentActiveTag = refs.daysContainer.querySelector(
+        '.day__item--active',
+    );
+    if (currentActiveTag) {
+        currentActiveTag.classList.remove('day__item--active');
+        refs.daysContainerMoreInfo.innerHTML = '';
+        showMoreInformation();
+    } else {
+        nextActiveTag.classList.add('day__item--active');
+        refs.jsMoreInfoContainer.classList.remove('is-hidden');
+        refs.daysContainerMoreInfo.innerHTML = '';
+        showMoreInformation();
+    }
+    if (currentActiveTag === nextActiveTag) {
+        removeActiveTag(currentActiveTag);
+    }
+}
+
+function removeActiveTag(event) {
+    if (event) {
+        event.classList.remove('day__item--active');
+        refs.jsMoreInfoContainer.classList.add('is-hidden');
+        refs.daysContainerMoreInfo.innerHTML = '';
+    }
 }

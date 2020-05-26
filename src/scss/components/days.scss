@@ -1,7 +1,8 @@
 .days {
     @extend %flex;
     @extend %space-between;
-    @include size(250px, null);
+    @include size(230px, null);
+    padding: 0;
 }
 
 @include md {

@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
         <title>Weather</title>
     </head>
 
@@ -50,29 +49,41 @@
 
                 <!-- Секция  1 день и 5 дней-->
 
+                <section class="city__section container is-hidden">
+                    <div class="weather">
+                        <h2 class="js-heading"></h2>
+                        <ul class="days js-five-days"></ul>
+
+                        <div class="arrow-wrap">
+                            <button
+                                class="arrow arrow__prev arrow__prev--fix js-btn__five-days-next"
+                            ></button>
+                            <button
+                                class="arrow arrow__next arrow__next--fix js-btn__five-days-prev"
+                            ></button>
+                        </div>
+                        <div class="js-more-info__container is-hidden">
+                            <ul
+                                class="more-info days js-more-info is-hidden"
+                            ></ul>
+                            <div class="arrow-wrap">
+                                <span
+                                    class="arrow arrow__prev arrow__prev--fix js-more-info-arrow__prev"
+                                ></span>
+                                <span
+                                    class="arrow arrow__next arrow__next--fix js-more-info-arrow__next"
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section
                     class="city__section is-hidden animate__animated animate__zoomIn"
                 >
                     <div class="weather">
                         <h2 class="js-heading"></h2>
-                        <ul class="days js-five-days">
-                            <!-- <li class="day__item">
-                                <h2 class="day__week">Sanday</h2>
-                                <h2 class="day__month">09 Feb</h2>
-                                <p>icon</p>
-                                <div class="day__tempr">
-                                    <div>
-                                        <h3 class="day__tempr--min-max">min</h3>
-                                        <p class="day__tempr--degrees">-2</p>
-                                    </div>
-                                    <div>
-                                        <h3 class="day__tempr--min-max">max</h3>
-                                        <p class="day__tempr--degrees">-5</p>
-                                    </div>
-                                </div>
-                                <a class="more-info__btn">more info</a>
-                            </li> -->
-                        </ul>
+                        <ul class="days js-five-days"></ul>
 
                         <div class="arrow-wrap">
                             <span
@@ -83,20 +94,7 @@
                             ></span>
                         </div>
 
-                        <ul class="more-info days js-more-info">
-                            <!-- <li class="more-info__item js-more-info__item">
-                                <h3 class="day__tempr--min-max more-info__time">
-                                    00:00
-                                </h3>
-                                <p>icon</p>
-                                <p class="day__tempr-degrees more-info__tempr">
-                                    -5
-                                </p>
-                                <p class="more-info__descr">772 mm</p>
-                                <p class="more-info__descr">54%</p>
-                                <p class="more-info__descr">3,7 m/s</p>
-                                </li> -->
-                        </ul>
+                        <ul class="more-info days js-more-info"></ul>
                     </div>
                 </section>
 

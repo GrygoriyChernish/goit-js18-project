@@ -5,6 +5,7 @@ import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
 import renderMarkup from './components/render-markup';
+import fiveDayService from './apiServiceFiveDay';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -14,6 +15,8 @@ const refs = {
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
     background: document.querySelector('.background'),
+
+    // background: document.querySelector('.background'),
     fiveDaysBtn: document.querySelector('.js-days'),
     fiveDayHeading: document.querySelector('.js-heading'),
     quoteChange: document.querySelector('.quote'),
@@ -26,7 +29,7 @@ const defaultCity = 'kiev';
 const appState = {
     currentCity: defaultCity,
 };
-
+fiveDayService.query = defaultCity;
 // Запрос данных API
 
 function fetchData(geoSearch = defaultCity) {
@@ -43,6 +46,7 @@ function updateWeatherResult(params) {
     fetchData(params)
         .then(data => {
             const days = tranformData(data);
+            // console.log(days);
             createHtml(days);
         })
         .catch(err => {
@@ -84,11 +88,11 @@ const tranformData = data => {
 // Создание разметки и очистка
 
 function createHtml(days) {
-    renderMarkup(degree, days, refs.oneDayDegree);
+    renderMarkup(degree, days, refs.oneDayDegree, 'beforeend');
 
-    renderMarkup(date, days, refs.oneDayData);
+    renderMarkup(date, days, refs.oneDayData, 'beforeend');
 
-    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading);
+    renderMarkup(fiveDaysHeadingTmpl, days, refs.fiveDayHeading, 'beforeend');
 
     renderMarkup(
         quote,
@@ -132,6 +136,7 @@ refs.searchForm.addEventListener('submit', event => {
     const form = event.target;
     const searchQuery = form.elements.query.value;
     appState.currentCity = form.elements.query.value;
+    fiveDayService.query = form.elements.query.value;
 
     updateWeatherResult(searchQuery);
 
@@ -156,7 +161,7 @@ refs.oneDayBtn.addEventListener('click', e => {
 // Запрос к серверу по клику на кнопку "5 дней"
 
 refs.fiveDaysBtn.addEventListener('click', () => {
-    console.log('Click!');
+    // console.log('Click!');
     // const city = appState.currentCity;
     // updateWeatherResult(city);
 });
