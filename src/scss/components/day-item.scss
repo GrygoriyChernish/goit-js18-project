@@ -25,3 +25,14 @@
         @include size(105px, null);
     }
 }
+
+.day__item--active {
+    .day__week {
+        color: $accent;
+        opacity: 1;
+    }
+
+    .more-info__btn {
+        opacity: 1;
+    }
+}

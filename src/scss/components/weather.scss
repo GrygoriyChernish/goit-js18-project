@@ -18,16 +18,20 @@
     margin: 0;
 }
 
+.weather__icon {
+    margin: 0 auto;
+}
+
 .pressure {
     margin-top: 10px;
     &::before {
         content: '';
         position: absolute;
-        left: 15px;
+        left: 10px;
         display: block;
         width: 22px;
         height: 22px;
-        // background: url(../icons/pressure@1X.png) no-repeat;
+        background: url(../icons/more-info/pressure@1X.png) no-repeat;
     }
 }
 
@@ -35,11 +39,11 @@
     &::before {
         content: '';
         position: absolute;
-        left: 22px;
+        left: 15px;
         display: block;
         width: 22px;
         height: 22px;
-        // background: url(../icons/humidity@1X.png) no-repeat;
+        background: url(../icons/more-info/humidity@1X.png) no-repeat;
     }
 }
 
@@ -47,11 +51,11 @@
     &::before {
         content: '';
         position: absolute;
-        left: 15px;
+        left: 10px;
         display: block;
-        width: 22px;
+        width: 25px;
         height: 22px;
-        // background: url(../icons/wind@1X.png) no-repeat;
+        background: url(../icons/more-info/wind@1X.png) no-repeat;
     }
 }
 

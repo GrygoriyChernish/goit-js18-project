@@ -1,14 +1,11 @@
 {{#each this}}
-<li class="more-info__item js-more-info__item">
-    <h3 class="day__tempr--min-max more-info__time">
-        00:00
-    </h3>
-    <p>icon</p>
-    <p class="day__tempr-degrees more-info__tempr">
-        -5
-    </p>
-    <p class="more-info__descr">772 mm</p>
-    <p class="more-info__descr">54%</p>
-    <p class="more-info__descr">3,7 m/s</p>
+<li class="more-info__item">
+    <h3 class="day__tempr--min-max more-info__time">{{hours}}</h3>
+    <img class="degree__icon weather__icon" src="{{icon}}" alt="icon" />
+    <p class="day__tempr--degrees more-info__tempr">{{temp}}</p>
+    <p class="more-info__descr pressure">{{pressure}}mm</p>
+    <p class="more-info__descr humidity">{{humidity}}%</p>
+    <p class="more-info__descr wind">{{wind}}m/s</p>
 </li>
+
 {{/each}}

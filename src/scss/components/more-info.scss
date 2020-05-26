@@ -4,7 +4,7 @@
     opacity: 54%;
     cursor: pointer;
     text-decoration: underline;
-
+    font-size: 12px;
     &:hover {
         opacity: 1;
     }
@@ -29,9 +29,10 @@
 
 .more-info__descr {
     position: relative;
-    @include padding(null null 13px 20px);
+    @include padding(null null 13px 45px);
     @include font-source(14px, 400);
     opacity: 54%;
+    text-align: left;
 }
 
 @include md {
@@ -62,4 +63,7 @@
             font-size: $text-s;
         }
     }
+}
+.more-info {
+    display: flex;
 }

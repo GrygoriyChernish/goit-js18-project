@@ -25,3 +25,11 @@ import './js/date-time';
 import './js/5days';
 
 // Цитаты
+// $('.js-five-days').slick({
+//     infinite: false,
+//     slidesToShow: 3,
+//     variableWidth: false,
+//     mobileFirst: true,
+//     nextArrow: $('.js-btn__five-days-next'),
+//     prevArrow: $('.js-btn__five-days-prev'),
+// });

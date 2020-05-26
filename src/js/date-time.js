@@ -5,6 +5,7 @@ import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
 import renderMarkup from './components/render-markup';
+import fiveDayService from './apiServiceFiveDay';
 
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
@@ -13,13 +14,12 @@ const refs = {
     oneDayData: document.querySelector('.js-sun'),
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
-    background: document.querySelector('.background')
-
     background: document.querySelector('.background'),
+
+    // background: document.querySelector('.background'),
     fiveDaysBtn: document.querySelector('.js-days'),
     fiveDayHeading: document.querySelector('.js-heading'),
     quoteChange: document.querySelector('.quote'),
-
 };
 
 const defaultCity = 'kiev';
@@ -27,15 +27,15 @@ const defaultCity = 'kiev';
 // Сохранение текущего города, который ввели в поле поиска или по умолчанию
 
 const appState = {
-    currentCity: defaultCity
+    currentCity: defaultCity,
 };
-
+fiveDayService.query = defaultCity;
 // Запрос данных API
 
 function fetchData(geoSearch = defaultCity) {
     return fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${geoSearch}&units=metric&appid=${apiKey}`
-    ).then((response) => {
+        `https://api.openweathermap.org/data/2.5/weather?q=${geoSearch}&units=metric&appid=${apiKey}`,
+    ).then(response => {
         if (response.ok) return response.json();
         throw new Error('Error fetching data');
     });
@@ -44,13 +44,16 @@ function fetchData(geoSearch = defaultCity) {
 function updateWeatherResult(params) {
     clearHtml();
     fetchData(params)
-        .then((data) => {
+        .then(data => {
             const days = tranformData(data);
+            // console.log(days);
             createHtml(days);
         })
-        .catch((err) => {
+        .catch(err => {
             console.error('Error: ', err);
-            alert(`По запросу "${appState.currentCity}" найдено 0 местоположений`);
+            alert(
+                `По запросу "${appState.currentCity}" найдено 0 местоположений`,
+            );
         });
 }
 
@@ -68,7 +71,7 @@ function timeConversion(duration) {
 
 // Преобразование данных
 
-const tranformData = (data) => {
+const tranformData = data => {
     return {
         sunrise: timeConversion((data.sys.sunrise + data.timezone) * 1000),
         sunset: timeConversion((data.sys.sunset + data.timezone) * 1000),
@@ -77,7 +80,8 @@ const tranformData = (data) => {
         temp: Math.round(data.main.temp),
         tempMin: Math.round(data.main.temp_min),
         tempMax: Math.round(data.main.temp_max),
-        icon: 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png'
+        icon:
+            'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png',
     };
 };
 
@@ -126,12 +130,13 @@ const getRandomNumber = () => Math.floor(Math.random() * 20);
 
 // Запрос к серверу по сабмиту
 
-refs.searchForm.addEventListener('submit', (event) => {
+refs.searchForm.addEventListener('submit', event => {
     event.preventDefault();
 
     const form = event.target;
     const searchQuery = form.elements.query.value;
     appState.currentCity = form.elements.query.value;
+    fiveDayService.query = form.elements.query.value;
 
     updateWeatherResult(searchQuery);
 
@@ -141,7 +146,7 @@ refs.searchForm.addEventListener('submit', (event) => {
         .then(({ hits }) => {
             setBackgroundImage(hits[getRandomNumber()].largeImageURL);
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
 });
 
 // Запрос к серверу по клику на кнопку "TODAY"
@@ -156,7 +161,7 @@ refs.oneDayBtn.addEventListener('click', e => {
 // Запрос к серверу по клику на кнопку "5 дней"
 
 refs.fiveDaysBtn.addEventListener('click', () => {
-    console.log('Click!');
+    // console.log('Click!');
     // const city = appState.currentCity;
     // updateWeatherResult(city);
 });
@@ -165,4 +170,11 @@ refs.fiveDaysBtn.addEventListener('click', () => {
 
 updateWeatherResult();
 
-export { updateWeatherResult, getRandomNumber, setBackgroundImage, clearHtml, createHtml, tranformData };
+export {
+    updateWeatherResult,
+    getRandomNumber,
+    setBackgroundImage,
+    clearHtml,
+    createHtml,
+    tranformData,
+};
