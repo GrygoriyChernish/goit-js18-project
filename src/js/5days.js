@@ -1,7 +1,6 @@
 import fiveDaysTmpl from '../template/five-days.hbs';
 import dayMoreInfoTmpl from '../template/five-days-more-info.hbs';
 import fiveDayService from './apiServiceFiveDay';
-
 const refs = {
     daysContainer: document.querySelector('.js-five-days'),
     moreInfoContainer: document.querySelector('.js-more-info'),

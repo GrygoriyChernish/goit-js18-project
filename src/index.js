@@ -33,3 +33,10 @@ import './js/5days';
 //     nextArrow: $('.js-btn__five-days-next'),
 //     prevArrow: $('.js-btn__five-days-prev'),
 // });
+// const arr = [1, 2, 3, 4, 5, 6, -9, -7];
+// function arrayMin(arr) {
+//     return arr.reduce(function (p, v) {
+//         return p < v ? p : v;
+//     }, 0);
+// }
+// console.log(Math.min(...arr));
