@@ -4,10 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link
-            rel="stylesheet"
-            href="path/to/font-awesome/css/font-awesome.min.css"
-        />
+
         <title>Weather</title>
     </head>
 
@@ -38,11 +35,11 @@
 
                 <!-- Секция Degree -->
 
-                <div class="js-degree"></div>
+                <div class="js-degree animate__animated animate__fadeIn"></div>
 
                 <!-- Кнопки Active & No Active  -->
 
-                <div class="btn__wrap">
+                <div class="btn__wrap animate__animated animate__fadeIn">
                     <button type="button" class="hvr-shrink btn js-today">
                         Today
                     </button>
@@ -53,7 +50,9 @@
 
                 <!-- Секция  1 день и 5 дней-->
 
-                <section class="city__section is-hidden">
+                <section
+                    class="city__section is-hidden animate__animated animate__zoomIn"
+                >
                     <div class="weather">
                         <h2 class="js-heading"></h2>
                         <ul class="days js-five-days">
@@ -103,7 +102,9 @@
 
                 <section>
                     <div class="wrapper js-wrapper">
-                        <div class="date-box section">
+                        <div
+                            class="date-box section animate__animated animate__fadeIn"
+                        >
                             <div class="date">
                                 <div class="data-suffix">
                                     <p id="data" class="date__data">
@@ -130,7 +131,9 @@
                             </div>
                         </div>
 
-                        <div class="quote"></div>
+                        <div
+                            class="quote animate__animated animate__fadeIn"
+                        ></div>
                     </div>
                 </section>
             </div>
