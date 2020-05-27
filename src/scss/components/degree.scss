@@ -23,7 +23,7 @@
 
 .degree__icon {
     @include size(42px, 42px);
-    @include margin(null auto 8px);
+    @include margin(null auto);
 }
 
 .degree__city {
