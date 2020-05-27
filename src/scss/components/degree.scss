@@ -1,27 +1,26 @@
 .degree {
-    @extend %flex;
-    @extend %center;
-    @extend %column;
     @include size(null, 190px);
     @include margin(null null 30px null);
+    @include padding(30px 60px);
     @include font-source-sans(null, $lite_main, 400, null);
 }
 
 .degree__icon {
     @include size(42px, 42px);
+    @include margin(null auto 8px);
 }
 
 .degree__city {
-    @include padding(16px null 20px null);
+    @include margin(null null 12px null);
     @include font-source-sans($text-m, $lite_main, 400, null);
 }
 
 .degree__temp {
-    padding-right: 14px;
+    @include margin(null 14px null null);
     @include font-source-sans($text-mobl, null, 300, null);
 
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
         @include font-source(36px, null);
         vertical-align: top;
@@ -47,7 +46,7 @@
 .degree__max-text {
     font-size: $text-s;
     color: $middle_dark;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .degree__min-value,
@@ -55,7 +54,7 @@
     font-size: $text-m;
 
     &::after {
-        content: '\00B0';
+        content: "\00B0";
         @include padding(null null null 2px);
     }
 }
@@ -64,14 +63,15 @@
     .degree {
         @include size(492px, 300px);
         @include margin(null auto 46px);
+        @include padding(30px 180px);
     }
 
     .degree__city {
-        @include padding(null null 12px null);
+        @include margin(null null 10px null);
     }
 
     .degree__temp {
-        @include padding(null 0 14px null);
+        @include margin(null 0 6px null);
         font-size: $text-tabl;
         &::after {
             font-size: 80px;
