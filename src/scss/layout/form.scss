@@ -1,23 +1,24 @@
 .form {
+    margin: 0;
+    padding: 0;
     position: relative;
     text-align: center;
     @include size(100%, null);
-    @include margin(null null 13px null);
-    @include padding(40px null null null);
+    @include margin(null null 10px null);
 
-    span {
-        position: absolute;
-        display: inline-block;
-        background: {
-            repeat: no-repeat;
-            position: center;
-        }
-        @include padding(28px 0 0 0);
-    }
+    // span {
+    //     position: absolute;
+    //     display: inline-block;
+    //     background: {
+    //         repeat: no-repeat;
+    //         position: center;
+    //     }
+    //     @include padding(28px 0 0 0);
+    // }
 }
 
 @include md {
     .form {
-        @include margin(null null 13px null);
+        @include margin(null null 15px null);
     }
 }

@@ -1,6 +1,6 @@
 .form__input {
     @include font-source-sans($text-s, $dark_main, 700, null);
-    @include size($cont-mob, 48px);
+    @include size(100%, 48px);
     @include border-radius(24px);
     background-color: $lite_main;
     border: 1px solid $lite_main;
