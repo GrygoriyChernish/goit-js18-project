@@ -48,7 +48,6 @@ const tranformHours = data => {
             hour: '2-digit',
             minute: '2-digit',
         }),
-
         temp: Math.round(data.main.temp),
         humidity: data.main.humidity,
         pressure: data.main.pressure,
@@ -69,7 +68,9 @@ function updateMoreInfoMarkup(forThreeHours) {
 }
 
 function getweatherFiveDay(event) {
-    fiveDayService.days.length = 0;
+    fiveDayService.resetDays();
+
+    refs.jsMoreInfoContainer.classList.add('is-hidden');
     fiveDayService.hits = fiveDayService.getCurrencyCity();
 
     fiveDayService.hits.then(response => {
@@ -78,7 +79,6 @@ function getweatherFiveDay(event) {
         const dates = response.list
             .map(element => getDate(element))
             .filter((el, idx, arr) => arr.indexOf(el) === idx);
-
         const list = dates
             .map(el => response.list.filter(elem => getDate(elem) === el))
             .map(element => ({
@@ -97,10 +97,9 @@ function getweatherFiveDay(event) {
 }
 
 function showMoreInformation() {
-    fiveDayService.hours.length = 0;
+    fiveDayService.resetHours();
     fiveDayService.hits.then(response => {
         const getDate = data => new Date(data.dt * 1000).getDate();
-
         const dates = response.list
             .map(element => getDate(element))
             .filter((el, idx, arr) => arr.indexOf(el) === idx);
@@ -115,7 +114,6 @@ function showMoreInformation() {
             ...response,
             list,
         };
-
         changedData.list[fiveDayService.oneDay].forecast.map(e => {
             fiveDayService.hours.push(tranformHours(e));
         });
@@ -135,13 +133,13 @@ function setActiveTag(e) {
     if (currentActiveTag) {
         currentActiveTag.classList.remove('day__item--active');
         refs.daysContainerMoreInfo.innerHTML = '';
-        showMoreInformation();
-    } else {
-        nextActiveTag.classList.add('day__item--active');
-        refs.jsMoreInfoContainer.classList.remove('is-hidden');
-        refs.daysContainerMoreInfo.innerHTML = '';
-        showMoreInformation();
+        // showMoreInformation();
     }
+    nextActiveTag.classList.add('day__item--active');
+    refs.jsMoreInfoContainer.classList.remove('is-hidden');
+    refs.daysContainerMoreInfo.innerHTML = '';
+    showMoreInformation();
+
     if (currentActiveTag === nextActiveTag) {
         removeActiveTag(currentActiveTag);
     }

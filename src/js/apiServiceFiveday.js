@@ -17,6 +17,12 @@ export default {
     oneDay: 0,
     hours: [],
     days: [],
+    resetHours() {
+        this.hours.length = 0;
+    },
+    resetDays() {
+        this.days.length = 0;
+    },
     get query() {
         return this.searchQuery;
     },
