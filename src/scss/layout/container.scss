@@ -1,8 +1,10 @@
 .container {
-    @include size(80%, 100vh);
+    @include size(80%, null);
     max-width: $cont-mob;
     @include margin(0 auto);
+    @include padding(30px null 35px);
     text-align: center;
+    background-color: gray;
 }
 
 @include md {
