@@ -1,6 +1,6 @@
 .day__week {
     @include font-source(12px, 400);
-    @include padding(null null 15px null);
+    @include padding(null null 20px null);
     opacity: 54%;
 
     &:hover {
