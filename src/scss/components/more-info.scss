@@ -10,9 +10,21 @@
     }
 }
 
-// .more-info__tempr {
-//      @include size(30px, null);
-// }
+.more-info {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        width: 250px; //90%
+        height: 3px;
+        overflow: visible;
+    }
+    &::-webkit-scrollbar-track {
+        background: $middle_lite;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $accent;
+    }
+}
 
 .more-info__item {
     @include size(120px, null);
