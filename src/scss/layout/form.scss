@@ -1,4 +1,5 @@
 .form {
+    @include margin(0 0 10px);
     margin: 0;
     padding: 0;
     position: relative;
@@ -6,19 +7,28 @@
     @include size(100%, null);
     @include margin(null null 10px null);
 
-    // span {
-    //     position: absolute;
-    //     display: inline-block;
-    //     background: {
-    //         repeat: no-repeat;
-    //         position: center;
-    //     }
-    //     @include padding(28px 0 0 0);
-    // }
+    &::before {
+        position: absolute;
+        z-index: 1;
+        @include psevdo;
+        @include size(30px, 30px);
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: {
+            repeat: no-repeat;
+            position: center;
+            image: url(../icons/location/location_search.svg);
+        }
+    }
 }
 
-@include md {
+@include lg {
     .form {
-        @include margin(null null 15px null);
+        @include margin(0 0 15px);
+
+        &::before {
+            left: 290px;
+        }
     }
 }
