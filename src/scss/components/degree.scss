@@ -7,7 +7,7 @@
 
 .degree__icon {
     @include size(42px, 42px);
-    @include margin(null auto 8px);
+    @include margin(null auto);
 }
 
 .degree__city {
@@ -20,7 +20,7 @@
     @include font-source-sans($text-mobl, null, 300, null);
 
     &::after {
-        content: "\00B0";
+        content: '\00B0';
         @include padding(null null null 2px);
         @include font-source(36px, null);
         vertical-align: top;
@@ -54,7 +54,7 @@
     font-size: $text-m;
 
     &::after {
-        content: "\00B0";
+        content: '\00B0';
         @include padding(null null null 2px);
     }
 }

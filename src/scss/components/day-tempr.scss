@@ -3,6 +3,7 @@
     @extend %flex;
     @extend %space-between;
     @include margin(null null 14px null);
+    @include padding(10px null null null);
     position: relative;
 
     &:before {
@@ -19,6 +20,7 @@
 .day__tempr--min-max {
     @include font-source(12px, 400);
     opacity: 54%;
+    margin: 0;
 }
 
 .day__tempr--degrees {
