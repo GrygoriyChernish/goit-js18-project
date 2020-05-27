@@ -10,11 +10,13 @@
 @include md {
     .container {
         max-width: $cont-tab;
+        @include padding(60px null 75px);
     }
 }
 
 @include lg {
     .container {
         max-width: $cont-desk;
+        @include padding(75px null 105px);
     }
 }
