@@ -11,7 +11,7 @@ const refs = {
 };
 
 let isActive = false;
-let favouriteCities = localStorage.getItem('cities')
+export let favouriteCities = localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [];
 localStorage.setItem('cities', JSON.stringify(favouriteCities));
