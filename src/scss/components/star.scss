@@ -1,8 +1,17 @@
 .star {
-    @include size(30px, 30px);
+    @include size(25px, 25px);
     @include border-radius(50%);
-    background-image: url(../icons/star/star.svg);
-    right: 25px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: {
+        position: center;
+        color: transparent;
+        repeat: no-repeat;
+        image: url(../icons/star/star.svg);
+    }
 
     &:hover,
     :focus {
@@ -21,6 +30,6 @@
 
 @include lg {
     .star {
-        right: 298px;
+        right: 295px;
     }
 }
