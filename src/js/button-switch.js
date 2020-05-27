@@ -16,7 +16,7 @@ function onBtnClick(event) {
             addClassList(refs.degree, 'is-hidden');
             addClassList(refs.wrapDateQuote, 'is-hidden');
             removeClassList(refs.citySection, 'is-hidden');
-            console.log(event.target);
+
             refs.fiveDaysBtn.disabled = true;
             refs.todayBtn.disabled = false;
         } else {
@@ -24,7 +24,7 @@ function onBtnClick(event) {
             removeClassList(refs.wrapDateQuote, 'is-hidden');
             addClassList(refs.citySection, 'is-hidden');
             refs.daysContainer.innerHTML = '';
-            console.log(event.target);
+
             refs.fiveDaysBtn.disabled = false;
             refs.todayBtn.disabled = true;
         }
