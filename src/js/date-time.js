@@ -1,12 +1,13 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
+import cityItem from '../template/cityItem.hbs';
 import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
 import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
 import renderMarkup from './components/render-markup';
 import fiveDayService from './apiServiceFiveDay';
-
+import { favouriteCities } from './add-cities-list';
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
 const refs = {
@@ -15,8 +16,7 @@ const refs = {
     oneDayDegree: document.querySelector('.js-degree'),
     searchForm: document.querySelector('.form'),
     background: document.querySelector('.background'),
-
-    // background: document.querySelector('.background'),
+    choiceFavorite: document.querySelector('.js-input-list'),
     fiveDaysBtn: document.querySelector('.js-days'),
     fiveDayHeading: document.querySelector('.js-heading'),
     quoteChange: document.querySelector('.quote'),
@@ -46,7 +46,6 @@ function updateWeatherResult(params) {
     fetchData(params)
         .then(data => {
             const days = tranformData(data);
-            // console.log(days);
             createHtml(days);
         })
         .catch(err => {
@@ -152,18 +151,27 @@ refs.searchForm.addEventListener('submit', event => {
 // Запрос к серверу по клику на кнопку "TODAY"
 
 refs.oneDayBtn.addEventListener('click', e => {
-    e.preventDefault();
-
     const city = appState.currentCity;
     updateWeatherResult(city);
+});
+
+
+
+// const markupFavorite = cityItem(favouriteCities);
+// refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
+
+refs.choiceFavorite.addEventListener('click', e => {
+    const location = e.target.textContent;
+    appState.currentCity = location;
+    updateWeatherResult(location);
 });
 
 // Запрос к серверу по клику на кнопку "5 дней"
 
 refs.fiveDaysBtn.addEventListener('click', () => {
-    // console.log('Click!');
-    // const city = appState.currentCity;
-    // updateWeatherResult(city);
+//     // console.log('Click!');
+//     // const city = appState.currentCity;
+//     // updateWeatherResult(city);
 });
 
 // Default call
