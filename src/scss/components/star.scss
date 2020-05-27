@@ -3,6 +3,12 @@
     @include border-radius(50%);
     background-image: url(../icons/star/star.svg);
     right: 25px;
+    //
+    border: none;
+    background-position: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: absolute;
 
     &:hover,
     :focus {
