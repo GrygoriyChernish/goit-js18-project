@@ -2,9 +2,9 @@
     @extend %flex;
     @extend %center;
     @extend %column;
-    @include size(280px, 190px);
+    // @include size(280px, 190px);
     border-radius: 35px;
-    margin-bottom: 42px;
+    // margin-bottom: 42px;
 }
 
 .date {
@@ -87,11 +87,11 @@
 }
 
 @include md {
-    .date-box {
-        width: 492px;
-        height: 277px;
-        margin: 0 auto 62px;
-    }
+    // .date-box {
+    // width: 492px;
+    // height: 277px;
+    // margin: 0 auto 62px;
+    // }
 
     .date__data,
     .date__day-week {
