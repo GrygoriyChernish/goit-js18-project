@@ -2,7 +2,7 @@
     @extend %flex;
     @extend %center;
     @include size(100%, 30px);
-    @include margin(null null 30px null);
+    @include margin(null null 50px null);
 }
 
 @include md {

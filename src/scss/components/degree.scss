@@ -1,8 +1,24 @@
 .degree {
-    @include size(null, 190px);
-    @include margin(null null 30px null);
-    @include padding(30px 60px);
+    display: flex;
+    justify-content: center;
+    @include size(80%, 100%);
+    max-width: 900px;
+    @include margin(0 auto 70px);
     @include font-source-sans(null, $lite_main, 400, null);
+    position: relative;
+
+    &__wrap {
+        align-items: end;
+    }
+
+    ::before {
+        // @include size(280px, 190px);
+        // position: absolute;
+        // @include psevdo;
+        // @include border-radius(35px);
+        // box-shadow: 0px 8px 43px 0px rgba(16, 33, 54, 0.59);
+        background-color: rgba(16, 33, 54, 0.59);
+    }
 }
 
 .degree__icon {
@@ -20,7 +36,7 @@
     @include font-source-sans($text-mobl, null, 300, null);
 
     &::after {
-        content: "\00B0";
+        content: '\00B0';
         @include padding(null null null 2px);
         @include font-source(36px, null);
         vertical-align: top;
@@ -54,17 +70,17 @@
     font-size: $text-m;
 
     &::after {
-        content: "\00B0";
+        content: '\00B0';
         @include padding(null null null 2px);
     }
 }
 
 @include md {
-    .degree {
-        @include size(492px, 300px);
-        @include margin(null auto 46px);
-        @include padding(30px 180px);
-    }
+    // .degree {
+    // @include size(492px, 300px);
+    // @include margin(null auto 46px);
+    // @include padding(30px 180px);
+    // }
 
     .degree__city {
         @include margin(null null 10px null);
@@ -97,6 +113,6 @@
 }
 @include lg {
     .degree {
-        @include margin(null 0 28px null);
+        justify-content: flex-end;
     }
 }
