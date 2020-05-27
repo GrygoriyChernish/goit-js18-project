@@ -135,13 +135,13 @@ function setActiveTag(e) {
     if (currentActiveTag) {
         currentActiveTag.classList.remove('day__item--active');
         refs.daysContainerMoreInfo.innerHTML = '';
-        showMoreInformation();
-    } else {
-        nextActiveTag.classList.add('day__item--active');
-        refs.jsMoreInfoContainer.classList.remove('is-hidden');
-        refs.daysContainerMoreInfo.innerHTML = '';
-        showMoreInformation();
+        // showMoreInformation();
     }
+    nextActiveTag.classList.add('day__item--active');
+    refs.jsMoreInfoContainer.classList.remove('is-hidden');
+    refs.daysContainerMoreInfo.innerHTML = '';
+    showMoreInformation();
+
     if (currentActiveTag === nextActiveTag) {
         removeActiveTag(currentActiveTag);
     }
