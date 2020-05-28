@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     @include margin(0 auto 20px);
-    // margin: 0 auto;
-    // margin-bottom: 20px;
     @include size(50%, auto);
     max-width: 130px;
 
