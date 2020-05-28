@@ -17,5 +17,9 @@
     .btn__wrap {
         @include margin(null 0 100px null);
         @include size(26%, null);
+
+        &-fix {
+            margin-bottom: 30px;
+        }
     }
 }

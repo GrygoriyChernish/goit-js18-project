@@ -14,7 +14,6 @@
     overflow-x: scroll;
 
     &::-webkit-scrollbar {
-        width: 250px; //90%
         height: 3px;
         overflow: visible;
     }
@@ -75,7 +74,7 @@
 @include lg {
     .more-info {
         @include margin(0 null null null);
-
+        overflow-x: hidden;
         &__btn {
             font-size: $text-s;
         }

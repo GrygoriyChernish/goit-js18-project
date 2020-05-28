@@ -7,7 +7,7 @@
 
 @include lg {
     .date-box {
-        @include padding(110px 70px 96px 106px);
+        @include padding(110px 70px 80px 106px);
         @include margin(0 0 0 -110px);
     }
 }
