@@ -1,0 +1,18 @@
+{{#each this}}
+<li class="day__item" data-index="{{index}}">
+    <h3 class="day__week">{{dayWeek}}</h3>
+    <h3 class="day__month">{{dayMonth}}</h3>
+    <img class="degree__icon weather__icon" src="{{icon}}" alt="icon" />
+    <div class="day__tempr">
+        <div>
+            <h4 class="day__tempr--min-max">min</h4>
+            <p class="day__tempr--degrees">{{tempMin}}</p>
+        </div>
+        <div>
+            <h4 class="day__tempr--min-max">max</h4>
+            <p class="day__tempr--degrees">{{tempMax}}</p>
+        </div>
+    </div>
+    <a class="more-info__btn " data-index="{{index}}">more info</a>
+</li>
+{{/each}}

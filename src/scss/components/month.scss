@@ -1,0 +1,41 @@
+.month {
+    position: relative;
+    @include font-source-sans(text-s, $lite_main, 400, null);
+    margin-right: 10px;
+
+    &::after {
+        @include psevdo($display: block);
+        @include size(1px, 20px);
+        @include position(absolute, 0 -10px null null);
+        background-color: rgb(231, 232, 235);
+    }
+}
+
+.month-time {
+    display: flex;
+    justify-content: center;
+    @include margin(0 auto 30px);
+    padding: 0;
+    @include size(100%, auto);
+    max-width: 130px;
+}
+
+@include md {
+    .month {
+        font-size: $text-m;
+    }
+
+    .month-time {
+        max-width: 210px;
+        margin-bottom: 38px;
+    }
+}
+
+@include lg {
+    .month-time {
+        justify-content: start;
+        width: 100%;
+        max-width: 190px;
+        margin: 0;
+    }
+}

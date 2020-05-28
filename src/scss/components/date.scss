@@ -1,0 +1,48 @@
+.date {
+    display: flex;
+    justify-content: center;
+    @include margin(0 auto 20px);
+    @include size(100%, auto);
+    max-width: 130px;
+
+    &__time,
+    &__suffix,
+    &__day-week {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        @include font-source-sans(30px, rgb(247, 247, 247), 300, 0.7);
+    }
+
+    &__time {
+        margin-right: 5px;
+    }
+
+    &__suffix {
+        font-size: 12px;
+        margin-right: 15px;
+    }
+}
+
+@include md {
+    .date {
+        max-width: 210px;
+        margin-bottom: 14px;
+
+        &__time,
+        &__day-week {
+            font-size: 60px;
+        }
+
+        &__suffix {
+            font-size: 22px;
+        }
+    }
+}
+
+@include lg {
+    .date {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}

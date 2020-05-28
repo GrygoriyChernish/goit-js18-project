@@ -1,0 +1,12 @@
+.date-section {
+    @include size(100%, auto);
+    margin: 0 auto;
+    padding: 0;
+}
+
+@include lg {
+    .date-section {
+        display: flex;
+        justify-content: space-between;
+    }
+}

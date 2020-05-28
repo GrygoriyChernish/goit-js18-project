@@ -1,6 +1,15 @@
 .day__item {
     @include size(58px, null);
     @include padding(22px null null null);
+
+    &:hover .day__week {
+        color: $accent;
+        opacity: 1;
+    }
+
+    &:hover .more-info__btn {
+        opacity: 1;
+    }
 }
 
 @include md {
@@ -13,6 +22,17 @@
 
 @include lg {
     .day__item {
-        @include size(82px, null);
+        @include size(105px, null);
+    }
+}
+
+.day__item--active {
+    .day__week {
+        color: $accent;
+        opacity: 1;
+    }
+
+    .more-info__btn {
+        opacity: 1;
     }
 }

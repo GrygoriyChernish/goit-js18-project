@@ -1,17 +1,28 @@
 .more-info__btn {
-    @include font-source(12px, 400);
+    @include font-source(null, 400);
     letter-spacing: 0px;
     opacity: 54%;
     cursor: pointer;
     text-decoration: underline;
-
+    font-size: 12px;
     &:hover {
         opacity: 1;
     }
 }
 
-.more-info__tempr {
-    @include size(30px, null);
+.more-info {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        height: 3px;
+        overflow: visible;
+    }
+    &::-webkit-scrollbar-track {
+        background: $middle_lite;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $accent;
+    }
 }
 
 .more-info__item {
@@ -19,20 +30,25 @@
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     @include padding(16px null null null);
-    @include margin(16px null null null);
+    @include margin(null 5px null null);
+
     cursor: pointer;
 
     &:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
+    &:last-child {
+        margin: 0;
+    }
 }
 
 .more-info__descr {
-    padding-bottom: 13px;
-    @include padding(null null 13px null);
-    font-size: 14px;
-    font-weight: 400;
+    position: relative;
+    @include padding(null null null 45px);
+    @include margin(null null 13px null);
+    @include font-source(14px, 400);
     opacity: 54%;
+    text-align: left;
 }
 
 @include md {
@@ -49,12 +65,21 @@
     }
 }
 
+@media (max-width: 1139px) {
+    .more-info__btn {
+        @include margin(null null 20px null);
+    }
+}
+
 @include lg {
     .more-info {
         @include margin(0 null null null);
-
+        overflow-x: hidden;
         &__btn {
-            font-size: $text-m;
+            font-size: $text-s;
         }
     }
+}
+.more-info {
+    display: flex;
 }

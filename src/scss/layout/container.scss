@@ -1,20 +1,22 @@
 .container {
-    width: $cont-mob;
+    @include size(80%, null);
+    max-width: $cont-mob;
     @include margin(0 auto);
+    @include padding(30px null 30px null);
     text-align: center;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
 }
 
 @include md {
     .container {
-        width: $cont-tab;
+        @include size(80%, null);
+        max-width: $cont-tab;
+        @include padding(60px null 50px null);
     }
 }
 
 @include lg {
     .container {
-        width: $cont-desk;
+        max-width: $cont-desk;
+        @include padding(75px null 70px null);
     }
 }

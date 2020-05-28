@@ -13,15 +13,20 @@
 
 .arrow__prev {
     background-image: url(../icons/back.svg);
+
     &:hover {
         background-color: $lite_main;
     }
 
     &--fix {
+        background-image: url(../icons/back-lite.svg);
+        border: none;
+        background-position: center;
         background-color: transparent;
+        background-repeat: no-repeat;
 
         &:hover {
-            background-color: transparent;
+            background-color: $middle_lite;
         }
     }
 }
@@ -34,10 +39,14 @@
     }
 
     &--fix {
+        background-image: url(../icons/next-lite.svg);
+        border: none;
+        background-position: center;
         background-color: transparent;
+        background-repeat: no-repeat;
 
         &:hover {
-            background-color: transparent;
+            background-color: $middle_lite;
         }
     }
 }

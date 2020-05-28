@@ -8,6 +8,57 @@
     background-color: $bg_opacity;
 }
 
+.more-info__tempr {
+    margin: 0 auto;
+    width: 30px;
+    text-align: center;
+}
+
+.slick-dotted.slick-slider {
+    margin: 0;
+}
+
+.weather__icon {
+    margin: 0 auto;
+}
+
+.pressure {
+    padding-top: 10px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url(../icons/more-info/pressure@1X.png) no-repeat;
+    }
+}
+
+.humidity {
+    &::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        display: block;
+        width: 22px;
+        height: 22px;
+        background: url(../icons/more-info/humidity@1X.png) no-repeat;
+    }
+}
+
+.wind {
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        display: block;
+        width: 25px;
+        height: 22px;
+        background: url(../icons/more-info/wind@1X.png) no-repeat;
+    }
+}
+
 @include md {
     .weather {
         @include size($cont-tab, null);

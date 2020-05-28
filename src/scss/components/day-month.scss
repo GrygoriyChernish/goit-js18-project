@@ -1,6 +1,8 @@
 .day__month {
-    @include font-source(16px, 400);
-    @include padding(null null 10px null);
+    @include font-source(25px, 400);
+    @include padding(10px null null null);
+    margin: (0 0 10px 0);
+    font-size: 16px;
 }
 
 @include md {
@@ -9,8 +11,8 @@
     }
 }
 
-@include lg {
-    .day__month {
-        @include margin(null null 20px null);
-    }
-}
+// @include lg {
+//     .day__month {
+//         // @include margin(null null 20px null);
+//     }
+// }

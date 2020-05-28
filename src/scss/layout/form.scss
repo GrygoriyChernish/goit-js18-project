@@ -1,30 +1,34 @@
 .form {
+    @include margin(0 0 10px);
+    margin: 0;
+    padding: 0;
     position: relative;
-    @include margin(null null 13px null);
-    @include padding(28px null null null);
+    text-align: center;
+    @include size(100%, null);
+    @include margin(null null 10px null);
 
-    span {
+    &::before {
         position: absolute;
-        display: inline-block;
+        z-index: 1;
+        @include psevdo;
+        @include size(30px, 30px);
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         background: {
             repeat: no-repeat;
             position: center;
+            image: url(../icons/location/location_search.svg);
         }
-        @include padding(28px 0 0 0);
-    }
-}
-
-@include md {
-    .form {
-        @include padding(62px 0 0 0);
-        @include margin(null null 13px null);
-        width: $cont-tab;
     }
 }
 
 @include lg {
     .form {
-        @include padding(78px 0 0 0);
-        width: $cont-desk;
+        @include margin(0 0 15px);
+
+        &::before {
+            left: 290px;
+        }
     }
 }

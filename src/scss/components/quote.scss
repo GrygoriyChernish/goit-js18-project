@@ -1,7 +1,7 @@
 .quote {
     display: inline-block;
-    @include size(200px, null);
-    @include margin(0 auto);
+    @include size(200px, auto);
+    @include margin(45px 0 null auto);
     text-align: right;
 }
 
@@ -20,6 +20,7 @@
         color: $middle_dark;
         top: 18px;
         right: 0px;
+        font-style: normal;
     }
 }
 
@@ -33,8 +34,8 @@
 
 @include md {
     .quote {
-        width: 373px;
-        @include margin(0 auto);
+        @include size(375px, auto);
+        margin-top: 65px;
     }
 
     .quote__text {
@@ -43,14 +44,13 @@
 
         &::before {
             font-size: 195px;
-            right: 20px;
             top: 35px;
         }
     }
 }
 
-// @include lg {
-//     .quote {
-//         // margin-bottom: 104px;
-//     }
-// }
+@include lg {
+    .quote {
+        margin: 0;
+    }
+}
