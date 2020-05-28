@@ -32,8 +32,9 @@
 
 @include lg {
     .background {
-        height: 100vh;
-        overflow: hidden;
+        min-height: 750px;
+        height: 100%;
+        overflow: cover;
         background-image: url('../icons/images-bg/bg-desk-1screen.png');
 
         &-fix {
