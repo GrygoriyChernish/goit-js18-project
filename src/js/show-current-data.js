@@ -2,7 +2,7 @@ import moment from 'moment';
 
 const refs = {
     date: document.querySelector('#data'),
-    suffix: document.querySelector('#suffix'),
+    suffix: document.querySelector('.js-date__suffix'),
     dayWeek: document.querySelector('#day-week'),
     time: document.querySelector('#time'),
     mounth: document.querySelector('#mounth'),

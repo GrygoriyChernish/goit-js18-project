@@ -29,9 +29,9 @@
 
                 <!-- Секция Degree -->
 
-                <section
-                    class="degree js-degree animate__animated animate__fadeIn"
-                ></section>
+                <section class="degree animate__animated animate__fadeIn">
+                    <div class="js-degree"></div>
+                </section>
 
                 <!-- Кнопки Active & No Active  -->
 
@@ -66,14 +66,6 @@
                             <ul
                                 class="more-info days js-more-info is-hidden"
                             ></ul>
-                            <div class="arrow-wrap">
-                                <span
-                                    class="arrow arrow__prev arrow__prev--fix js-more-info-arrow__prev"
-                                ></span>
-                                <span
-                                    class="arrow arrow__next arrow__next--fix js-more-info-arrow__next"
-                                ></span>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -98,41 +90,30 @@
                     </div>
                 </section>
 
-                <section>
-                    <div class="wrapper js-wrapper">
-                        <div
-                            class="date-box section animate__animated animate__fadeIn"
-                        >
-                            <div class="date">
-                                <div class="data-suffix">
-                                    <p id="data" class="date__data">
-                                        8
-                                    </p>
-                                    <sup id="suffix" class="date__suffix"></sup>
-                                </div>
-                                <div class="date__day">
-                                    <p id="day-week" class="date__day-week"></p>
-                                </div>
+                <section class="date-section js-wrapper">
+                    <div class="date-box animate__animated animate__fadeIn">
+                        <div class="date">
+                            <div class="date__time">
+                                <p id="data" class="date__data"></p>
                             </div>
-                            <div class="block-desk">
-                                <div class="month-time">
-                                    <p
-                                        id="mounth"
-                                        class="month border-line"
-                                    ></p>
-                                    <p id="time" class="time"></p>
-                                </div>
-                                <div class="sunrise-sunset js-sun">
-                                    <p class="sunrise border-line"></p>
-                                    <p class="sunset"></p>
-                                </div>
+                            <div class="date__suffix">
+                                <p class="js-date__suffix"></p>
+                            </div>
+
+                            <div class="date__day">
+                                <p id="day-week" class="date__day-week"></p>
                             </div>
                         </div>
-
-                        <div
-                            class="quote animate__animated animate__fadeIn"
-                        ></div>
+                        <div class="day__info">
+                            <div class="month-time">
+                                <p id="mounth" class="month"></p>
+                                <p id="time" class="time"></p>
+                            </div>
+                            <div class="sunrise-sunset js-sun"></div>
+                        </div>
                     </div>
+
+                    <div class="quote animate__animated animate__fadeIn"></div>
                 </section>
             </div>
         </main>

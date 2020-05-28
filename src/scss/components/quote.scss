@@ -1,10 +1,8 @@
 .quote {
-    display: block;
-    width: 200px;
+    display: inline-block;
+    @include size(200px, auto);
+    @include margin(45px 0 null auto);
     text-align: right;
-    margin-bottom: 58px;
-    margin-left: auto;
-    margin-right: 0px;
 }
 
 .quote__text {
@@ -36,9 +34,8 @@
 
 @include md {
     .quote {
-        width: 373px;
-        margin-bottom: 72px;
-        margin-right: 79px;
+        @include size(375px, auto);
+        margin-top: 65px;
     }
 
     .quote__text {
@@ -55,8 +52,5 @@
 @include lg {
     .quote {
         margin: 0;
-    }
-    .wrapper {
-        justify-content: space-between;
     }
 }

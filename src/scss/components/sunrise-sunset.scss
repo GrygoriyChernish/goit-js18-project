@@ -1,0 +1,88 @@
+.sunrise-sunset {
+    display: flex;
+    justify-content: center;
+    @include margin(0 auto 20px);
+    @include size(100%, auto);
+    max-width: 130px;
+}
+
+.sunrise {
+    margin-right: 10px;
+
+    &::after {
+        @include psevdo($display: block);
+        @include size(1px, 20px);
+        @include position(absolute, 0 -10px null null);
+        background-color: rgb(231, 232, 235);
+    }
+}
+.sunrise,
+.sunset {
+    @include font-source-sans(text-s, $lite_main, 400, null);
+}
+
+.sunrise,
+.sunset {
+    position: relative;
+    padding-left: 28px;
+
+    &::before {
+        @include psevdo($display: block);
+        @include position(absolute, null null 0 0);
+        @include size(25px, 33px);
+    }
+}
+
+.sunrise::before {
+    background: {
+        size: 25px 33px;
+        position: center;
+        repeat: no-repeat;
+    }
+    background-image: url('../icons/sun/sunrise.png');
+}
+
+.sunset {
+    margin-left: 10px;
+
+    &::before {
+        background: {
+            size: 25px 33px;
+            position: center;
+            repeat: no-repeat;
+        }
+        background-image: url('../icons/sun/sunset.png');
+    }
+}
+
+@include md {
+    .sunrise-sunset {
+        max-width: 210px;
+        margin-bottom: 14px;
+    }
+
+    .sunrise,
+    .sunset {
+        font-size: $text-m;
+    }
+}
+
+@include lg {
+    .sunrise-sunset {
+        width: 100%;
+        max-width: 190px;
+        margin: 0;
+    }
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .sunrise::before {
+        background-image: url('../icons/sun/sunrise@2x.png');
+    }
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .sunset::before {
+        background-image: url('../icons/sun/sunset@2x.png');
+    }
+}
