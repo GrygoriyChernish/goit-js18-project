@@ -1,162 +1,43 @@
-.date-box {
-    @extend %flex;
-    @extend %center;
-    @extend %column;
-    // @include size(280px, 190px);
-    border-radius: 35px;
-    // margin-bottom: 42px;
-}
-
 .date {
-    margin-bottom: 20px;
-}
+    display: flex;
+    justify-content: center;
+    @include margin(0 auto 20px);
+    // margin: 0 auto;
+    // margin-bottom: 20px;
+    @include size(50%, auto);
+    max-width: 130px;
 
-.month-time {
-    margin-bottom: 30px;
-}
-
-.date,
-.month-time,
-.data-suffix,
-.sunrise-sunset {
-    @extend %center-row;
-}
-
-.date__data,
-.date__day-week {
-    @include font-source-sans(text-mobl, rgb(247, 247, 247), 300, null);
-}
-
-.date__suffix {
-    @include font-source-sans(text-s, rgb(247, 247, 247), 300, null);
-    margin-right: 16px;
-    top: 0;
-}
-
-.month,
-.time,
-.sunrise,
-.sunset {
-    @include font-source-sans(text-s, $lite_main, 400, null);
-}
-
-.border-line {
-    position: relative;
-    margin-right: 20px;
-
-    &::after {
-        @include psevdo($display: block);
-        @include size(1px, 20px);
-        @include position(absolute, 0 -10px null null);
-        background-color: rgb(231, 232, 235);
+    &__time,
+    &__suffix,
+    &__day-week {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        @include font-source-sans(30px, rgb(247, 247, 247), 300, 0.7);
     }
-}
 
-.sunrise-sunset {
-    width: 170px;
-}
-
-.sunrise,
-.sunset {
-    position: relative;
-    padding-left: 34px;
-
-    &::before {
-        @include psevdo($display: block);
-        @include position(absolute, null null 0 0);
-        @include size(25px, 33px);
+    &__time {
+        margin-right: 5px;
     }
-}
 
-.sunrise::before {
-    background: {
-        size: 25px 33px;
-        position: center;
-        repeat: no-repeat;
+    &__suffix {
+        font-size: 12px;
+        margin-right: 15px;
     }
-    background-image: url('../icons/sun/sunrise.png');
-}
-
-.sunset::before {
-    background: {
-        size: 25px 33px;
-        position: center;
-        repeat: no-repeat;
-    }
-    background-image: url('../icons/sun/sunset.png');
 }
 
 @include md {
-    // .date-box {
-    // width: 492px;
-    // height: 277px;
-    // margin: 0 auto 62px;
-    // }
-
-    .date__data,
-    .date__day-week {
-        font-size: $text-tabl;
-    }
-
-    .date__suffix {
-        font-size: 23px;
-        top: 26px;
-    }
-
-    .month,
-    .time,
-    .sunrise,
-    .sunset {
-        font-size: $text-m;
-    }
-
     .date {
+        max-width: 210px;
         margin-bottom: 14px;
-    }
 
-    .month-time {
-        margin-bottom: 40px;
-    }
-}
-
-@include lg {
-    .wrapper {
-        flex-direction: inherit;
-    }
-    .date-box {
-        align-items: center;
-        justify-content: center;
-    }
-
-    .block-desk {
-        display: flex;
-        justify-content: space-between;
-        width: 430px;
-    }
-
-    .sunrise,
-    .sunset {
-        &::before {
-            bottom: 42px;
+        &__time,
+        &__day-week {
+            font-size: 60px;
         }
-    }
 
-    .border-line {
-        &::after {
-            @include margin(null 7px null null);
-            right: -18px;
+        &__suffix {
+            font-size: 22px;
         }
-    }
-}
-
-@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    .sunrise::before {
-        background-image: url('../icons/sun/sunrise@2x.png');
-    }
-}
-
-@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    .sunset::before {
-        background-image: url('../icons/sun/sunset@2x.png');
     }
 }

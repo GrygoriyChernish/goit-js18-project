@@ -1,6 +1,12 @@
-.wrapper {
-    margin: 0;
+.date-section {
+    @include size(100%, auto);
+    margin: 0 auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+}
+
+@include lg {
+    .date-section {
+        display: flex;
+        justify-content: space-between;
+    }
 }

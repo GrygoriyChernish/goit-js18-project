@@ -1,0 +1,108 @@
+.month-time {
+    margin-bottom: 30px;
+}
+
+.month-time,
+.sunrise-sunset {
+    @extend %center-row;
+}
+
+.month,
+.time,
+.sunrise,
+.sunset {
+    @include font-source-sans(text-s, $lite_main, 400, null);
+}
+
+.border-line {
+    position: relative;
+    margin-right: 20px;
+
+    &::after {
+        @include psevdo($display: block);
+        @include size(1px, 20px);
+        @include position(absolute, 0 -10px null null);
+        background-color: rgb(231, 232, 235);
+    }
+}
+
+.sunrise-sunset {
+    width: 170px;
+}
+
+.sunrise,
+.sunset {
+    position: relative;
+    padding-left: 34px;
+
+    &::before {
+        @include psevdo($display: block);
+        @include position(absolute, null null 0 0);
+        @include size(25px, 33px);
+    }
+}
+
+.sunrise::before {
+    background: {
+        size: 25px 33px;
+        position: center;
+        repeat: no-repeat;
+    }
+    background-image: url('../icons/sun/sunrise.png');
+}
+
+.sunset::before {
+    background: {
+        size: 25px 33px;
+        position: center;
+        repeat: no-repeat;
+    }
+    background-image: url('../icons/sun/sunset.png');
+}
+
+@include md {
+    .month,
+    .time,
+    .sunrise,
+    .sunset {
+        font-size: $text-m;
+    }
+
+    .month-time {
+        margin-bottom: 40px;
+    }
+}
+
+@include lg {
+    .block-desk {
+        display: flex;
+        justify-content: space-between;
+        width: 430px;
+    }
+
+    .sunrise,
+    .sunset {
+        &::before {
+            bottom: 42px;
+        }
+    }
+
+    .border-line {
+        &::after {
+            @include margin(null 7px null null);
+            right: -18px;
+        }
+    }
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .sunrise::before {
+        background-image: url('../icons/sun/sunrise@2x.png');
+    }
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .sunset::before {
+        background-image: url('../icons/sun/sunset@2x.png');
+    }
+}
