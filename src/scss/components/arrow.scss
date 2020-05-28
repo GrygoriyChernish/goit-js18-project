@@ -13,6 +13,10 @@
 
 .arrow__prev {
     background-image: url(../icons/back.svg);
+    border: none;
+    background-position: center;
+    background-color: $middle_lite;
+    background-repeat: no-repeat;
 
     &:hover {
         background-color: $lite_main;
@@ -33,6 +37,10 @@
 
 .arrow__next {
     background-image: url(../icons/next.svg);
+    border: none;
+    background-position: center;
+    background-color: $middle_lite;
+    background-repeat: no-repeat;
 
     &:hover {
         background-color: $lite_main;
