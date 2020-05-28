@@ -150,16 +150,16 @@ refs.searchForm.addEventListener('submit', event => {
 
 // Запрос к серверу по клику на кнопку "TODAY"
 
-refs.oneDayBtn.addEventListener('click', e => {
-    const city = appState.currentCity;
-    updateWeatherResult(city);
-});
+// refs.oneDayBtn.addEventListener('click', e => {
+//     const city = appState.currentCity;
+//     updateWeatherResult(city);
+// });
 
 // const markupFavorite = cityItem(favouriteCities);
 // refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
 
 refs.choiceFavorite.addEventListener('click', e => {
-    if (e.target.nodeName == !'U') {
+    if (e.target.nodeName !== 'U') {
         return;
     }
 
