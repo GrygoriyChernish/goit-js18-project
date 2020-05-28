@@ -1,0 +1,10 @@
+.time {
+    @include font-source-sans(text-s, $lite_main, 400, null);
+    margin-left: 10px;
+}
+
+@include md {
+    .time {
+        font-size: $text-m;
+    }
+}

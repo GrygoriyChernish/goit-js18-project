@@ -1,33 +1,21 @@
-.month-time {
-    margin-bottom: 30px;
-}
-
-.month-time,
 .sunrise-sunset {
-    @extend %center-row;
+    display: flex;
+    justify-content: center;
+    @include margin(0 auto 20px);
+    @include size(100%, auto);
+    max-width: 130px;
 }
 
-.month,
-.time,
+.sunrise::after {
+    @include psevdo($display: block);
+    @include size(1px, 20px);
+    @include position(absolute, 0 -10px null null);
+    background-color: rgb(231, 232, 235);
+}
+
 .sunrise,
 .sunset {
     @include font-source-sans(text-s, $lite_main, 400, null);
-}
-
-.border-line {
-    position: relative;
-    margin-right: 20px;
-
-    &::after {
-        @include psevdo($display: block);
-        @include size(1px, 20px);
-        @include position(absolute, 0 -10px null null);
-        background-color: rgb(231, 232, 235);
-    }
-}
-
-.sunrise-sunset {
-    width: 170px;
 }
 
 .sunrise,
@@ -61,36 +49,22 @@
 }
 
 @include md {
-    .month,
-    .time,
+    .sunrise-sunset {
+        max-width: 210px;
+        margin-bottom: 14px;
+    }
+
     .sunrise,
     .sunset {
         font-size: $text-m;
     }
-
-    .month-time {
-        margin-bottom: 40px;
-    }
 }
 
 @include lg {
-    .block-desk {
-        display: flex;
-        justify-content: space-between;
-        width: 430px;
-    }
-
     .sunrise,
     .sunset {
         &::before {
             bottom: 42px;
-        }
-    }
-
-    .border-line {
-        &::after {
-            @include margin(null 7px null null);
-            right: -18px;
         }
     }
 }

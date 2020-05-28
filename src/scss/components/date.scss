@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     @include margin(0 auto 20px);
-    @include size(50%, auto);
+    @include size(100%, auto);
     max-width: 130px;
 
     &__time,
