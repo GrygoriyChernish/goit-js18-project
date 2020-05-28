@@ -179,10 +179,5 @@ refs.fiveDaysBtn.addEventListener('click', () => {
 updateWeatherResult();
 
 export {
-    updateWeatherResult,
-    getRandomNumber,
-    setBackgroundImage,
-    clearHtml,
-    createHtml,
-    tranformData,
+    updateWeatherResult, getRandomNumber, setBackgroundImage
 };
