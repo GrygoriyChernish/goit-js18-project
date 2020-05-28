@@ -67,7 +67,7 @@
 
     .day__tempr--degrees {
         // @include margin(16px 0 0 0);
-        @include padding(0);
+        //@include padding(16px 0 0 0);
         position: relative;
 
         &:before {
@@ -86,7 +86,7 @@
 
         @include lg {
             font-size: $text-m;
-            margin-top: 10px;
+            //padding-top: 10px;
         }
     }
 }

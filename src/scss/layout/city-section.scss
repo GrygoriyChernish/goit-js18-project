@@ -1,6 +1,7 @@
 .city__section {
     @include font-source-sans(18px, $lite_main, 700, 22px);
     letter-spacing: 1px;
+    margin: 0;
 
     &--text {
         @include font-source(28px, null);
