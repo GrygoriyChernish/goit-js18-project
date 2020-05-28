@@ -155,8 +155,6 @@ refs.oneDayBtn.addEventListener('click', e => {
     updateWeatherResult(city);
 });
 
-
-
 // const markupFavorite = cityItem(favouriteCities);
 // refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
 
@@ -169,20 +167,13 @@ refs.choiceFavorite.addEventListener('click', e => {
 // Запрос к серверу по клику на кнопку "5 дней"
 
 refs.fiveDaysBtn.addEventListener('click', () => {
-//     // console.log('Click!');
-//     // const city = appState.currentCity;
-//     // updateWeatherResult(city);
+    //     // console.log('Click!');
+    //     // const city = appState.currentCity;
+    //     // updateWeatherResult(city);
 });
 
 // Default call
 
 updateWeatherResult();
 
-export {
-    updateWeatherResult,
-    getRandomNumber,
-    setBackgroundImage,
-    clearHtml,
-    createHtml,
-    tranformData,
-};
+export { updateWeatherResult, getRandomNumber, setBackgroundImage };
