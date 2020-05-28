@@ -159,17 +159,13 @@ refs.oneDayBtn.addEventListener('click', e => {
 // refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
 
 refs.choiceFavorite.addEventListener('click', e => {
+    if (e.target.nodeName !== 'U') {
+        return;
+    }
+
     const location = e.target.textContent;
     appState.currentCity = location;
     updateWeatherResult(location);
-});
-
-// Запрос к серверу по клику на кнопку "5 дней"
-
-refs.fiveDaysBtn.addEventListener('click', () => {
-    //     // console.log('Click!');
-    //     // const city = appState.currentCity;
-    //     // updateWeatherResult(city);
 });
 
 // Default call
