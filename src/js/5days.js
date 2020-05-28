@@ -13,7 +13,7 @@ const refs = {
     jsMoreInfoContainer: document.querySelector('.js-more-info__container'),
 };
 
-refs.fiveDaysBtn.addEventListener('click', getweatherFiveDay);
+refs.fiveDaysBtn.addEventListener('click', getWeatherFiveDay);
 refs.daysContainer.addEventListener('click', setActiveTag);
 
 const tranformDay = (a, data) => {
@@ -67,7 +67,7 @@ function updateMoreInfoMarkup(forThreeHours) {
     refs.daysContainerMoreInfo.innerHTML = markup;
 }
 
-function getweatherFiveDay(event) {
+function getWeatherFiveDay() {
     fiveDayService.resetDays();
 
     refs.jsMoreInfoContainer.classList.add('is-hidden');
@@ -114,9 +114,11 @@ function showMoreInformation() {
             ...response,
             list,
         };
+        console.log(changedData);
         changedData.list[fiveDayService.oneDay].forecast.map(e => {
             fiveDayService.hours.push(tranformHours(e));
         });
+        console.log(changedData);
         updateMoreInfoMarkup(fiveDayService.hours);
     });
 }
@@ -125,16 +127,19 @@ function setActiveTag(e) {
     if (e.target.nodeName !== 'A') {
         return;
     }
+
     fiveDayService.oneDay = Number(e.target.dataset.index);
     const nextActiveTag = e.target.parentNode;
     const currentActiveTag = refs.daysContainer.querySelector(
         '.day__item--active',
     );
+
     if (currentActiveTag) {
         currentActiveTag.classList.remove('day__item--active');
         refs.daysContainerMoreInfo.innerHTML = '';
         // showMoreInformation();
     }
+
     nextActiveTag.classList.add('day__item--active');
     refs.jsMoreInfoContainer.classList.remove('is-hidden');
     refs.daysContainerMoreInfo.innerHTML = '';

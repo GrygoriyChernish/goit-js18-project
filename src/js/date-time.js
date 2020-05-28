@@ -150,18 +150,20 @@ refs.searchForm.addEventListener('submit', event => {
 
 // Запрос к серверу по клику на кнопку "TODAY"
 
-refs.oneDayBtn.addEventListener('click', e => {
-    const city = appState.currentCity;
-    updateWeatherResult(city);
-});
-
-
+// refs.oneDayBtn.addEventListener('click', e => {
+//     const city = appState.currentCity;
+//     updateWeatherResult(city);
+// });
 
 // const markupFavorite = cityItem(favouriteCities);
 // refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
 
 refs.choiceFavorite.addEventListener('click', e => {
-    const location = e.target.textContent;
+    if (e.target.nodeName !== 'U') {
+        return;
+    }
+
+    const location = e.target.nodeName.textContent;
     appState.currentCity = location;
     updateWeatherResult(location);
 });
@@ -169,20 +171,13 @@ refs.choiceFavorite.addEventListener('click', e => {
 // Запрос к серверу по клику на кнопку "5 дней"
 
 refs.fiveDaysBtn.addEventListener('click', () => {
-//     // console.log('Click!');
-//     // const city = appState.currentCity;
-//     // updateWeatherResult(city);
+    //     // console.log('Click!');
+    //     // const city = appState.currentCity;
+    //     // updateWeatherResult(city);
 });
 
 // Default call
 
 updateWeatherResult();
 
-export {
-    updateWeatherResult,
-    getRandomNumber,
-    setBackgroundImage,
-    clearHtml,
-    createHtml,
-    tranformData,
-};
+export { updateWeatherResult, getRandomNumber, setBackgroundImage };
