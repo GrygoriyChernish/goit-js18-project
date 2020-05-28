@@ -15,7 +15,7 @@
 
 @include lg {
     .btn__wrap {
-        @include margin(null 0 46px null);
+        @include margin(null 0 100px null);
         @include size(26%, null);
     }
 }

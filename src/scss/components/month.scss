@@ -14,7 +14,7 @@
 .month-time {
     display: flex;
     justify-content: center;
-    @include margin(0 auto 10px);
+    @include margin(0 auto 30px);
     padding: 0;
     @include size(100%, auto);
     max-width: 130px;
@@ -27,6 +27,15 @@
 
     .month-time {
         max-width: 210px;
-        margin-bottom: 14px;
+        margin-bottom: 38px;
+    }
+}
+
+@include lg {
+    .month-time {
+        justify-content: start;
+        width: 100%;
+        max-width: 190px;
+        margin: 0;
     }
 }

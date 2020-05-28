@@ -1,12 +1,13 @@
 .date-box {
     margin: 0;
-    padding: 0;
-    border-radius: 35px;
+    @include padding(45px);
+    @include border-radius(35px);
+    background-color: rgba(16, 33, 54, 0.59);
 }
 
 @include lg {
-    // .date-box {
-    // align-items: center;
-    // justify-content: center;
-    // }
+    .date-box {
+        @include padding(110px 70px 96px 106px);
+        @include margin(0 0 0 -110px);
+    }
 }

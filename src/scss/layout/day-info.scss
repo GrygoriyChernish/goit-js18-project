@@ -1,0 +1,11 @@
+.day__info {
+    display: inline-block;
+}
+
+@include lg {
+    .day__info {
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+    }
+}

@@ -6,13 +6,16 @@
     max-width: 130px;
 }
 
-.sunrise::after {
-    @include psevdo($display: block);
-    @include size(1px, 20px);
-    @include position(absolute, 0 -10px null null);
-    background-color: rgb(231, 232, 235);
-}
+.sunrise {
+    margin-right: 10px;
 
+    &::after {
+        @include psevdo($display: block);
+        @include size(1px, 20px);
+        @include position(absolute, 0 -10px null null);
+        background-color: rgb(231, 232, 235);
+    }
+}
 .sunrise,
 .sunset {
     @include font-source-sans(text-s, $lite_main, 400, null);
@@ -21,7 +24,7 @@
 .sunrise,
 .sunset {
     position: relative;
-    padding-left: 34px;
+    padding-left: 28px;
 
     &::before {
         @include psevdo($display: block);
@@ -39,13 +42,17 @@
     background-image: url('../icons/sun/sunrise.png');
 }
 
-.sunset::before {
-    background: {
-        size: 25px 33px;
-        position: center;
-        repeat: no-repeat;
+.sunset {
+    margin-left: 10px;
+
+    &::before {
+        background: {
+            size: 25px 33px;
+            position: center;
+            repeat: no-repeat;
+        }
+        background-image: url('../icons/sun/sunset.png');
     }
-    background-image: url('../icons/sun/sunset.png');
 }
 
 @include md {
@@ -61,11 +68,10 @@
 }
 
 @include lg {
-    .sunrise,
-    .sunset {
-        &::before {
-            bottom: 42px;
-        }
+    .sunrise-sunset {
+        width: 100%;
+        max-width: 190px;
+        margin: 0;
     }
 }
 
