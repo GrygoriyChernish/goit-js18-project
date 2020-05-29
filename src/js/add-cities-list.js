@@ -11,6 +11,8 @@ let favouriteCities = localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [];
 localStorage.setItem('cities', JSON.stringify(favouriteCities));
+refs.prevBtn.classList.add('is-hidden');
+refs.nextBtn.classList.add('is-hidden');
 //Listiners
 refs.starInput.addEventListener('click', addToFavoriteCities);
 refs.citiesList.addEventListener('click', onCloseIconClick);
@@ -35,6 +37,7 @@ function Active() {
 }
 // Add To Favorites
 function addToFavoriteCities() {
+    event.preventDefault();
     const cityName = refs.cityInput.value.trim();
     renderCitiesList(favouriteCities);
     refs.cityInput.value = '';
@@ -54,7 +57,7 @@ renderCitiesList(favouriteCities);
 //Delete
 
 function onCloseIconClick(event) {
-    if (event.target.nodeName === 'SPAN') {
+    if (event.target.nodeName === 'BUTTON') {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);
