@@ -11,12 +11,12 @@ let favouriteCities = localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [];
 localStorage.setItem('cities', JSON.stringify(favouriteCities));
-refs.prevBtn.classList.add('is-hidden');
-refs.nextBtn.classList.add('is-hidden');
+
 //Listiners
-refs.starInput.addEventListener('click', addToFavoriteCities);
-refs.citiesList.addEventListener('click', onCloseIconClick);
-refs.cityInput.addEventListener('click', Active);
+// refs.starInput.addEventListener('click', addToFavoriteCities);
+// refs.citiesList.addEventListener('click', onCloseIconClick);
+// refs.cityInput.addEventListener('click', Active);
+
 //Render List
 function renderCitiesList(cities) {
     if (refs.citiesList.firstChild) {

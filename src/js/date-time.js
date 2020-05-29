@@ -1,13 +1,11 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
-import cityItem from '../template/cityItem.hbs';
 import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
 import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
 import renderMarkup from './components/render-markup';
 import fiveDayService from './apiServiceFiveDay';
-import { favouriteCities } from './add-cities-list';
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
 const refs = {
@@ -22,14 +20,14 @@ const refs = {
     quoteChange: document.querySelector('.quote'),
 };
 
-const defaultCity = 'kiev';
+const defaultCity = '';
 
 // Сохранение текущего города, который ввели в поле поиска или по умолчанию
 
 const appState = {
     currentCity: defaultCity,
 };
-fiveDayService.query = defaultCity;
+
 // Запрос данных API
 
 function fetchData(geoSearch = defaultCity) {
@@ -148,36 +146,14 @@ refs.searchForm.addEventListener('submit', event => {
         .catch(error => console.log(error));
 });
 
-// Запрос к серверу по клику на кнопку "TODAY"
-
-refs.oneDayBtn.addEventListener('click', e => {
-    const city = appState.currentCity;
-    updateWeatherResult(city);
-});
-
-
-
-// const markupFavorite = cityItem(favouriteCities);
-// refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
-
 refs.choiceFavorite.addEventListener('click', e => {
-    const location = e.target.textContent;
+    if (e.target.nodeName !== 'U') {
+        return;
+    }
+
+    const location = e.target.nodeName.textContent;
     appState.currentCity = location;
     updateWeatherResult(location);
 });
 
-// Запрос к серверу по клику на кнопку "5 дней"
-
-refs.fiveDaysBtn.addEventListener('click', () => {
-//     // console.log('Click!');
-//     // const city = appState.currentCity;
-//     // updateWeatherResult(city);
-});
-
-// Default call
-
-updateWeatherResult();
-
-export {
-    updateWeatherResult, getRandomNumber, setBackgroundImage
-};
+export { updateWeatherResult, getRandomNumber, setBackgroundImage };
