@@ -53,7 +53,7 @@
 
 @include md {
     .more-info {
-        @include margin(40px null null null);
+        @include margin(null null null null);
 
         &__btn {
             font-size: $text-s;

@@ -1,13 +1,11 @@
 import date from '../template/date-one-day.hbs';
 import degree from '../template/degree.hbs';
-import cityItem from '../template/cityItem.hbs';
 import fiveDaysHeadingTmpl from '../template/heading-5days.hbs';
 import quote from '../template/blockquote.hbs';
 import { fetchBackgroundImage } from './apiService-bg';
 import blockquotes from './blockquote';
 import renderMarkup from './components/render-markup';
 import fiveDayService from './apiServiceFiveDay';
-import { favouriteCities } from './add-cities-list';
 const apiKey = '73ee7931741da6d4344aba83af577859';
 
 const refs = {
@@ -22,14 +20,14 @@ const refs = {
     quoteChange: document.querySelector('.quote'),
 };
 
-const defaultCity = 'kiev';
+const defaultCity = '';
 
 // Сохранение текущего города, который ввели в поле поиска или по умолчанию
 
 const appState = {
     currentCity: defaultCity,
 };
-fiveDayService.query = defaultCity;
+
 // Запрос данных API
 
 function fetchData(geoSearch = defaultCity) {
