@@ -1,9 +1,15 @@
 import { fetchBackgroundImage } from './apiService-bg';
+import degreeNa from '../template/degreeNA.hbs';
 import {
     updateWeatherResult,
     getRandomNumber,
     setBackgroundImage,
 } from './date-time';
+import fiveDayService from './apiServiceFiveDay';
+
+const refs = {
+    oneDayDegree: document.querySelector('.js-degree'),
+};
 
 const options = {
     timeout: 5000,
@@ -35,6 +41,7 @@ function success(position) {
         // Запрос на API погоды и рендер на страницу полученых данных
 
         updateWeatherResult(locationCity);
+        fiveDayService.query = locationCity;
 
         // Запрос и установка заднего фона по текущему местонахождению
         fetchBackgroundImage(locationCity)
@@ -46,6 +53,8 @@ function success(position) {
 }
 
 function error(err) {
+    const markupDegreeNa = degreeNa();
+    refs.oneDayDegree.insertAdjacentHTML('beforeend', markupDegreeNa);
     console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
