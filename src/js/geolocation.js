@@ -1,21 +1,15 @@
 import { fetchBackgroundImage } from './apiService-bg';
-<<<<<<< HEAD
-=======
 import degreeNa from '../template/degreeNA.hbs';
->>>>>>> f7bb3f24c4dcafad551bd4128156f897d3aecd48
 import {
     updateWeatherResult,
     getRandomNumber,
     setBackgroundImage,
 } from './date-time';
-<<<<<<< HEAD
-=======
 import fiveDayService from './apiServiceFiveDay';
 
 const refs = {
     oneDayDegree: document.querySelector('.js-degree'),
 };
->>>>>>> f7bb3f24c4dcafad551bd4128156f897d3aecd48
 
 const options = {
     timeout: 5000,
@@ -43,20 +37,12 @@ function success(position) {
 
     queryApi().then(data => {
         const locationCity = data.features[0].text_en;
-<<<<<<< HEAD
-
-        // Запрос на API погоды и рендер на страницу полученых данных
-
-        updateWeatherResult(locationCity);
-
-=======
 
         // Запрос на API погоды и рендер на страницу полученых данных
 
         updateWeatherResult(locationCity);
         fiveDayService.query = locationCity;
 
->>>>>>> f7bb3f24c4dcafad551bd4128156f897d3aecd48
         // Запрос и установка заднего фона по текущему местонахождению
         fetchBackgroundImage(locationCity)
             .then(({ hits }) => {

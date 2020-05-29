@@ -146,28 +146,14 @@ refs.searchForm.addEventListener('submit', event => {
         .catch(error => console.log(error));
 });
 
-// Запрос к серверу по клику на кнопку "TODAY"
-
-refs.oneDayBtn.addEventListener('click', e => {
-    const city = appState.currentCity;
-    updateWeatherResult(city);
-});
-
-// const markupFavorite = cityItem(favouriteCities);
-// refs.choiceFavorite.insertAdjacentHTML('beforeend', markupFavorite);
-
 refs.choiceFavorite.addEventListener('click', e => {
     if (e.target.nodeName !== 'U') {
         return;
     }
 
-    const location = e.target.textContent;
+    const location = e.target.nodeName.textContent;
     appState.currentCity = location;
     updateWeatherResult(location);
 });
-
-// Default call
-
-updateWeatherResult();
 
 export { updateWeatherResult, getRandomNumber, setBackgroundImage };
