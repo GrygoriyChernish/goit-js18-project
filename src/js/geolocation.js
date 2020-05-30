@@ -4,9 +4,15 @@ import {
     getRandomNumber,
     setBackgroundImage,
 } from './date-time';
+import renderMarkup from './components/render-markup';
+import degreeNA from '../template/degree-NA.hbs';
 
 const options = {
     timeout: 5000,
+};
+
+const refs = {
+    oneDayDegree: document.querySelector('.js-degree'),
 };
 
 function success(position) {
@@ -46,6 +52,7 @@ function success(position) {
 }
 
 function error(err) {
+    // renderMarkup(degreeNA, err, refs.oneDayDegree);
     console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
