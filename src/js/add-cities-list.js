@@ -37,6 +37,7 @@ function Active() {
 }
 // Add To Favorites
 function addToFavoriteCities() {
+    event.preventDefault();
     const cityName = refs.cityInput.value.trim();
     renderCitiesList(favouriteCities);
     refs.cityInput.value = '';
@@ -56,7 +57,7 @@ renderCitiesList(favouriteCities);
 //Delete
 
 function onCloseIconClick(event) {
-    if (event.target.nodeName === 'SPAN') {
+    if (event.target.nodeName === 'BUTTON') {
         const listItem = event.target.parentElement;
         const inputList = listItem.parentElement;
         const inputListArray = Array.from(inputList.children);

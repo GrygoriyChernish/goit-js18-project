@@ -2,7 +2,10 @@
     cursor: pointer;
     @include size(12px, 12px);
     @include padding(null null null 15px);
+    @include border-radius(50%);
+    border: none;
     background: {
+        color: transparent;
         image: url(../icons/icon-close.svg);
         repeat: no-repeat;
         position: center;

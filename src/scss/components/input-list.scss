@@ -15,6 +15,7 @@
         @include padding(7px);
         @include margin(null 3px);
         @include size(null, 30px);
+        text-decoration: underline;
 
         &:hover {
             background-color: rgba(16, 33, 54, 0.3);
