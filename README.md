@@ -1,7 +1,7 @@
 [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-# GoIT JavaScript: #18 Online Project
+# final_project_group_15 Online Project
 
 ### _Weather App (Vanilla JS)_
 
